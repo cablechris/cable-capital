@@ -19,9 +19,18 @@ const posts = {
       "The time is now."
     ]
   },
-  'crypto-consumer-behavior': {
-    title: 'Crypto Through a Consumer Behavior Lens',
-    date: 'MARCH 20, 2025',
+  'market-cycles': {
+    title: 'Navigating Crypto Market Cycles',
+    date: 'NOVEMBER 10, 2023',
+    content: [
+      "After leading insights and analytics at Diageo and spending over a decade in crypto, I've noticed striking parallels between consumer behavior models and crypto market cycles.",
+      "The boom-bust cycles of crypto markets follow patterns remarkably similar to traditional consumer adoption curves, just accelerated. Early adopters, the mainstream wave, and laggards all behave according to well-established principles of behavioral economics. What's different is the compressed timeframe and amplified reactions within the crypto space.",
+      "Consider the classic Rogers' Diffusion of Innovation curve. In traditional markets, this adoption process might take years or decades. In crypto, we see the same pattern compressed into months or a few years at most."
+    ]
+  },
+  'defi-evolution': {
+    title: 'The Evolution of DeFi: Beyond Yield Farming',
+    date: 'JUNE 15, 2023',
     content: [
       "After leading insights and analytics at Diageo and spending over a decade in crypto, I've noticed striking parallels between consumer behavior models and crypto market cycles.",
       "The boom-bust cycles of crypto markets follow patterns remarkably similar to traditional consumer adoption curves, just accelerated. Early adopters, the mainstream wave, and laggards all behave according to well-established principles of behavioral economics. What's different is the compressed timeframe and amplified reactions within the crypto space.",
@@ -30,10 +39,19 @@ const posts = {
   },
   'dao-governance': {
     title: 'The Evolution of DAO Governance',
-    date: 'FEBRUARY 15, 2025',
+    date: 'FEBRUARY 15, 2023',
     content: [
       "Having founded multiple Investment DAOs including Flamingo, Neon, Ready Player, and Zero, I've witnessed the evolution of governance models firsthand.",
       "When we launched Flamingo in 2019, the DAO landscape was still in its infancy. Our governance model was idealistic - one token, one vote, with all major decisions requiring community approval."
+    ]
+  },
+  'crypto-consumer-behavior': {
+    title: 'Crypto Through a Consumer Behavior Lens',
+    date: 'JANUARY 20, 2023',
+    content: [
+      "After leading insights and analytics at Diageo and spending over a decade in crypto, I've noticed striking parallels between consumer behavior models and crypto market cycles.",
+      "The boom-bust cycles of crypto markets follow patterns remarkably similar to traditional consumer adoption curves, just accelerated. Early adopters, the mainstream wave, and laggards all behave according to well-established principles of behavioral economics. What's different is the compressed timeframe and amplified reactions within the crypto space.",
+      "Consider the classic Rogers' Diffusion of Innovation curve. In traditional markets, this adoption process might take years or decades. In crypto, we see the same pattern compressed into months or a few years at most."
     ]
   }
 }

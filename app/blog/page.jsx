@@ -10,24 +10,24 @@ const staticPosts = [
     date: 'MARCH 25, 2024'
   },
   {
-    slug: 'crypto-consumer-behavior',
-    title: 'Crypto Through a Consumer Behavior Lens',
-    date: 'MARCH 20, 2025'
-  },
-  {
-    slug: 'dao-governance',
-    title: 'The Evolution of DAO Governance',
-    date: 'FEBRUARY 15, 2025'
-  },
-  {
     slug: 'market-cycles',
     title: 'Navigating Crypto Market Cycles',
-    date: 'NOVEMBER 10, 2024'
+    date: 'NOVEMBER 10, 2023'
   },
   {
     slug: 'defi-evolution',
     title: 'The Evolution of DeFi: Beyond Yield Farming',
     date: 'JUNE 15, 2023'
+  },
+  {
+    slug: 'dao-governance',
+    title: 'The Evolution of DAO Governance',
+    date: 'FEBRUARY 15, 2023'
+  },
+  {
+    slug: 'crypto-consumer-behavior',
+    title: 'Crypto Through a Consumer Behavior Lens',
+    date: 'JANUARY 20, 2023'
   }
 ];
 
