@@ -3,6 +3,22 @@ import Link from 'next/link'
 
 // Sample data - replace with your actual data
 const posts = {
+  'vibe-coding-revolution': {
+    title: 'The Vibe Coding Revolution',
+    date: 'MARCH 25, 2024',
+    content: [
+      "I stumbled across a \"chaos coding\" class today during lunch. Not just any class—one taught by my good friend Aaron Wright, who I recently spent time with at ETH Denver.",
+      "Aaron is probably within the top 1% of Cursor users globally. When someone at that level offers to share their knowledge, you show up. Despite being a lawyer by trade, he's absolutely obsessed with the platform. When he announced he was running a showcase class, I had to join.",
+      "Within 45 minutes, we had collectively vibe coded an entire 3D world on Cursor.",
+      "Five months ago, I first tried Cursor as a complete non-coder. I managed to create a rudimentary snake game, but the process was painful—hours of debugging for minimal progress.",
+      "But something fundamental has changed. The debugging process still exists, but what previously took hours now happens in minutes. The system has gotten significantly more intelligent, more responsive.",
+      "This is how technology actually progresses. Not in smooth curves economists draw on graphs, but in sudden, jarring leaps that reconfigure what's possible. One day something is difficult; the next, it's trivially easy.",
+      "Vibe coding isn't just another programming trend. It's a fundamental rethinking of who can create software and how quickly ideas can materialize.",
+      "The best software tools don't just make existing programmers more efficient—they expand who can program in the first place.",
+      "The barriers between imagination and implementation are collapsing.",
+      "The time is now."
+    ]
+  },
   'crypto-consumer-behavior': {
     title: 'Crypto Through a Consumer Behavior Lens',
     date: 'MARCH 20, 2025',
@@ -22,8 +38,10 @@ const posts = {
   }
 }
 
-export default function Post({ params }) {
-  const { slug } = params
+// Make the component async
+export default function BlogPost({ params }) {
+  const { slug } = params;
+  
   const post = posts[slug]
   
   if (!post) {
@@ -36,12 +54,15 @@ export default function Post({ params }) {
 
   return (
     <Layout>
-      <article>
-        <div className="post-date">{post.date}</div>
+      <article className="blog-post">
         <h1>{post.title}</h1>
-        {post.content.map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
-        ))}
+        <div className="post-date">{post.date}</div>
+        
+        <div className="post-content">
+          {post.content.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+        </div>
       </article>
       
       <div style={{ marginTop: '3rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between' }}>
