@@ -1,63 +1,61 @@
-import Layout from '../../components/Layout'
-import Link from 'next/link'
+'use client';
 
-// Sample data - replace with your actual coding projects
-const projects = [
-  {
-    id: 'defi-dashboard',
-    title: 'DeFi Dashboard',
-    description: 'A dashboard for tracking DeFi investments across multiple protocols and chains.',
-    tags: ['React', 'Ethers.js', 'TailwindCSS'],
-    demoUrl: 'https://example.com/demo',
-    codeUrl: 'https://github.com/example/defi-dashboard'
-  },
-  {
-    id: 'dao-voting',
-    title: 'DAO Voting System',
-    description: 'A decentralized voting system for DAOs with delegation and quadratic voting support.',
-    tags: ['Solidity', 'Next.js', 'The Graph'],
-    demoUrl: 'https://example.com/demo',
-    codeUrl: 'https://github.com/example/dao-voting'
-  },
-  {
-    id: 'nft-marketplace',
-    title: 'NFT Marketplace',
-    description: 'A marketplace for buying, selling, and trading NFTs with support for multiple collections.',
-    tags: ['React', 'Solidity', 'IPFS'],
-    demoUrl: 'https://example.com/demo',
-    codeUrl: 'https://github.com/example/nft-marketplace'
-  }
-]
+import Layout from '../../components/Layout';
+import { projects } from '../data/projects';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Projects() {
   return (
     <Layout>
-      <h1>Coding Projects</h1>
-      <p>A collection of my open-source projects in the crypto and web3 space.</p>
-      
-      <div style={{ marginTop: '2rem' }}>
-        {projects.map(project => (
-          <div key={project.id} className="project-card">
-            <h2 className="project-title">{project.title}</h2>
-            <p className="project-description">{project.description}</p>
-            
-            <div className="project-tags">
-              {project.tags.map(tag => (
-                <span key={tag} className="project-tag">{tag}</span>
-              ))}
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <h1 className="text-4xl font-bold mb-8">Projects</h1>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((project) => (
+            <div key={project.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="relative h-48">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h2 className="text-2xl font-bold mb-2">{project.title}</h2>
+                <p className="text-gray-600 mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 bg-gray-100 rounded-full text-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex gap-4">
+                  <Link
+                    href={project.demoUrl}
+                    className="text-primary hover:text-primary/80 font-medium"
+                    target="_blank"
+                  >
+                    Live Demo →
+                  </Link>
+                  <Link
+                    href={project.githubUrl}
+                    className="text-primary hover:text-primary/80 font-medium"
+                    target="_blank"
+                  >
+                    GitHub →
+                  </Link>
+                </div>
+              </div>
             </div>
-            
-            <div style={{ display: 'flex', gap: '0.75rem' }}>
-              <a href={project.demoUrl} className="button" target="_blank" rel="noopener noreferrer">
-                View Demo
-              </a>
-              <a href={project.codeUrl} style={{ display: 'flex', alignItems: 'center' }} target="_blank" rel="noopener noreferrer">
-                View Code
-              </a>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </Layout>
-  )
+  );
 } 

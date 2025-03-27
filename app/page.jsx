@@ -1,60 +1,87 @@
+'use client';
+
 import Layout from '../components/Layout'
 import Link from 'next/link'
-
-// Sample data - replace with your actual data
-const latestPost = {
-  slug: 'crypto-consumer-behavior',
-  title: 'Crypto Through a Consumer Behavior Lens',
-  date: 'MARCH 20, 2025',
-  content: [
-    "After leading insights and analytics at Diageo and spending over a decade in crypto, I've noticed striking parallels between consumer behavior models and crypto market cycles.",
-    "The boom-bust cycles of crypto markets follow patterns remarkably similar to traditional consumer adoption curves, just accelerated. Early adopters, the mainstream wave, and laggards all behave according to well-established principles of behavioral economics. What's different is the compressed timeframe and amplified reactions within the crypto space."
-  ]
-}
-
-const previousPosts = [
-  {
-    slug: 'dao-governance',
-    title: 'The Evolution of DAO Governance',
-    date: 'FEBRUARY 15, 2025'
-  },
-  {
-    slug: 'defi-evolution',
-    title: 'The Evolution of DeFi: Beyond Yield Farming',
-    date: 'JUNE 15, 2023'
-  }
-]
+import { posts } from './data/posts'
 
 export default function Home() {
+  // Sort posts by date in reverse chronological order
+  const sortedPosts = [...posts].sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB - dateA;
+  });
+
+  // Get the latest post
+  const latestPost = sortedPosts[0];
+  
+  // Get the next few posts for the "Previous Posts" section
+  const previousPosts = sortedPosts.slice(1, 4);
+
   return (
     <Layout>
-      <article>
-        <div className="post-date">{latestPost.date}</div>
-        <h1>{latestPost.title}</h1>
-        {latestPost.content.map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
-        ))}
-        <p>
-          <Link href={`/blog/${latestPost.slug}`}>
+      <article className="prose prose-lg max-w-none">
+        <div className="text-sm text-gray-600 uppercase tracking-wider mb-4">
+          {latestPost.date}
+        </div>
+        <h1 className="text-4xl font-bold mb-8 text-gray-900">
+          {latestPost.title}
+        </h1>
+        <div className="space-y-6">
+          {latestPost.content.map((paragraph, index) => (
+            <p key={index} className="text-gray-800 leading-relaxed text-lg">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+        <div className="mt-8">
+          <Link 
+            href={`/blog/${latestPost.slug}`}
+            className="text-primary hover:text-primary/80 font-medium"
+          >
             Continue reading →
           </Link>
-        </p>
+        </div>
       </article>
       
-      <div style={{ marginTop: '3rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border)' }}>
-        <h3>Previous Posts</h3>
-        <ul style={{ listStyle: 'none', padding: 0 }}>
+      <div className="mt-16 pt-8 border-t border-gray-200">
+        <h2 className="text-2xl font-bold mb-8 text-gray-900">Previous Posts</h2>
+        <div className="space-y-8">
           {previousPosts.map(post => (
-            <li key={post.slug} style={{ marginBottom: '1rem' }}>
-              <div className="post-date">{post.date}</div>
-              <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-            </li>
+            <article key={post.slug} className="group">
+              <div className="text-sm text-gray-600 uppercase tracking-wider mb-2">
+                {post.date}
+              </div>
+              <Link 
+                href={`/blog/${post.slug}`}
+                className="text-xl font-semibold text-gray-900 group-hover:text-primary transition-colors"
+              >
+                {post.title}
+              </Link>
+            </article>
           ))}
-        </ul>
-        <p>
-          <Link href="/blog">View all posts →</Link>
-        </p>
+        </div>
+        <div className="mt-12">
+          <Link 
+            href="/blog"
+            className="text-primary hover:text-primary/80 font-medium"
+          >
+            View all posts →
+          </Link>
+        </div>
       </div>
+
+      <style jsx>{`
+        :global(.prose) {
+          max-width: none;
+        }
+        :global(.prose p) {
+          margin: 1.5rem 0;
+        }
+        :global(.prose h1) {
+          margin: 0 0 2rem 0;
+        }
+      `}</style>
     </Layout>
   )
 } 
