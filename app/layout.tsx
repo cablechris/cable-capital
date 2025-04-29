@@ -4,7 +4,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Cable Capital",
+  title: "Chris Cable",
   description: "Crypto generalist & investor since 2013"
 }
 
@@ -14,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={inter.className}>
+      <body className="min-h-screen bg-white antialiased">
         {children}
       </body>
     </html>

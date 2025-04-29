@@ -1,0 +1,91 @@
+.paperContainer {
+  @apply bg-gray-50 min-h-screen;
+}
+
+.header {
+  @apply bg-white text-primary py-16;
+}
+
+.headerContent {
+  @apply container mx-auto px-4;
+}
+
+.title {
+  @apply text-4xl md:text-5xl font-bold mb-4;
+}
+
+.subtitle {
+  @apply text-xl opacity-90;
+}
+
+.authorInfo {
+  @apply mt-6 text-sm opacity-75;
+}
+
+.mainContent {
+  @apply container mx-auto px-4 py-8;
+}
+
+.layout {
+  @apply flex flex-col md:flex-row gap-8;
+}
+
+.sidebar {
+  @apply hidden md:block md:w-1/4 lg:w-1/5;
+}
+
+.article {
+  @apply w-full md:w-3/4 lg:w-4/5;
+}
+
+.articleInner {
+  @apply bg-white rounded-xl shadow-lg overflow-hidden;
+}
+
+.articleContent {
+  @apply p-6 md:p-8 lg:p-10 space-y-12;
+}
+
+.section {
+  @apply space-y-4;
+}
+
+.sectionTitle {
+  @apply text-3xl font-bold border-b border-gray-200 pb-2;
+}
+
+.paragraph {
+  @apply text-lg leading-relaxed;
+}
+
+.list {
+  @apply list-disc pl-6 space-y-2;
+}
+
+.visualization {
+  @apply p-4 bg-white shadow-lg rounded-lg mt-6;
+}
+
+.visualizationTitle {
+  @apply text-xl font-semibold mb-4;
+}
+
+.visualizationCaption {
+  @apply text-sm text-gray-600 mt-2;
+}
+
+.codeBlock {
+  @apply bg-gray-800 text-gray-200 p-4 rounded font-mono text-sm overflow-x-auto;
+}
+
+.footer {
+  @apply mt-16 pt-8 border-t border-gray-200 text-center text-gray-500 text-sm;
+}
+
+.references {
+  @apply mt-4 text-sm space-y-3;
+}
+
+.reference {
+  @apply pl-6 -indent-6;
+} 

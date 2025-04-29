@@ -1,0 +1,5 @@
+{
+  "command": "uvx ableton-mcp",
+  "name": "Ableton MCP",
+  "description": "Run Ableton MCP server"
+} 
