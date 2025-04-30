@@ -2,7 +2,12 @@
 
 import React from 'react';
 
-const TableOfContents = ({ activeSection, scrollToSection }) => {
+interface TableOfContentsProps {
+  activeSection: string;
+  scrollToSection: (sectionId: string) => void;
+}
+
+const TableOfContents: React.FC<TableOfContentsProps> = ({ activeSection, scrollToSection }) => {
   const sections = [
     { id: "abstract", title: "Abstract" },
     { id: "introduction", title: "Introduction" },

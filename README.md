@@ -8,6 +8,8 @@ A personal blog and portfolio site built with Next.js, TypeScript, and Tailwind 
 app/
 ├── components/           # Shared components
 │   ├── Layout.jsx        # Main layout component used by all pages
+│   ├── ResearchPaper.tsx # Research paper component with visualizations
+│   ├── TableOfContents.tsx # Table of contents component
 │   ├── games/           # Game components
 │   │   └── RetroPixelCollector.tsx
 │   ├── layout/          # Layout components
@@ -15,6 +17,12 @@ app/
 │   ├── ui/             # UI components
 │   │   ├── Button.tsx
 │   │   └── Card.tsx
+│   ├── visualizations/ # Research paper visualizations
+│   │   ├── TraitSurvivalVisualization.tsx
+│   │   ├── TraitPropagationVisualization.tsx
+│   │   ├── MetaPreferenceVisualization.tsx
+│   │   ├── BaselineTraitPersistenceVisualization.tsx
+│   │   └── SubculturalNetworkVisualization.tsx
 │   └── content/        # Content-specific components
 │
 ├── lib/                # Utilities and data
