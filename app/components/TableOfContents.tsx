@@ -7,11 +7,11 @@ interface TableOfContentsProps {
   scrollToSection: (sectionId: string) => void;
 }
 
-const TableOfContents: React.FC<TableOfContentsProps> = ({ activeSection, scrollToSection }) => {
+const TableOfContents = ({ activeSection, scrollToSection }: TableOfContentsProps) => {
   const sections = [
     { id: "abstract", title: "Abstract" },
     { id: "introduction", title: "Introduction" },
-    { id: "related-work", title: "Related Work" },
+    { id: "background", title: "Background" },
     { id: "methodology", title: "Methodology" },
     { id: "results", title: "Results" },
     { id: "discussion", title: "Discussion" },
