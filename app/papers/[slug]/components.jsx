@@ -1,40 +1,128 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ScatterChart, Scatter, BarChart, Bar } from 'recharts';
 import TableOfContents from '../../../components/TableOfContents';
+import { Line as ChartLine } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip as ChartTooltip,
+  Legend as ChartLegend,
+  Filler
+} from 'chart.js';
 
-// Copy all the visualization components from your provided code
-export const TraitSurvivalVisualization = () => {
-  const generateTraitSurvivalData = () => {
-    return Array(50).fill(0).map((_, index) => ({
-      epoch: index,
-      totalTraits: 100 * Math.exp(-0.05 * index),
-      functionalTraits: 100 * Math.exp(-0.03 * index),
-      nonFunctionalTraits: 100 * Math.exp(-0.07 * index)
-    }));
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  ChartTooltip,
+  ChartLegend,
+  Filler
+);
+
+interface TraitData {
+  generation: number;
+  traitValue: number;
+  survivalRate: number;
+}
+
+interface TraitSurvivalVisualizationProps {
+  traitName: string;
+  optimalValue: number;
+  selectionStrength: number;
+}
+
+const TraitSurvivalVisualization: React.FC<TraitSurvivalVisualizationProps> = ({
+  traitName,
+  optimalValue,
+  selectionStrength
+}) => {
+  const [data, setData] = useState<TraitData[]>([]);
+  const chartRef = useRef<ChartJS>(null);
+
+  useEffect(() => {
+    const generateData = () => {
+      const newData: TraitData[] = [];
+      for (let i = 0; i < 100; i++) {
+        const traitValue = optimalValue + (Math.random() - 0.5) * 2;
+        const distance = Math.abs(traitValue - optimalValue);
+        const survivalRate = Math.exp(-selectionStrength * distance * distance);
+        newData.push({
+          generation: i,
+          traitValue,
+          survivalRate
+        });
+      }
+      setData(newData);
+    };
+
+    generateData();
+  }, [optimalValue, selectionStrength]);
+
+  const chartData = {
+    labels: data.map(d => d.generation),
+    datasets: [
+      {
+        label: 'Trait Value',
+        data: data.map(d => d.traitValue),
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1,
+        yAxisID: 'y'
+      },
+      {
+        label: 'Survival Rate',
+        data: data.map(d => d.survivalRate),
+        borderColor: 'rgb(255, 99, 132)',
+        tension: 0.1,
+        yAxisID: 'y1'
+      }
+    ]
   };
 
-  const [data] = useState(generateTraitSurvivalData());
+  const options = {
+    responsive: true,
+    interaction: {
+      mode: 'index' as const,
+      intersect: false,
+    },
+    scales: {
+      y: {
+        type: 'linear' as const,
+        display: true,
+        position: 'left' as const,
+        title: {
+          display: true,
+          text: 'Trait Value'
+        }
+      },
+      y1: {
+        type: 'linear' as const,
+        display: true,
+        position: 'right' as const,
+        grid: {
+          drawOnChartArea: false,
+        },
+        title: {
+          display: true,
+          text: 'Survival Rate'
+        }
+      }
+    }
+  };
 
   return (
-    <div className="p-4 bg-white shadow-lg rounded-lg">
-      <h3 className="text-xl font-semibold mb-4">H1: Non-Functional Trait Persistence</h3>
-      <ResponsiveContainer width="100%" height={400}>
-        <LineChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="epoch" label={{ value: 'Epochs', position: 'insideBottom', offset: -5 }} />
-          <YAxis label={{ value: 'Number of Traits', angle: -90, position: 'insideLeft' }} />
-          <Tooltip />
-          <Legend />
-          <Line type="monotone" dataKey="totalTraits" stroke="#8884d8" strokeWidth={3} name="Total Traits" />
-          <Line type="monotone" dataKey="functionalTraits" stroke="#82ca9d" strokeWidth={3} name="Functional Traits" />
-          <Line type="monotone" dataKey="nonFunctionalTraits" stroke="#ff7300" strokeWidth={3} name="Non-Functional Traits" />
-        </LineChart>
-      </ResponsiveContainer>
-      <p className="text-sm text-gray-600 mt-2">
-        Demonstrates trait survival independent of direct utility optimization.
-      </p>
+    <div className="w-full max-w-4xl mx-auto p-4">
+      <h3 className="text-xl font-semibold mb-4">{traitName} Evolution</h3>
+      <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-lg">
+        <ChartLine ref={chartRef} data={chartData} options={options} />
+      </div>
     </div>
   );
 };
