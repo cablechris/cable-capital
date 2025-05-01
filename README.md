@@ -7,7 +7,7 @@ A personal blog and portfolio site built with Next.js, TypeScript, and Tailwind 
 ```
 app/
 ├── components/           # Shared components
-│   ├── Layout.jsx        # Main layout component used by all pages
+│   ├── Layout.tsx        # Main layout component used by all pages
 │   ├── ResearchPaper.tsx # Research paper component with visualizations
 │   ├── TableOfContents.tsx # Table of contents component
 │   ├── games/           # Game components
@@ -31,7 +31,7 @@ app/
 │   └── utils/         # Helper functions
 │
 ├── content/           # Content files
-│   ├── blog/         # Blog posts
+│   ├── blog/         # Blog posts (future MDX support)
 │   ├── papers/       # Research papers
 │   └── projects/     # Project showcases
 │
@@ -46,28 +46,38 @@ app/
 - Type-safe components with TypeScript
 - Interactive games and visualizations
 - Research paper showcase
-- Blog with MDX support
+- Blog with TypeScript data source (MDX support can be added in the future)
 - Project portfolio
 
-## Getting Started
+## Blog Post Management
 
-1. Clone the repository:
-```bash
-git clone https://github.com/cablechris/my-blog.git
-cd my-blog
+**Current Approach:**
+- Blog posts are managed as a TypeScript array in `app/data/posts.ts`.
+- Each post is an object with `slug`, `title`, `date`, and `content` fields.
+- The blog index (`/blog`) and homepage display posts by mapping over this array.
+- Individual blog posts are rendered via a dynamic route: `app/blog/[slug]/page.tsx`.
+
+**To add a new post:**
+1. Open `app/data/posts.ts`.
+2. Add a new object to the `posts` array with the required fields.
+3. The post will automatically appear on the blog index and have its own page at `/blog/[slug]`.
+
+**Example post object:**
+```ts
+{
+  slug: 'my-new-post',
+  title: 'My New Post',
+  date: 'June 10, 2024',
+  content: [
+    'First paragraph...',
+    'Second paragraph...'
+  ]
+}
 ```
 
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Run the development server:
-```bash
-npm run dev
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+**Dynamic Routing:**
+- The file `app/blog/[slug]/page.tsx` handles rendering individual blog posts based on the URL slug.
+- If a post is not found, a "Post not found" message is shown.
 
 ## Development
 
@@ -95,7 +105,7 @@ All shared TypeScript types are in `lib/types/index.ts`. This includes:
 
 ### Content Management
 
-- Blog posts are written in MDX
+- Blog posts are currently managed in `app/data/posts.ts` (MDX support can be added in the future)
 - Research papers include interactive visualizations
 - Projects showcase technical details and live demos
 - Games are built with TypeScript and modern web technologies

@@ -1,4 +1,12 @@
-export const papers = [
+export interface Paper {
+  id: number;
+  title: string;
+  description: string;
+  date: string;
+  url: string;
+}
+
+export const papers: Paper[] = [
   {
     id: 1,
     title: "Culture Without Function: Emergent Coordination in Artificial Systems",
@@ -6,4 +14,4 @@ export const papers = [
     date: "2025",
     url: "/papers/emergent-culture"
   }
-] 
+]; 

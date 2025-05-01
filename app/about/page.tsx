@@ -1,9 +1,11 @@
-'use client';
+"use client";
 
-import Layout from '../components/Layout'
-import Image from 'next/image'
+import React from 'react';
+import Layout from '../components/Layout';
+import Image from 'next/image';
+import { PageProps } from '@/lib/types';
 
-export default function About() {
+export default function About({ searchParams }: PageProps) {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto px-4 py-8">
@@ -62,5 +64,5 @@ export default function About() {
         }
       `}</style>
     </Layout>
-  )
+  );
 } 

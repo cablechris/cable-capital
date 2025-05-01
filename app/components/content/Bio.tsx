@@ -1,32 +1,48 @@
 "use client"
 
 import React from 'react';
+import { BioSection } from '@/lib/types';
 
 export default function Bio() {
+  const sections: BioSection[] = [
+    {
+      title: "Investment Focus",
+      items: [
+        "Early-stage protocols",
+        "High-throughput blockchains",
+        "Intersection of Crypto x AI"
+      ]
+    },
+    {
+      title: "Interests",
+      items: [
+        "Calisthenics",
+        "Foiling",
+        "AI"
+      ]
+    },
+    {
+      title: "Coding Experience",
+      description: "Complete novice - learning via Cursor, Vercel & Claude"
+    }
+  ];
+
   return (
     <aside className="bio">
-      <div className="bio-section">
-        <h3>Investment Focus</h3>
-        <ul>
-          <li>Early-stage protocols</li>
-          <li>High-throughput blockchains</li>
-          <li>Intersection of Crypto x AI</li>
-        </ul>
-      </div>
-      
-      <div className="bio-section">
-        <h3>Interests</h3>
-        <ul>
-          <li>Calisthenics</li>
-          <li>Foiling</li>
-          <li>AI</li>
-        </ul>
-      </div>
-      
-      <div className="bio-section">
-        <h3>Coding Experience</h3>
-        <p>Complete novice - learning via Cursor, Vercel & Claude</p>
-      </div>
+      {sections.map((section) => (
+        <div key={section.title} className="bio-section">
+          <h3>{section.title}</h3>
+          {section.items ? (
+            <ul>
+              {section.items.map((item, itemIndex) => (
+                <li key={itemIndex}>{item}</li>
+              ))}
+            </ul>
+          ) : (
+            <p>{section.description}</p>
+          )}
+        </div>
+      ))}
       
       <style jsx>{`
         .bio {

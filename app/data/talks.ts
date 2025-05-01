@@ -1,4 +1,11 @@
-export const talks = [
+export interface Talk {
+  id: string;
+  title: string;
+  description: string;
+  date: string;
+}
+
+export const talks: Talk[] = [
   {
     id: '4NZihrfJAMA',
     title: 'Cannes Interactive Stage: Chris Cable - integrating blockchain solutions into your strategy',

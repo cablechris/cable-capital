@@ -1,17 +1,19 @@
-'use client';
+"use client";
 
+import React from 'react';
 import Layout from '../components/Layout';
-import { talks } from '../data/talks';
+import { talks, Talk } from '../data/talks';
 import Image from 'next/image';
+import { PageProps } from '@/lib/types';
 
-export default function Talks() {
+export default function Talks({ searchParams }: PageProps) {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold mb-8">Talks & Presentations</h1>
         
         <div className="space-y-12">
-          {talks.map((talk) => (
+          {talks.map((talk: Talk) => (
             <div key={talk.id} className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="relative aspect-video w-full">
                 <a 

@@ -1,17 +1,19 @@
-'use client';
+"use client";
 
-import Layout from '../components/Layout'
-import Link from 'next/link'
-import { papers } from '../data/papers'
+import React from 'react';
+import Layout from '../components/Layout';
+import Link from 'next/link';
+import { papers, Paper } from '../data/papers';
+import { PageProps } from '@/lib/types';
 
-export default function Papers() {
+export default function Papers({ searchParams }: PageProps) {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold mb-8">Papers</h1>
         
         <div className="space-y-8">
-          {papers?.map((paper) => (
+          {papers?.map((paper: Paper) => (
             <article key={paper.id} className="group">
               <h2 className="text-2xl font-bold mb-2 group-hover:text-primary">
                 <Link href={paper.url}>
@@ -25,5 +27,5 @@ export default function Papers() {
         </div>
       </div>
     </Layout>
-  )
+  );
 } 
