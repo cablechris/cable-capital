@@ -2,9 +2,13 @@
 
 import React, { useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { TraitData, TraitSurvivalProps } from '@/lib/types/visualizations';
 
-const TraitSurvivalVisualization = () => {
-  const generateTraitSurvivalData = () => {
+const TraitSurvivalVisualization: React.FC<TraitSurvivalProps> = ({ 
+  title = "H1: Non-Functional Trait Persistence",
+  description = "Demonstrates trait survival independent of direct utility optimization."
+}) => {
+  const generateTraitSurvivalData = (): TraitData[] => {
     return Array(50).fill(0).map((_, index) => ({
       epoch: index,
       totalTraits: 100 * Math.exp(-0.05 * index),
@@ -13,11 +17,11 @@ const TraitSurvivalVisualization = () => {
     }));
   };
 
-  const [data] = useState(generateTraitSurvivalData());
+  const [data] = useState<TraitData[]>(generateTraitSurvivalData());
 
   return (
     <div className="p-4 bg-white shadow-lg rounded-lg">
-      <h3 className="text-xl font-semibold mb-4">H1: Non-Functional Trait Persistence</h3>
+      <h3 className="text-xl font-semibold mb-4">{title}</h3>
       <ResponsiveContainer width="100%" height={400}>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -49,7 +53,7 @@ const TraitSurvivalVisualization = () => {
         </LineChart>
       </ResponsiveContainer>
       <p className="text-sm text-gray-600 mt-2">
-        Demonstrates trait survival independent of direct utility optimization.
+        {description}
       </p>
     </div>
   );

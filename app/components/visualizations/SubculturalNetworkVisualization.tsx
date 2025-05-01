@@ -1,10 +1,14 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import { NetworkNode, NetworkLink, SubculturalNetworkProps } from '@/lib/types/visualizations';
 
-const SubculturalNetworkVisualization = () => {
-  const [nodes, setNodes] = useState([]);
-  const [links, setLinks] = useState([]);
+const SubculturalNetworkVisualization: React.FC<SubculturalNetworkProps> = ({
+  title = "H2: Agent Subcultural Clustering",
+  description = "Modularity analysis reveals distinct agent communities forming organically."
+}) => {
+  const [nodes, setNodes] = useState<NetworkNode[]>([]);
+  const [links, setLinks] = useState<NetworkLink[]>([]);
 
   useEffect(() => {
     generateNetworkData();
@@ -13,8 +17,8 @@ const SubculturalNetworkVisualization = () => {
   const generateNetworkData = () => {
     const numNodes = 100;
     const numClusters = 4;
-    const generatedNodes = [];
-    const generatedLinks = [];
+    const generatedNodes: NetworkNode[] = [];
+    const generatedLinks: NetworkLink[] = [];
     
     // Create nodes with cluster assignments
     for (let i = 0; i < numNodes; i++) {
@@ -83,7 +87,7 @@ const SubculturalNetworkVisualization = () => {
   
   return (
     <div className="p-4 bg-white shadow-lg rounded-lg">
-      <h3 className="text-xl font-semibold mb-4">H2: Agent Subcultural Clustering</h3>
+      <h3 className="text-xl font-semibold mb-4">{title}</h3>
       <div className="relative" style={{ height: "500px" }}>
         <svg width="100%" height="100%" viewBox="0 0 600 400">
           {/* Draw links */}
@@ -147,7 +151,7 @@ const SubculturalNetworkVisualization = () => {
         </svg>
       </div>
       <p className="text-sm text-gray-600 mt-2">
-        Modularity analysis reveals distinct agent communities forming organically. Colors represent subcultural clusters that emerge from preference similarity.
+        {description}
       </p>
     </div>
   );

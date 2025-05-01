@@ -2,13 +2,18 @@
 
 import React from 'react';
 
+interface Section {
+  id: string;
+  title: string;
+}
+
 interface TableOfContentsProps {
   activeSection: string;
   scrollToSection: (sectionId: string) => void;
 }
 
-const TableOfContents = ({ activeSection, scrollToSection }: TableOfContentsProps) => {
-  const sections = [
+const TableOfContents: React.FC<TableOfContentsProps> = ({ activeSection, scrollToSection }) => {
+  const sections: Section[] = [
     { id: "abstract", title: "Abstract" },
     { id: "introduction", title: "Introduction" },
     { id: "background", title: "Background" },
