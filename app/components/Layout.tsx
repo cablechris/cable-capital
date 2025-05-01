@@ -5,10 +5,19 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
-export default function Layout({ children }) {
+interface NavItem {
+  href: string;
+  label: string;
+}
+
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+export default function Layout({ children }: LayoutProps) {
   const pathname = usePathname();
   
-  const navItems = [
+  const navItems: NavItem[] = [
     { href: '/blog', label: 'Blog' },
     { href: '/papers', label: 'Papers' },
     { href: '/talks', label: 'Talks' },
