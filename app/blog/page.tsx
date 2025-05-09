@@ -5,9 +5,9 @@ import Layout from '../components/Layout';
 import Bio from '../components/content/Bio';
 import { posts, BlogPost } from '../data/posts';
 
-export interface PageProps {
-  slug?: string;
-  searchParams?: { [key: string]: string | string[] | undefined };
+interface PageProps {
+  params: Record<string, never>;
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
 export default function BlogPage({ searchParams }: PageProps) {
