@@ -9,10 +9,10 @@ interface Section {
 
 interface TableOfContentsProps {
   activeSection: string;
-  scrollToSection: (sectionId: string) => void;
+  scrollToSection: (id: string) => void;
 }
 
-const TableOfContents: React.FC<TableOfContentsProps> = ({ activeSection, scrollToSection }) => {
+const TableOfContents = ({ activeSection, scrollToSection }: TableOfContentsProps) => {
   const sections: Section[] = [
     { id: "abstract", title: "Abstract" },
     { id: "introduction", title: "Introduction" },
@@ -29,7 +29,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ activeSection, scroll
       <h2 className="text-lg font-bold mb-4">Contents</h2>
       <ul className="space-y-2">
         {sections.map((section) => (
-          <li key={section.id}>
+          <li key={section.id} className={activeSection === section.id ? 'active' : ''}>
             <button
               onClick={() => scrollToSection(section.id)}
               className={`block w-full text-left px-2 py-1 rounded ${
