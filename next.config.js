@@ -16,7 +16,8 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   experimental: {
-    optimizeCss: true,
+    // Disable optimizeCss to prevent critters issues
+    optimizeCss: false,
     scrollRestoration: true,
   },
 }
