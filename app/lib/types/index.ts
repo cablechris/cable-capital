@@ -10,10 +10,24 @@ export interface Post {
   tags: string[];
 }
 
+export interface BlogPost {
+  slug: string;
+  title: string;
+  date: string;
+  content: string[];
+}
+
 export interface Author {
   name: string;
   avatar: string;
   bio: string;
+}
+
+// Bio Types
+export interface BioSection {
+  title: string;
+  items?: string[];
+  description?: string;
 }
 
 // Research Paper Types
