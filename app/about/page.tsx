@@ -36,6 +36,7 @@ export default function About({ searchParams }: PageProps) {
           <p>
             The future is here, it's just not equally distributed.
           </p>
+          <p className="mt-8 text-lg font-semibold text-primary">Contact me @ <a href="mailto:info@cable.capital" className="underline">info@cable.capital</a></p>
         </div>
       </div>
 
