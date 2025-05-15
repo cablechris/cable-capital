@@ -1,3 +1,5 @@
+// Force clean build
+// NOTE: Ensure every blog post has a unique slug! Duplicate slugs will cause posts to be hidden or routing errors.
 export interface BlogPost {
   slug: string;
   title: string;
