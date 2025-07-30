@@ -36,6 +36,33 @@ export default function About({ searchParams }: PageProps) {
           <p>
             The future is here, it's just not equally distributed.
           </p>
+
+          <h2 className="section-heading">Consulting</h2>
+          <p>
+            Through CPC Consulting LLC, we partner with select organizations to tackle high‑stakes problems 
+            at the intersection of strategy, technology, and markets. Drawing on experience in crypto, 
+            analytics, and complex deal structuring, we help leaders turn complexity into clarity and 
+            clarity into results.
+          </p>
+          <p>
+            <a href="/consulting" className="text-primary hover:text-primary/80 font-medium inline-flex items-center group">
+              Learn more about our consulting services
+              <svg 
+                className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+          </p>
+
           <p className="mt-8 text-lg font-semibold text-primary">Contact me @ <a href="mailto:info@cable.capital" className="underline">info@cable.capital</a></p>
         </div>
       </div>

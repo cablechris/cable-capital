@@ -20,6 +20,7 @@ export default function Layout({ children }: LayoutProps) {
   const navItems: NavItem[] = [
     { href: '/blog', label: 'Blog' },
     { href: '/papers', label: 'Papers' },
+    { href: '/consulting', label: 'Consulting' },
     { href: '/talks', label: 'Talks' },
     { href: '/investments', label: 'Investments' },
     { href: '/about', label: 'About' }
@@ -31,7 +32,7 @@ export default function Layout({ children }: LayoutProps) {
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="text-2xl font-bold text-gray-900">
-              CC
+              CPC
             </Link>
             <nav className="flex items-center space-x-8">
               {navItems.map((item) => (

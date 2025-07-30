@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { posts } from './data/posts'
 
 export default function Home() {
-  // Sort posts by date in reverse chronological order
+  // Sort posts by date in reverse chronological order (newest first)
   const sortedPosts = [...posts].sort((a, b) => {
     const dateA = new Date(a.date);
     const dateB = new Date(b.date);
-    return dateB - dateA;
+    return dateB.getTime() - dateA.getTime();
   });
 
   // Get the latest post
