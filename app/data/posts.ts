@@ -9,17 +9,6 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
   {
-    slug: 'balancing-kids-work-barbell',
-    title: 'Balancing Kids, Work, and the Barbell Life',
-    date: 'May 15, 2025',
-    content: [
-      "People talk about \"work-life balance\" like it's an equation you can solve. But life with kids isn't math—it's physics. Everything is in motion, and the best you can do is learn how to keep moving without toppling over.",
-      "When my first child was born, I thought I'd have to choose: career or family, training or sleep. But it turns out you don't choose—you trade. You trade intensity for consistency, late-night sessions for early-morning ones, personal bests for simply showing up.",
-      "The barbell taught me this. Strength isn't built from single heroic lifts. It comes from unglamorous, repeated effort. Parenthood is the same. Work is the same. You don't win by doing more. You win by not stopping.",
-      "So now I train, even if it's just 20 minutes. I work, but I close the laptop when my kids walk in. It's not balanced. It's stable. And stability, it turns out, is strong enough."
-    ]
-  },
-  {
     slug: 'risk-volatility-evolution-courage',
     title: 'Risk, Volatility, and the Evolution of Courage',
     date: 'May 13, 2025',
