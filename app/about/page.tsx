@@ -13,24 +13,23 @@ export default function About({ searchParams }: PageProps) {
         <div className="about-content">
           <h2 className="section-heading first-section">Building at the Edges</h2>
           <p>
-            I invest in crypto because I believe in decentralization. While working in traditional finance, 
-            I discovered how a small group in DC effectively controlled global markets. This revelation led 
-            me down a rabbit hole into Bitcoin, where I was immediately struck by its elegant design and 
-            liberating ethos.
+            I believe in decentralisation — in digital markets and physical ones. Started with Bitcoin,
+            now applying the same lens to global commodity supply chains. Concentrated chokepoints create
+            fragility. I work to route around them.
           </p>
 
           <h2 className="section-heading">Life Philosophy</h2>
           <p>
-            I avoid the middle. In investing, in fitness, in learning. High-intensity calisthenics and 
-            morning walks with my kids by the water. Deep work on frontier tech balanced with digital 
+            I avoid the middle. In investing, in fitness, in learning. High-intensity calisthenics and
+            morning walks with my kids by the water. Deep work on frontier tech balanced with digital
             silence. Few half-measures.
           </p>
 
           <h2 className="section-heading">Current Chapter</h2>
           <p>
-            Investing remains my focus, but I'm now building alongside it. Getting my reps in with code 
-            and treating these incredible tools as extensions of thought. Scratching my creative itch with 
-            projects that push boundaries. Drawn to high-throughput blockchains and the intersections of crypto x AI.
+            Investing remains my focus, but I'm building alongside it. Cable Capital sources critical
+            physical inputs for Australian businesses when traditional supply chains break. On the digital
+            side — code, crypto, AI, and projects that push boundaries.
           </p>
 
           <p>
