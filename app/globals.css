@@ -3,84 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #1a1a1a;
+  --background: #F8F7F4;
+  --foreground: #111827;
   --primary: #4D7C0F;
-  --blog-title-color: #FFFFFF;
-  --muted: #f5f5f5;
-  --muted-foreground: #737373;
-  --border: #e5e5e5;
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-@layer base {
-  html {
-    font-family: var(--font-sans);
-  }
-
-  body {
-    @apply bg-white text-gray-800;
-  }
-
-  h1 {
-    @apply text-4xl font-bold mb-8;
-    color: var(--primary);
-  }
-
-  h2 {
-    @apply text-2xl font-bold mb-4;
-    color: var(--primary);
-  }
-
-  a {
-    @apply text-primary hover:text-primary/80 transition-colors;
-  }
-
-  /* Bold text in blog posts */
-  strong, b {
-    color: var(--primary);
-    font-weight: 600;
-  }
-}
-
-@layer components {
-  .container {
-    @apply max-w-4xl mx-auto px-4;
-  }
-
-  .nav-link {
-    @apply inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300;
-  }
-
-  .post-preview {
-    @apply border-b border-gray-200 pb-8 mb-8;
-  }
-
-  .post-preview:last-child {
-    @apply border-b-0;
-  }
-
-  .post-date {
-    @apply text-sm text-gray-600 mb-2;
-  }
-  
-  /* Blog post titles */
-  .post-title {
-    color: var(--primary);
-    font-weight: 700;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1a1a1a;
-    --foreground: #f5f5f5;
-    --primary: #6B8E23;
-    --blog-title-color: #7CB342;
-    --muted: #2a2a2a;
-    --muted-foreground: #a0a0a0;
-    --border: #333333;
-  }
+  --muted: #f0ede8;
+  --muted-foreground: #6b7280;
+  --border: #e2ddd8;
 }
 
 * {
@@ -93,144 +21,30 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: var(--font-sans);
 }
 
 body {
-  color: #333;
-  background: #fff;
-  line-height: 1.6;
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.header {
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
   color: var(--foreground);
-}
-
-.nav {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-link:hover {
-  color: var(--primary);
-}
-
-.profile-img {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-}
-
-.main {
-  padding: 2rem 0;
-}
-
-.footer {
-  padding: 2rem 0;
-  border-top: 1px solid var(--border);
-  margin-top: 4rem;
-}
-
-.post-date {
-  font-size: 0.875rem;
-  color: var(--muted-foreground);
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: var(--primary);
-  margin: 1.5rem 0 1rem 0;
-  line-height: 1.3;
-}
-
-h1 {
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-p {
-  margin: 1rem 0;
+  background: var(--background);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
-  color: var(--primary);
+  color: inherit;
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
+/* Blog post bold text */
+strong, b {
+  font-weight: 600;
 }
 
-.project-card {
-  border: 1px solid var(--border);
-  border-radius: 0.25rem;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+@layer components {
+  .post-preview {
+    @apply border-b border-gray-200 pb-8 mb-8;
+  }
+  .post-preview:last-child {
+    @apply border-b-0;
+  }
 }
-
-.project-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.project-description {
-  color: var(--foreground);
-  margin-bottom: 1rem;
-}
-
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.project-tag {
-  background-color: var(--muted);
-  color: var(--muted-foreground);
-  padding: 0.25rem 0.5rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-}
-
-.button {
-  display: inline-block;
-  background-color: var(--primary);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.button:hover {
-  opacity: 0.9;
-  text-decoration: none;
-} 

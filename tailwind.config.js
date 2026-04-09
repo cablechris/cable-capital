@@ -10,9 +10,13 @@ module.exports = {
       colors: {
         primary: '#4D7C0F',
       },
+      fontFamily: {
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-serif)', 'Georgia', 'serif'],
+      },
     },
   },
   plugins: [
     require('@tailwindcss/typography'),
   ],
-} 
+}

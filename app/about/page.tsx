@@ -3,93 +3,115 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import Image from 'next/image';
-import { PageProps } from '@/lib/types';
 
-export default function About({ searchParams }: PageProps) {
+export default function About() {
   return (
     <Layout>
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold mb-8">About</h1>
-        <div className="about-content">
-          <h2 className="section-heading first-section">Building at the Edges</h2>
-          <p>
-            I believe in decentralisation — in digital markets and physical ones. Started with Bitcoin,
-            now applying the same lens to global commodity supply chains. Concentrated chokepoints create
-            fragility. I work to route around them.
-          </p>
+      <div className="py-20">
 
-          <h2 className="section-heading">Life Philosophy</h2>
-          <p>
-            I avoid the middle. In investing, in fitness, in learning. High-intensity calisthenics and
-            morning walks with my kids by the water. Deep work on frontier tech balanced with digital
-            silence. Few half-measures.
-          </p>
-
-          <h2 className="section-heading">Current Chapter</h2>
-          <p>
-            Investing remains my focus, but I'm building alongside it. Cable Capital sources critical
-            physical inputs for Australian businesses when traditional supply chains break. On the digital
-            side — code, crypto, AI, and projects that push boundaries.
-          </p>
-
-          <p>
-            The future is here, it's just not equally distributed.
-          </p>
-
-          <h2 className="section-heading">Consulting</h2>
-          <p>
-            Through CPC Consulting LLC, we partner with select organizations to tackle high‑stakes problems 
-            at the intersection of strategy, technology, and markets. Drawing on experience in crypto, 
-            analytics, and complex deal structuring, we help leaders turn complexity into clarity and 
-            clarity into results.
-          </p>
-          <p>
-            <a href="/consulting" className="text-primary hover:text-primary/80 font-medium inline-flex items-center group">
-              Learn more about our consulting services
-              <svg 
-                className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </a>
-          </p>
-
-          <p className="mt-8 text-lg font-semibold text-primary">Contact me @ <a href="mailto:info@cable.capital" className="underline">info@cable.capital</a></p>
+        {/* Header + photo */}
+        <div className="flex flex-col-reverse md:flex-row md:items-start md:gap-16 mb-20">
+          <div className="flex-1 min-w-0">
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">About</p>
+            <h1 className="font-serif text-4xl md:text-5xl text-gray-900 leading-tight mb-8">
+              Chris Cable
+            </h1>
+            <p className="text-lg text-gray-600 leading-relaxed mb-4">
+              I've spent more than a decade studying how systems fail — and building
+              positions around the alternatives.
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              That started with Bitcoin in 2013, when I saw that concentrating trust
+              in central financial institutions was a structural fragility, not a feature.
+              The same lens now applies to physical supply chains: chokepoints, whether
+              financial or logistical, create the same kind of brittleness. I work to route around them.
+            </p>
+          </div>
+          <div className="flex-shrink-0 mb-10 md:mb-0">
+            <Image
+              src="/images/headshot.JPG"
+              alt="Chris Cable"
+              width={200}
+              height={200}
+              className="rounded-lg object-cover shadow-sm w-32 h-32 md:w-48 md:h-48"
+              priority
+            />
+          </div>
         </div>
+
+        <div className="border-t border-gray-100 mb-20" />
+
+        {/* The work */}
+        <div className="max-w-3xl space-y-16 mb-20">
+          <div>
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">Supply Chain</h2>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Cable Capital sources critical chemicals and agricultural inputs for
+              Australian businesses when traditional supply routes fail. The work
+              is both transactional — finding and brokering supply — and advisory:
+              helping clients understand their exposure and build alternatives before
+              a crisis forces the issue.
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              The Strait of Hormuz is the kind of chokepoint I think about. Not as a
+              headline risk, but as a structural feature of a supply chain that deserves
+              a prepared response. Most businesses don't have one.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">Consulting</h2>
+            <p className="text-gray-600 leading-relaxed">
+              Through CPC Consulting LLC, I work with a small number of organisations
+              on complex strategic problems — market entry, deal structuring, investment
+              intelligence, and navigating markets in transition. The common thread is
+              situations where the standard playbook doesn't apply and the cost of getting
+              it wrong is high.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">Background</h2>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              My background spans investment markets, analytics, deal structuring,
+              and over a decade operating at the frontier of emerging technology and
+              global markets. That experience built a deep network across investment,
+              operator, and founder communities worldwide.
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              I'm based in Australia. Outside of work: calisthenics, time on the water,
+              and raising three kids.
+            </p>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-100 mb-20" />
+
+        {/* Philosophy */}
+        <div className="max-w-2xl mb-20">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-6">How I Think</h2>
+          <p className="text-xl text-gray-800 leading-relaxed">
+            "Concentrated chokepoints create fragility. I work to route around them."
+          </p>
+        </div>
+
+        <div className="border-t border-gray-100 mb-20" />
+
+        {/* Contact */}
+        <div className="max-w-xl">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">Get in Touch</h2>
+          <p className="text-gray-600 leading-relaxed mb-6">
+            For supply chain enquiries, consulting, or anything else.
+          </p>
+          <a
+            href="mailto:info@cable.capital"
+            className="inline-flex items-center px-6 py-3 bg-gray-900 text-white text-sm font-medium rounded hover:bg-gray-700 transition-colors"
+          >
+            info@cable.capital
+          </a>
+        </div>
+
       </div>
-
-      <style jsx>{`
-        .about-content {
-          margin: 0 auto;
-        }
-
-        .section-heading {
-          margin-top: 2rem;
-          margin-bottom: 1rem;
-          font-size: 1.75rem;
-          font-weight: 600;
-          color: #557A33;
-        }
-
-        .first-section {
-          margin-top: 0;
-        }
-
-        .about-content p {
-          margin-bottom: 1.5rem;
-          line-height: 1.8;
-          font-size: 1.1rem;
-          color: #444;
-        }
-      `}</style>
     </Layout>
   );
-} 
+}

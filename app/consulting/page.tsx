@@ -6,90 +6,123 @@ import Layout from '../components/Layout';
 export default function ConsultingPage() {
   return (
     <Layout>
-      <div className="max-w-4xl mx-auto px-4 py-16">
-                       <div className="mb-10">
-                 <h1 className="text-3xl font-extrabold text-primary mb-4">CPC Consulting LLC</h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 font-medium mb-6">
-            Trusted by high‑growth startups, seasoned investors, and market leaders navigating complex strategic challenges.
+      <div className="py-20">
+
+        {/* Header */}
+        <div className="max-w-3xl mb-20">
+          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">Consulting</p>
+          <h1 className="font-serif text-4xl md:text-5xl text-gray-900 leading-tight mb-8">
+            Strategic advisory for complex problems.
+          </h1>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            CPC Consulting LLC partners with a select number of organisations on high-stakes
+            challenges at the intersection of strategy, markets, and technology.
           </p>
-                           <p className="text-lg text-gray-600 dark:text-gray-300">
-                   At CPC Consulting LLC, we partner with select organizations to tackle high‑stakes problems and unlock growth at the intersection of strategy, technology, and markets. With leadership rooted in founding Flamingo DAO and backgrounds spanning crypto, insights and analytics, investment banking, and complex deal structuring, we bring both deep expertise and a global network of investors, operators, and innovators—leveraging these relationships thoughtfully to deliver results.
-                 </p>
         </div>
-        
-        <section className="mt-12">
-          <h2 className="text-xl font-bold text-primary mb-6 border-b border-primary/20 inline-block pb-1">Areas of Focus</h2>
-          <ul className="space-y-4 text-gray-600 dark:text-gray-300">
-            <li className="flex items-start">
-              <span className="text-primary mr-2">•</span>
-              <div>
-                <span className="font-medium">Strategy & Growth</span> – Transformational go‑to‑market strategies, commercial roadmaps, and market entry planning.
-              </div>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary mr-2">•</span>
-              <div>
-                <span className="font-medium">Marketing & Analytics</span> – Data‑driven insights, performance analytics, and decision frameworks that accelerate growth.
-              </div>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary mr-2">•</span>
-              <div>
-                <span className="font-medium">Crypto Advisory</span> – Practical strategy and execution for crypto‑enabled businesses.
-              </div>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary mr-2">•</span>
-              <div>
-                <span className="font-medium">Investment & Market Intelligence</span> – Sharp, high‑impact analysis that drives capital allocation and competitive advantage.
-              </div>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary mr-2">•</span>
-              <div>
-                <span className="font-medium">Complex Deal Structuring</span> – From financing to partnerships, creative solutions for high‑value transactions.
-              </div>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary mr-2">•</span>
-              <div>
-                <span className="font-medium">Technical Due Diligence</span> – In‑depth evaluations to de‑risk investments and strategic initiatives.
-              </div>
-            </li>
-          </ul>
-        </section>
 
-        <section className="mt-12">
-          <h2 className="text-xl font-bold text-primary mb-6 border-b border-primary/20 inline-block pb-1">Engagement Model</h2>
-          <p className="text-gray-600 dark:text-gray-300">
-            We work on a selective, high‑focus basis, taking on only a small number of clients at any time. Engagements range from strategic advisory mandates to hands‑on consulting, ensuring every partnership gets the depth, rigor, and senior attention it deserves.
+        <div className="border-t border-gray-100 mb-20" />
+
+        {/* Who we are */}
+        <div className="max-w-3xl mb-20">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-6">Who We Are</h2>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            We bring experience across investment markets, complex deal structuring,
+            strategy, and analytics — combined with a global network of operators,
+            investors, and founders built over more than a decade of working at the
+            frontier of emerging markets and new technologies.
           </p>
-        </section>
+          <p className="text-gray-600 leading-relaxed">
+            Our edge is in seeing around corners: identifying second-order effects,
+            mapping risks that aren't yet visible, and building strategies that hold
+            when conditions change.
+          </p>
+        </div>
 
-                       <section className="mt-12">
-                 <h2 className="text-xl font-bold text-primary mb-6 border-b border-primary/20 inline-block pb-1">References</h2>
-                 <p className="text-gray-600 dark:text-gray-300">
-                   We've been fortunate to work alongside founders, executives, and investors who expect and receive exceptional outcomes. References and case studies are available upon request, including examples of transformative growth strategies, successful capital raises, and complex deal executions.
-                 </p>
-               </section>
+        <div className="border-t border-gray-100 mb-20" />
 
-        <section className="mt-12">
-          <h2 className="text-xl font-bold text-primary mb-6 border-b border-primary/20 inline-block pb-1">Let's Build What's Next</h2>
-          <div className="space-y-4 text-gray-600 dark:text-gray-300">
-            <p>
-              If you're facing a complex challenge or see an untapped opportunity, let's talk. Share a brief overview of your project or ambition, and we'll explore how CPC Consulting LLC can help you break through.
-            </p>
-            <p>
-              <a 
-                href="mailto:info@cable.capital" 
-                className="text-primary hover:text-primary/80 transition-colors font-medium"
-              >
-                info@cable.capital
-              </a>
-            </p>
+        {/* Areas of focus */}
+        <div className="mb-20">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-10">Areas of Focus</h2>
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-10">
+            <div>
+              <h3 className="text-base font-semibold text-gray-900 mb-2">Strategy & Growth</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Go-to-market strategy, commercial roadmaps, and market entry planning
+                for high-growth organisations navigating new markets or competitive inflections.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold text-gray-900 mb-2">Investment & Market Intelligence</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Sharp, high-impact analysis that drives capital allocation decisions
+                and competitive positioning in rapidly evolving markets.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold text-gray-900 mb-2">Complex Deal Structuring</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                From financing to strategic partnerships, creative solutions for
+                high-value transactions where standard playbooks don't apply.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold text-gray-900 mb-2">Analytics & Decision Frameworks</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Data-driven insight and structured decision-making frameworks that
+                help leadership teams cut through complexity and move with conviction.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold text-gray-900 mb-2">Technical Due Diligence</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                In-depth evaluation of technology and business models to de-risk
+                investments and strategic commitments before they're made.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold text-gray-900 mb-2">Emerging Markets & Technology</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Strategic guidance for organisations operating at the frontier of
+                new technologies and rapidly evolving regulatory or market environments.
+              </p>
+            </div>
           </div>
-        </section>
+        </div>
+
+        <div className="border-t border-gray-100 mb-20" />
+
+        {/* Engagement model */}
+        <div className="max-w-2xl mb-20">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-6">Engagement Model</h2>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            We work on a selective basis, taking on a small number of clients at any time.
+            Engagements range from focused advisory mandates to longer-term strategic
+            partnerships — structured to ensure every client receives senior attention
+            and genuine depth.
+          </p>
+          <p className="text-gray-600 leading-relaxed">
+            References and examples of past work are available upon request.
+          </p>
+        </div>
+
+        <div className="border-t border-gray-100 mb-20" />
+
+        {/* CTA */}
+        <div className="max-w-xl">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">Start a Conversation</h2>
+          <p className="text-gray-600 leading-relaxed mb-6">
+            If you're facing a complex challenge or see an opportunity that requires
+            a different kind of thinking, we'd like to hear about it.
+          </p>
+          <a
+            href="mailto:info@cable.capital"
+            className="inline-flex items-center px-6 py-3 bg-gray-900 text-white text-sm font-medium rounded hover:bg-gray-700 transition-colors"
+          >
+            info@cable.capital
+          </a>
+        </div>
+
       </div>
     </Layout>
   );
-} 
+}
