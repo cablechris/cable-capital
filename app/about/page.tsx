@@ -22,8 +22,8 @@ export default function About() {
             routing alternatives that protect them when traditional supply fails.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            The firm was founded on a single conviction: that concentrated supply chains —
-            optimised for efficiency at the cost of resilience — are a structural fragility,
+            The firm was founded on a single conviction: that concentrated supply chains,
+            optimised for efficiency at the cost of resilience, are a structural fragility,
             not a feature. Our work is to route around them before they become a crisis.
           </p>
         </div>
@@ -59,7 +59,7 @@ export default function About() {
               <h3 className="font-serif text-2xl text-gray-900 mb-1">Chris Cable</h3>
               <p className="text-sm text-gray-400 uppercase tracking-widest mb-6">Founder & Director</p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                I've spent more than a decade studying how systems fail — and building
+                I've spent more than a decade studying how systems fail, and building
                 positions around the alternatives. That started with Bitcoin in 2013, when
                 I saw that concentrating trust in central institutions was a structural
                 fragility, not a feature. The same lens now applies to physical supply
@@ -97,7 +97,7 @@ export default function About() {
             <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">Supply Chain</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               Cable Capital sources fertilizers, industrial chemicals, and crop protection
-              products for Australian manufacturers and agribusinesses — with a focus on
+              products for Australian manufacturers and agribusinesses, with a focus on
               supplier diversity and routing resilience. We work transactionally and
               advise on longer-term supply chain architecture.
             </p>
@@ -111,7 +111,7 @@ export default function About() {
             <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">Consulting</h2>
             <p className="text-gray-600 leading-relaxed">
               Through CPC Consulting, Cable Capital works with a small number of
-              organisations on complex strategic problems — market entry, deal structuring,
+              organisations on complex strategic problems: market entry, deal structuring,
               investment intelligence, and navigating markets in transition. The common
               thread is situations where the standard playbook doesn't apply and the cost
               of getting it wrong is high.

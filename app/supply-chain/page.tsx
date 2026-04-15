@@ -17,7 +17,7 @@ export default function SupplyChainPage() {
           <p className="text-lg text-gray-600 leading-relaxed mb-6">
             Cable Capital sources critical chemicals and agricultural inputs for Australian
             businesses when traditional supply routes fail. The work is both transactional
-            — finding and brokering supply — and advisory: helping clients understand their
+            covering both transactional brokerage and advisory work: helping clients understand their
             exposure and build alternatives before a crisis forces the issue.
           </p>
           <p className="text-lg text-gray-600 leading-relaxed">
@@ -38,15 +38,15 @@ export default function SupplyChainPage() {
               Chokepoints are everywhere. Most businesses only see them when it's too late.
             </h3>
             <p className="text-gray-600 leading-relaxed mb-4">
-              COVID-19 made it visible at scale — empty shelves, closed ports, formula
+              COVID-19 made it visible at scale: empty shelves, closed ports, formula
               shortages overnight. The Strait of Hormuz is making it visible again,
               differently, and with consequences that will take longer to resolve. These
               are not anomalies. They are features of supply chains optimised for
               efficiency and never tested for resilience.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Australian businesses — distant from major production centres and dependent
-              on long international supply lines — carry more of this risk than most.
+              Australian businesses, distant from major production centres and dependent
+              on long international supply lines, carry more of this risk than most.
               When access to critical chemicals or agricultural inputs breaks down,
               the consequences are immediate and operational.
             </p>
@@ -57,7 +57,7 @@ export default function SupplyChainPage() {
               We build alternatives before you need them.
             </h3>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Cable Capital works as both broker and advisor — sourcing critical inputs
+              Cable Capital works as both broker and advisor: sourcing critical inputs
               transactionally and helping clients build the supplier relationships and
               routing options that reduce dependency on any single point of failure.
             </p>
@@ -78,7 +78,7 @@ export default function SupplyChainPage() {
               <h3 className="text-base font-semibold text-gray-900 mb-3">Fertilizers</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Urea, DAP, MAP, potash, and ammonia-based nitrogen fertilizers.
-                Critical inputs for Australian broadacre and horticulture — and among
+                Critical inputs for Australian broadacre and horticulture, and among
                 the first products disrupted when global production corridors close.
               </p>
             </div>
@@ -116,14 +116,14 @@ export default function SupplyChainPage() {
             <div className="border-t border-gray-200 pt-6">
               <h3 className="text-sm font-semibold text-gray-900 mb-2">North Africa</h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                Morocco and Egypt — established producers of phosphate fertilizers
+                Morocco and Egypt, established producers of phosphate fertilizers
                 and chemical intermediates with stable export infrastructure.
               </p>
             </div>
             <div className="border-t border-gray-200 pt-6">
               <h3 className="text-sm font-semibold text-gray-900 mb-2">Central Asia</h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                Kazakhstan and Uzbekistan — significant producers of nitrogen
+                Kazakhstan and Uzbekistan, significant producers of nitrogen
                 fertilizers and industrial chemicals, increasingly accessible
                 via alternative routing.
               </p>
@@ -132,7 +132,7 @@ export default function SupplyChainPage() {
               <h3 className="text-sm font-semibold text-gray-900 mb-2">United States</h3>
               <p className="text-gray-500 text-sm leading-relaxed">
                 US Gulf Coast producers of urea, ammonia, and specialty chemicals
-                — a reliable alternative supply base with strong regulatory standards.
+                a reliable alternative supply base with strong regulatory standards.
               </p>
             </div>
             <div className="border-t border-gray-200 pt-6">
@@ -161,7 +161,7 @@ export default function SupplyChainPage() {
             <div>
               <h3 className="text-base font-semibold text-gray-900 mb-3">Supply Chain Advisory</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Strategic review of your existing supply chain — identifying concentration
+                Strategic review of your existing supply chain, identifying concentration
                 risks, mapping alternative routes, and building supplier redundancy before
                 disruption forces your hand.
               </p>
@@ -183,7 +183,7 @@ export default function SupplyChainPage() {
           <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-6">Who We Work With</h2>
           <p className="text-gray-600 leading-relaxed mb-6">
             We work with Australian manufacturers and agribusinesses that depend on
-            reliable access to chemicals and agricultural inputs — and that understand
+            reliable access to chemicals and agricultural inputs, and that understand
             the cost of getting it wrong.
           </p>
           <p className="text-gray-600 leading-relaxed">
@@ -194,7 +194,7 @@ export default function SupplyChainPage() {
 
         <div className="border-t border-gray-100 mb-20" />
 
-        {/* Dual CTA — Buyers + Suppliers */}
+        {/* Dual CTA: Buyers + Suppliers */}
         <div className="grid md:grid-cols-2 gap-16">
           <div>
             <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">For Buyers</h2>

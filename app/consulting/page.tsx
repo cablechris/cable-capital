@@ -27,7 +27,7 @@ export default function ConsultingPage() {
           <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-6">Who We Are</h2>
           <p className="text-gray-600 leading-relaxed mb-4">
             We bring experience across investment markets, complex deal structuring,
-            strategy, and analytics — combined with a global network of operators,
+            strategy, and analytics, combined with a global network of operators,
             investors, and founders built over more than a decade of working at the
             frontier of emerging markets and new technologies.
           </p>
@@ -97,7 +97,7 @@ export default function ConsultingPage() {
           <p className="text-gray-600 leading-relaxed mb-4">
             We work on a selective basis, taking on a small number of clients at any time.
             Engagements range from focused advisory mandates to longer-term strategic
-            partnerships — structured to ensure every client receives senior attention
+            partnerships, structured to ensure every client receives senior attention
             and genuine depth.
           </p>
           <p className="text-gray-600 leading-relaxed">

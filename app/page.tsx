@@ -51,7 +51,7 @@ export default function Home() {
               Built before you need it
             </h2>
             <p className="text-gray-500 text-sm leading-relaxed mb-5">
-              Supply chain resilience isn't built in a crisis — it's built before one. We've
+              Supply chain resilience isn't built in a crisis. It's built before one. We've
               established direct relationships with producers across North Africa, Central Asia,
               and the US Gulf Coast so that when geopolitical shocks or logistical failures
               disrupt your usual channels, the alternatives are already in place and ready to move.
@@ -73,7 +73,7 @@ export default function Home() {
             </h2>
             <p className="text-gray-500 text-sm leading-relaxed mb-5">
               Through CPC Consulting LLC, we partner with a select number of organisations
-              on high-stakes strategic challenges — from market entry and growth strategy
+              on high-stakes strategic challenges: from market entry and growth strategy
               to deal structuring and investment intelligence.
             </p>
             <Link href="/consulting" className="text-sm font-medium text-primary hover:text-primary/80 inline-flex items-center group transition-colors">
@@ -86,14 +86,14 @@ export default function Home() {
         </FadeIn>
       </section>
 
-      {/* Pull Quote — Approach */}
+      {/* Pull Quote: Approach */}
       <section className="py-20 border-b border-[#e2ddd8]">
         <FadeIn>
           <div className="max-w-2xl mx-auto text-center">
             <div className="w-px h-10 bg-primary mx-auto mb-8" />
             <blockquote className="font-serif text-xl md:text-2xl text-gray-700 italic leading-relaxed">
               "Concentrated systems create fragility. The Strait of Hormuz, a single
-              supplier, a dominant logistics route — these chokepoints look stable until
+              supplier, a dominant logistics route. These chokepoints look stable until
               they aren't. We think in second-order effects and build alternatives
               before they become urgent."
             </blockquote>
