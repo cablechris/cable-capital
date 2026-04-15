@@ -11,7 +11,7 @@ export default function Home() {
           <div className="max-w-3xl">
             <div className="w-8 h-px bg-primary mb-8" />
             <h1 className="font-serif text-4xl md:text-[2.75rem] text-gray-900 leading-tight mb-6">
-              Routing around fragility — in supply chains and markets.
+              Continuity in complex markets.
             </h1>
             <p className="text-base text-gray-500 leading-relaxed mb-10 max-w-xl font-light">
               We source critical chemicals and agricultural inputs for Australian businesses
