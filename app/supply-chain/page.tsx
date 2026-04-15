@@ -14,10 +14,17 @@ export default function SupplyChainPage() {
           <h1 className="font-serif text-4xl md:text-5xl text-gray-900 leading-tight mb-8">
             Resilient sourcing for Australian businesses.
           </h1>
+          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+            Cable Capital sources critical chemicals and agricultural inputs for Australian
+            businesses when traditional supply routes fail. The work is both transactional
+            — finding and brokering supply — and advisory: helping clients understand their
+            exposure and build alternatives before a crisis forces the issue.
+          </p>
           <p className="text-lg text-gray-600 leading-relaxed">
-            We source critical chemicals and agricultural inputs for Australian manufacturers
-            and agribusinesses — with a focus on supply chain resilience when traditional
-            routes fail.
+            The Strait of Hormuz is the kind of chokepoint I think about. Not as a headline
+            risk, but as a structural feature of a supply chain that deserves a prepared
+            response. COVID showed what happens when you don't have one. The Gulf is showing
+            it again. Most businesses still don't.
           </p>
         </div>
 
@@ -31,15 +38,17 @@ export default function SupplyChainPage() {
               Chokepoints are everywhere. Most businesses only see them when it's too late.
             </h3>
             <p className="text-gray-600 leading-relaxed mb-4">
-              From the Strait of Hormuz to a single dominant supplier, supply chains that
-              look stable in normal conditions can collapse quickly under geopolitical
-              pressure, logistical failure, or demand shock.
+              COVID-19 made it visible at scale — empty shelves, closed ports, formula
+              shortages overnight. The Strait of Hormuz is making it visible again,
+              differently, and with consequences that will take longer to resolve. These
+              are not anomalies. They are features of supply chains optimised for
+              efficiency and never tested for resilience.
             </p>
             <p className="text-gray-600 leading-relaxed">
               Australian businesses — distant from major production centres and dependent
-              on long international supply lines — are particularly exposed. When access
-              to key chemicals or agricultural inputs breaks down, the consequences are
-              immediate and operational.
+              on long international supply lines — carry more of this risk than most.
+              When access to critical chemicals or agricultural inputs breaks down,
+              the consequences are immediate and operational.
             </p>
           </div>
           <div>
