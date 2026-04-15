@@ -51,9 +51,10 @@ export default function Home() {
               Built before you need it
             </h2>
             <p className="text-gray-500 text-sm leading-relaxed mb-5">
-              When geopolitical shocks, logistical failures, or supplier collapses disrupt access
-              to chemicals and agricultural inputs, Australian businesses need alternatives that
-              already exist — not ones built in a crisis.
+              Supply chain resilience isn't built in a crisis — it's built before one. We've
+              established direct relationships with producers across North Africa, Central Asia,
+              and the US Gulf Coast so that when geopolitical shocks or logistical failures
+              disrupt your usual channels, the alternatives are already in place and ready to move.
             </p>
             <Link href="/supply-chain" className="text-sm font-medium text-primary hover:text-primary/80 inline-flex items-center group transition-colors">
               Learn more
