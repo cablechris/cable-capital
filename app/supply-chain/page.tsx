@@ -21,7 +21,7 @@ export default function SupplyChainPage() {
             exposure and build alternatives before a crisis forces the issue.
           </p>
           <p className="text-lg text-gray-600 leading-relaxed">
-            The Strait of Hormuz is the kind of chokepoint I think about. Not as a headline
+            The Strait of Hormuz is the kind of chokepoint we think about. Not as a headline
             risk, but as a structural feature of a supply chain that deserves a prepared
             response. COVID showed what happens when you don't have one. The Gulf is showing
             it again. Most businesses still don't.
@@ -30,7 +30,7 @@ export default function SupplyChainPage() {
 
         <div className="border-t border-gray-100 mb-20" />
 
-        {/* The Problem */}
+        {/* The Problem / Our Role */}
         <div className="grid md:grid-cols-2 gap-16 mb-20">
           <div>
             <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">The Problem</h2>
@@ -65,6 +65,83 @@ export default function SupplyChainPage() {
               We think in second-order effects. Before a chokepoint closes, we're already
               working on what comes next.
             </p>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-100 mb-20" />
+
+        {/* Commodities */}
+        <div className="mb-20">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-10">What We Source</h2>
+          <div className="grid md:grid-cols-3 gap-10">
+            <div>
+              <h3 className="text-base font-semibold text-gray-900 mb-3">Fertilizers</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Urea, DAP, MAP, potash, and ammonia-based nitrogen fertilizers.
+                Critical inputs for Australian broadacre and horticulture — and among
+                the first products disrupted when global production corridors close.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold text-gray-900 mb-3">Industrial Chemicals</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Sulfuric acid, caustic soda, solvents, and process chemicals for
+                manufacturing and industrial operations. Sourced from verified producers
+                with consistent specification and supply continuity.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold text-gray-900 mb-3">Crop Protection</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Herbicides, fungicides, and insecticides for broad-acre and specialty
+                agriculture. We source active ingredients and formulated products from
+                established manufacturers across multiple regions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-100 mb-20" />
+
+        {/* Geographic Reach */}
+        <div className="mb-20">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-6">Where We Source From</h2>
+          <p className="text-gray-600 leading-relaxed mb-10 max-w-2xl">
+            Our sourcing strategy deliberately prioritises supply origins outside
+            concentrated geopolitical risk zones. We maintain supplier relationships
+            across multiple regions so that disruption in one corridor does not
+            become a crisis for our clients.
+          </p>
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="border-t border-gray-200 pt-6">
+              <h3 className="text-sm font-semibold text-gray-900 mb-2">North Africa</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Morocco and Egypt — established producers of phosphate fertilizers
+                and chemical intermediates with stable export infrastructure.
+              </p>
+            </div>
+            <div className="border-t border-gray-200 pt-6">
+              <h3 className="text-sm font-semibold text-gray-900 mb-2">Central Asia</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Kazakhstan and Uzbekistan — significant producers of nitrogen
+                fertilizers and industrial chemicals, increasingly accessible
+                via alternative routing.
+              </p>
+            </div>
+            <div className="border-t border-gray-200 pt-6">
+              <h3 className="text-sm font-semibold text-gray-900 mb-2">United States</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                US Gulf Coast producers of urea, ammonia, and specialty chemicals
+                — a reliable alternative supply base with strong regulatory standards.
+              </p>
+            </div>
+            <div className="border-t border-gray-200 pt-6">
+              <h3 className="text-sm font-semibold text-gray-900 mb-2">Southeast Asia</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Regional manufacturing hubs for crop protection products and
+                chemical formulations with proximity advantages for Australian logistics.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -117,19 +194,36 @@ export default function SupplyChainPage() {
 
         <div className="border-t border-gray-100 mb-20" />
 
-        {/* CTA */}
-        <div className="max-w-xl">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">Get in Touch</h2>
-          <p className="text-gray-600 leading-relaxed mb-6">
-            If you're concerned about supply chain exposure or need to source chemicals
-            or agricultural inputs, we'd like to hear about it.
-          </p>
-          <a
-            href="mailto:info@cable.capital"
-            className="inline-flex items-center px-6 py-3 bg-gray-900 text-white text-sm font-medium rounded hover:bg-gray-700 transition-colors"
-          >
-            info@cable.capital
-          </a>
+        {/* Dual CTA — Buyers + Suppliers */}
+        <div className="grid md:grid-cols-2 gap-16">
+          <div>
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">For Buyers</h2>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              If you're concerned about supply chain exposure or need to source fertilizers,
+              industrial chemicals, or crop protection products, we'd like to hear about it.
+            </p>
+            <a
+              href="mailto:info@cable.capital"
+              className="inline-flex items-center px-6 py-3 bg-gray-900 text-white text-sm font-medium rounded hover:bg-gray-700 transition-colors"
+            >
+              Get in touch
+            </a>
+          </div>
+          <div>
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">For Suppliers</h2>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              We work with verified, established producers across North Africa, Central Asia,
+              and the US Gulf Coast. If you supply fertilizers, industrial chemicals, or
+              crop protection products and are looking for Australian market access,
+              we'd like to hear from you.
+            </p>
+            <a
+              href="mailto:info@cable.capital?subject=Supplier Enquiry"
+              className="inline-flex items-center px-6 py-3 border border-gray-900 text-gray-900 text-sm font-medium rounded hover:bg-gray-50 transition-colors"
+            >
+              Supplier enquiries
+            </a>
+          </div>
         </div>
 
       </div>
