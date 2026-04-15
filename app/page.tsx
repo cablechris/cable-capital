@@ -16,7 +16,7 @@ export default function Home() {
             <p className="text-base text-gray-500 leading-relaxed mb-10 max-w-xl font-light">
               We source critical chemicals and agricultural inputs for Australian businesses
               when traditional supply chains falter, and provide strategic advisory to
-              organisations navigating complex and uncertain markets.
+              organisations navigating volatile and uncertain markets.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
