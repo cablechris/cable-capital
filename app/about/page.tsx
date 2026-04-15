@@ -39,12 +39,12 @@ export default function About() {
               <p className="text-gray-900 font-medium">Cable Capital</p>
             </div>
             <div className="border-t border-gray-200 pt-6">
-              <p className="text-xs text-gray-400 uppercase tracking-widest mb-2">Jurisdiction</p>
-              <p className="text-gray-900 font-medium">Australia</p>
+              <p className="text-xs text-gray-400 uppercase tracking-widest mb-2">Established</p>
+              <p className="text-gray-900 font-medium">2025</p>
             </div>
             <div className="border-t border-gray-200 pt-6">
-              <p className="text-xs text-gray-400 uppercase tracking-widest mb-2">ABN</p>
-              <p className="text-gray-900 font-medium">[ABN — provide to add]</p>
+              <p className="text-xs text-gray-400 uppercase tracking-widest mb-2">Registered</p>
+              <p className="text-gray-900 font-medium">New South Wales, Australia</p>
             </div>
           </div>
         </div>
