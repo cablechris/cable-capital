@@ -21,6 +21,7 @@ export default function Layout({ children }: LayoutProps) {
     { href: '/supply-chain', label: 'Supply Chain' },
     { href: '/consulting', label: 'Consulting' },
     { href: '/blog', label: 'Blog' },
+    { href: '/thesis', label: 'Thesis' },
     { href: '/about', label: 'About' },
   ];
 
