@@ -22,6 +22,7 @@ export default function Layout({ children }: LayoutProps) {
     { href: '/consulting', label: 'Consulting' },
     { href: '/blog', label: 'Blog' },
     { href: '/thesis', label: 'Thesis' },
+    { href: '/memos', label: 'Memos' },
     { href: '/about', label: 'About' },
   ];
 
