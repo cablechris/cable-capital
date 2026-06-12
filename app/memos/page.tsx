@@ -6,6 +6,15 @@ import Link from 'next/link';
 
 const memos = [
   {
+    number: '02',
+    slug: 'elastic',
+    title: 'Elastic (ESTC)',
+    deck: 'The retrieval layer priced as legacy search. The most widely deployed vector database in the enterprise, at a 60-75% discount to every direct peer, with a bookings book at a two-year high and a buyback compressing the float at the bottom.',
+    date: 'June 2026',
+    verdict: 'LONG',
+    tags: ['Enterprise Retrieval', 'Public Equity', 'NYSE: ESTC'],
+  },
+  {
     number: '01',
     slug: 'tenstorrent',
     title: 'Tenstorrent',
