@@ -18,11 +18,11 @@ export default function Layout({ children }: LayoutProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navItems: NavItem[] = [
-    { href: '/supply-chain', label: 'Supply Chain' },
-    { href: '/consulting', label: 'Consulting' },
-    { href: '/blog', label: 'Blog' },
-    { href: '/thesis', label: 'Thesis' },
+    { href: '/thesis', label: 'Theses' },
     { href: '/memos', label: 'Memos' },
+    { href: '/papers', label: 'Research' },
+    { href: '/investments', label: 'Investments' },
+    { href: '/v2/barbell', label: 'Barbell' },
     { href: '/about', label: 'About' },
   ];
 

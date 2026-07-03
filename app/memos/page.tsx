@@ -6,6 +6,15 @@ import Link from 'next/link';
 
 const memos = [
   {
+    number: '02',
+    slug: 'dolphin-network',
+    title: 'Dolphin Network',
+    deck: 'Distributed inference, narrowed. A consumer-GPU network with real arbitrage in audio and small LLMs, marginal edge in image, and a fading thesis in video. The bet is workload economics, not sharding.',
+    date: 'May 2026',
+    verdict: 'MONITOR',
+    tags: ['Decentralized AI', 'Pre-Token', 'Inference'],
+  },
+  {
     number: '01',
     slug: 'tenstorrent',
     title: 'Tenstorrent',
@@ -15,6 +24,12 @@ const memos = [
     tags: ['AI Silicon', 'Convertible Note', 'Hiive SPV'],
   },
 ];
+
+const verdictColor = (v: string) => {
+  if (v === 'PASS') return 'text-red-700';
+  if (v === 'MONITOR') return 'text-amber-700';
+  return 'text-emerald-700';
+};
 
 export default function MemosPage() {
   return (
@@ -33,9 +48,7 @@ export default function MemosPage() {
               <div className="flex items-baseline gap-4 mb-3">
                 <span className="text-xs font-mono text-gray-400 tracking-widest uppercase">№ {memo.number}</span>
                 <span className="text-xs text-gray-400">{memo.date}</span>
-                <span className={`text-xs font-mono tracking-wide uppercase ${
-                  memo.verdict === 'PASS' ? 'text-red-700' : 'text-emerald-700'
-                }`}>
+                <span className={`text-xs font-mono tracking-wide uppercase ${verdictColor(memo.verdict)}`}>
                   {memo.verdict}
                 </span>
               </div>

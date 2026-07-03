@@ -1,0 +1,486 @@
+/* The Barbell — manifesto page. Scoped bb- classes, inherits v2 tokens. */
+
+.bb-root {
+  background: var(--v2-ivory);
+  color: var(--v2-ink);
+  overflow-x: clip;
+}
+
+/* ---------- fixed chrome ---------- */
+
+.bb-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 28px;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  color: var(--v2-ivory);
+}
+
+.bb-nav a,
+.bb-nav span {
+  pointer-events: auto;
+  font-family: var(--v2-mono-font);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.bb-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 50;
+  background: var(--v2-oxblood);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+}
+
+/* ---------- act I: the crush ---------- */
+
+.bb-hero {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bb-hero-eyebrow {
+  position: absolute;
+  top: 18vh;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.bb-hero-word {
+  font-family: var(--v2-serif-font);
+  font-size: clamp(3.4rem, 13vw, 11.5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  will-change: transform, opacity, filter;
+}
+
+.bb-slab-pos {
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+}
+
+.bb-slab-pos--left {
+  left: calc(50% - 23vw);
+}
+
+.bb-slab-pos--right {
+  left: calc(50% + 23vw);
+}
+
+.bb-slab {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(34px, 6.5vw, 104px);
+  height: clamp(140px, 30vh, 300px);
+  background: var(--v2-ink);
+  border-radius: 3px;
+  box-shadow: 0 30px 80px rgba(14, 14, 12, 0.18);
+  will-change: transform;
+}
+
+.bb-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 46vw;
+  height: 4px;
+  background: var(--v2-oxblood);
+  transform: translate(-50%, -50%) scaleX(0);
+  transform-origin: center;
+  border-radius: 2px;
+  will-change: transform;
+}
+
+.bb-hero-label {
+  position: absolute;
+  top: calc(50% + clamp(90px, 18vh, 180px));
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+.bb-scrollhint {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.bb-scrollhint-line {
+  width: 1px;
+  height: 44px;
+  background: var(--v2-ink-4);
+  overflow: hidden;
+  position: relative;
+}
+
+.bb-scrollhint-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--v2-oxblood);
+  animation: bb-drip 2.2s var(--v2-ease) infinite;
+}
+
+@keyframes bb-drip {
+  0% { top: -100%; }
+  60% { top: 100%; }
+  100% { top: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bb-scrollhint-line::after { animation: none; }
+  /* static composition: word centred, slabs at rest, bar visible */
+  .bb-bar { transform: translate(-50%, -50%) scaleX(1); opacity: 0.5; }
+}
+
+/* ---------- act II: the curve ---------- */
+
+.bb-curve {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 clamp(20px, 5vw, 64px);
+}
+
+.bb-curve-head {
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto 4vh;
+}
+
+.bb-curve-svgwrap {
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.bb-curve-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bb-pole-label {
+  position: absolute;
+  bottom: -6px;
+  font-family: var(--v2-mono-font);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--v2-oxblood);
+}
+
+.bb-pole-label--left { left: 2%; }
+.bb-pole-label--right { right: 2%; }
+
+.bb-curve-caps {
+  max-width: 1180px;
+  width: 100%;
+  margin: 5vh auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 64px);
+}
+
+.bb-cap p {
+  font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+  line-height: 1.65;
+  color: var(--v2-ink-2);
+  max-width: 46ch;
+}
+
+.bb-cap .bb-cap-eyebrow { margin-bottom: 12px; }
+
+@media (max-width: 720px) {
+  .bb-curve-caps { grid-template-columns: 1fr; gap: 20px; }
+  .bb-cap p { font-size: 0.9rem; }
+}
+
+/* ---------- act III: two poles ---------- */
+
+.bb-poles {
+  background: var(--v2-ink);
+  color: var(--v2-ivory);
+  padding: clamp(90px, 16vh, 180px) clamp(20px, 5vw, 64px);
+}
+
+.bb-poles-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.bb-poles-title {
+  font-family: var(--v2-serif-font);
+  font-size: clamp(2.2rem, 4.6vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 16ch;
+  margin-bottom: clamp(56px, 9vh, 110px);
+}
+
+.bb-poles-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr 1fr;
+  gap: clamp(28px, 4vw, 72px);
+  align-items: start;
+}
+
+.bb-pole-item {
+  font-family: var(--v2-serif-font);
+  font-size: clamp(1.2rem, 1.7vw, 1.55rem);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(246, 242, 234, 0.12);
+}
+
+.bb-mid-col {
+  padding-top: 8px;
+}
+
+.bb-mid-item {
+  --bb-strike: 1;
+  position: relative;
+  display: inline-block;
+  font-family: var(--v2-serif-font);
+  font-style: italic;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  color: rgba(246, 242, 234, 0.38);
+  margin: 14px 0;
+}
+
+.bb-mid-item::after {
+  content: '';
+  position: absolute;
+  left: -2%;
+  top: 54%;
+  width: 104%;
+  height: 1.5px;
+  background: var(--v2-oxblood);
+  transform: scaleX(var(--bb-strike));
+  transform-origin: left center;
+}
+
+.bb-mid-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .bb-poles-grid { grid-template-columns: 1fr; }
+  .bb-mid-wrap { align-items: flex-start; text-align: left; padding: 24px 0; }
+}
+
+/* ---------- act IV: doctrine ---------- */
+
+.bb-doctrine {
+  padding: clamp(90px, 16vh, 200px) clamp(20px, 5vw, 64px);
+}
+
+.bb-doc-section {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(140px, 1fr) minmax(0, 2.2fr);
+  gap: clamp(24px, 4vw, 72px);
+  padding: clamp(48px, 8vh, 96px) 0;
+  border-top: 1px solid var(--v2-rule);
+}
+
+.bb-doc-lead {
+  font-family: var(--v2-editorial-font);
+  font-size: clamp(1.5rem, 2.6vw, 2.3rem);
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+  max-width: 30ch;
+}
+
+.bb-doc-body {
+  margin-top: 28px;
+  font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+  line-height: 1.7;
+  color: var(--v2-ink-2);
+  max-width: 58ch;
+}
+
+.bb-w { display: inline-block; will-change: transform, opacity; }
+
+@media (max-width: 720px) {
+  .bb-doc-section { grid-template-columns: 1fr; gap: 18px; }
+}
+
+/* ---------- act V: close ---------- */
+
+.bb-close {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 clamp(20px, 6vw, 80px) 10vh;
+}
+
+.bb-glyph {
+  display: flex;
+  align-items: center;
+  margin-bottom: clamp(40px, 7vh, 72px);
+}
+
+.bb-glyph-weight {
+  width: 10px;
+  height: 38px;
+  background: var(--v2-ink);
+  border-radius: 2px;
+}
+
+.bb-glyph-bar {
+  width: clamp(120px, 22vw, 280px);
+  height: 3px;
+  background: var(--v2-oxblood);
+  transform-origin: center;
+}
+
+.bb-close-line {
+  font-family: var(--v2-serif-font);
+  font-size: clamp(2rem, 5vw, 4.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  max-width: 18ch;
+}
+
+.bb-close-cta {
+  margin-top: clamp(48px, 8vh, 80px);
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--v2-mono-font);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 16px 28px;
+  border: 1px solid var(--v2-rule-strong);
+  border-radius: 999px;
+  transition: background 0.5s var(--v2-ease), color 0.5s var(--v2-ease), border-color 0.5s var(--v2-ease);
+}
+
+.bb-close-cta:hover {
+  background: var(--v2-ink);
+  color: var(--v2-ivory);
+  border-color: var(--v2-ink);
+}
+
+/* ---------- reading sections (the essay) ---------- */
+
+.bb-essay {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(72px, 13vh, 150px) clamp(20px, 5vw, 40px);
+}
+
+.bb-essay--intro {
+  padding-top: clamp(40px, 8vh, 96px);
+}
+
+.bb-essay-title {
+  font-family: var(--v2-serif-font);
+  font-size: clamp(2rem, 4.6vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: clamp(28px, 5vh, 48px);
+  max-width: 20ch;
+}
+
+.bb-essay h2 {
+  font-family: var(--v2-serif-font);
+  font-size: clamp(1.55rem, 2.9vw, 2.2rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: clamp(40px, 7vh, 72px) 0 clamp(18px, 3vh, 28px);
+}
+
+.bb-essay p {
+  font-size: clamp(1.02rem, 1.2vw, 1.15rem);
+  line-height: 1.72;
+  color: var(--v2-ink-2);
+  margin-bottom: 1.25em;
+}
+
+.bb-essay .bb-essay-lede {
+  font-family: var(--v2-editorial-font);
+  font-style: italic;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  line-height: 1.4;
+  color: var(--v2-ink);
+}
+
+.bb-essay .bb-essay-sub {
+  color: var(--v2-ink);
+  font-weight: 500;
+  margin-bottom: 0.9em;
+}
+
+.bb-essay ul {
+  margin: 0 0 1.5em;
+  padding: 0;
+  list-style: none;
+}
+
+.bb-essay li {
+  position: relative;
+  padding-left: 26px;
+  font-size: clamp(1.02rem, 1.2vw, 1.15rem);
+  line-height: 1.6;
+  color: var(--v2-ink-2);
+  margin-bottom: 0.85em;
+}
+
+.bb-essay li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 0.72em;
+  width: 8px;
+  height: 1.5px;
+  background: var(--v2-oxblood);
+}

@@ -1,0 +1,148 @@
+/* Cable Capital v2 — design tokens + base styles
+   Scoped to .v2-root so the live site is untouched. */
+
+.v2-root {
+  --v2-ivory: #F6F2EA;
+  --v2-ivory-dim: #EDE6D6;
+  --v2-ivory-2: #E6DFCE;
+  --v2-ink: #0E0E0C;
+  --v2-ink-2: #2A2722;
+  --v2-ink-3: #5A5449;
+  --v2-ink-4: #8A8274;
+  --v2-oxblood: #6B1E1E;
+  --v2-oxblood-glow: rgba(107, 30, 30, 0.35);
+  --v2-rule: rgba(14, 14, 12, 0.10);
+  --v2-rule-strong: rgba(14, 14, 12, 0.28);
+
+  --v2-serif-font: var(--v2-serif), Georgia, 'Times New Roman', serif;
+  --v2-editorial-font: var(--v2-editorial), Georgia, serif;
+  --v2-sans-font: var(--v2-sans), 'Inter', system-ui, sans-serif;
+  --v2-mono-font: var(--v2-mono), ui-monospace, 'SFMono-Regular', monospace;
+
+  --v2-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --v2-ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+  background: var(--v2-ivory);
+  color: var(--v2-ink);
+  font-family: var(--v2-sans-font);
+  min-height: 100vh;
+}
+
+.v2-root *,
+.v2-root *::before,
+.v2-root *::after {
+  box-sizing: border-box;
+}
+
+.v2-root a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.v2-serif {
+  font-family: var(--v2-serif-font);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.v2-editorial {
+  font-family: var(--v2-editorial-font);
+  font-weight: 400;
+}
+
+.v2-mono {
+  font-family: var(--v2-mono-font);
+  font-feature-settings: 'tnum' on, 'lnum' on;
+}
+
+.v2-eyebrow {
+  font-family: var(--v2-mono-font);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--v2-ink-3);
+}
+
+.v2-hair {
+  height: 1px;
+  background: var(--v2-rule);
+  border: 0;
+  width: 100%;
+}
+
+/* Grain overlay for warmth */
+.v2-grain::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.9'/></svg>");
+}
+
+/* Selection */
+.v2-root ::selection {
+  background: var(--v2-oxblood);
+  color: var(--v2-ivory);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .v2-root *,
+  .v2-root *::before,
+  .v2-root *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Hero marquee */
+.v2-marquee {
+  display: flex;
+  gap: 4rem;
+  animation: v2-marquee-scroll 60s linear infinite;
+  will-change: transform;
+}
+
+@keyframes v2-marquee-scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+/* Barbell curve breathing */
+@keyframes v2-pulse-a {
+  0%, 100% { transform: translate(0, 0); opacity: 0.85; }
+  50% { transform: translate(-2px, -1px); opacity: 1; }
+}
+@keyframes v2-pulse-b {
+  0%, 100% { transform: translate(0, 0); opacity: 0.85; }
+  50% { transform: translate(2px, 1px); opacity: 1; }
+}
+
+.v2-pillar-card {
+  transition: transform 0.6s var(--v2-ease), background 0.4s var(--v2-ease), border-color 0.4s var(--v2-ease);
+}
+.v2-pillar-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--v2-ink) !important;
+}
+.v2-pillar-card:hover .v2-pillar-arrow {
+  transform: translate(6px, -6px);
+}
+.v2-pillar-arrow {
+  transition: transform 0.5s var(--v2-ease);
+}
+
+.v2-link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.4s var(--v2-ease);
+}
+.v2-link-underline:hover {
+  background-size: 100% 1px;
+}
