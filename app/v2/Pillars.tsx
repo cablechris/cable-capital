@@ -40,15 +40,6 @@ export default function Pillars() {
       }}
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
-        <div className="flex items-end justify-between mb-14">
-          <div>
-            <div className="v2-eyebrow">The work</div>
-          </div>
-          <div className="hidden md:block v2-mono text-[10px] tracking-[0.22em] uppercase" style={{ color: 'var(--v2-ink-4)' }}>
-            Ⅰ · Ⅱ · Ⅲ
-          </div>
-        </div>
-
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {pillars.map((p, i) => (
             <motion.div
@@ -67,10 +58,7 @@ export default function Pillars() {
                   minHeight: 360,
                 }}
               >
-                <div className="flex items-start justify-between mb-14">
-                  <span className="v2-mono text-[11px] tracking-[0.22em]" style={{ color: 'var(--v2-ink-3)' }}>
-                    {p.num} / {p.tag}
-                  </span>
+                <div className="flex items-start justify-end mb-14">
                   <svg
                     className="v2-pillar-arrow"
                     width="20"

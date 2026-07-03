@@ -104,17 +104,6 @@ export default function HeroFrame() {
             rabbit holes.
           </span>
         </motion.h1>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 1.4 }}
-          className="mt-12 flex items-center gap-3 v2-mono text-[11px] tracking-[0.22em] uppercase"
-          style={{ color: 'var(--v2-ink-3)' }}
-        >
-          <span>Scroll</span>
-          <span className="inline-block w-10 h-px" style={{ background: 'var(--v2-ink-3)' }} />
-        </motion.div>
       </div>
     </section>
   )

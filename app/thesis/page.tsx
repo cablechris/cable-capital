@@ -1,8 +1,5 @@
-"use client";
-
-import React from 'react';
-import Layout from '../components/Layout';
-import Link from 'next/link';
+import Link from 'next/link'
+import V2Shell from '../v2/V2Shell'
 
 const theses = [
   {
@@ -14,58 +11,81 @@ const theses = [
     status: 'Active conviction',
     positions: ['COHR', 'LITE', 'GLW', 'FN'],
   },
-];
+]
 
 export default function ThesisPage() {
   return (
-    <Layout>
-      <div className="py-16">
-        <div className="mb-12 border-b border-gray-100 pb-12">
-          <h1 className="font-serif text-4xl md:text-5xl text-gray-900 mb-4">Thesis</h1>
-          <p className="text-gray-500 text-sm max-w-xl">
-            Structured investment theses with explicit positions, kill conditions, and monitoring cadences.
+    <V2Shell>
+      <div className="max-w-[1080px] mx-auto px-6 lg:px-10 pt-32 lg:pt-40 pb-28">
+        {/* Page header */}
+        <div className="pb-12 mb-4" style={{ borderBottom: '1px solid var(--v2-rule-strong)' }}>
+          <div className="v2-mono text-[11px] tracking-[0.22em] uppercase mb-5" style={{ color: 'var(--v2-oxblood)' }}>
+            Pre-registered
+          </div>
+          <h1
+            className="v2-serif"
+            style={{
+              fontSize: 'clamp(2.75rem, 6vw, 4.5rem)',
+              lineHeight: 1.0,
+              letterSpacing: '-0.02em',
+            }}
+          >
+            Theses
+          </h1>
+          <p className="mt-7 text-[17px] leading-[1.65] max-w-[56ch]" style={{ color: 'var(--v2-ink-2)' }}>
+            Structured bets, each with explicit positions, the conditions that would prove me
+            wrong, and a timestamp. Written before they resolve, so the record can grade them.
           </p>
         </div>
 
-        <div className="space-y-0">
-          {theses.map((thesis) => (
-            <article key={thesis.slug} className="border-b border-gray-100 py-10 group">
-              <div className="flex items-baseline gap-4 mb-3">
-                <span className="text-xs font-mono text-gray-400 tracking-widest uppercase">№ {thesis.number}</span>
-                <span className="text-xs text-gray-400">{thesis.date}</span>
-                <span className="text-xs font-mono text-primary tracking-wide uppercase">{thesis.status}</span>
+        {/* List */}
+        <div>
+          {theses.map((t) => (
+            <Link
+              key={t.slug}
+              href={`/thesis/${t.slug}`}
+              className="group grid grid-cols-12 gap-4 lg:gap-6 py-9 lg:py-11 items-baseline"
+              style={{ borderBottom: '1px solid var(--v2-rule)' }}
+            >
+              <div className="col-span-12 lg:col-span-2 flex lg:block items-baseline gap-4">
+                <span className="v2-mono text-[11px] tracking-[0.22em]" style={{ color: 'var(--v2-ink-4)' }}>
+                  No. {t.number}
+                </span>
+                <span className="v2-mono text-[10px] tracking-[0.18em] uppercase lg:mt-2 lg:block" style={{ color: 'var(--v2-ink-4)' }}>
+                  {t.date}
+                </span>
               </div>
 
-              <Link href={`/thesis/${thesis.slug}`}>
-                <h2 className="text-2xl font-serif text-gray-900 group-hover:text-primary transition-colors mb-2 leading-snug">
-                  {thesis.title}
+              <div className="col-span-12 lg:col-span-7">
+                <div className="v2-mono text-[10px] tracking-[0.22em] uppercase mb-3" style={{ color: 'var(--v2-oxblood)' }}>
+                  {t.status}
+                </div>
+                <h2
+                  className="v2-serif"
+                  style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.35rem)', lineHeight: 1.08, letterSpacing: '-0.015em' }}
+                >
+                  <span className="v2-link-underline pb-1">{t.title}</span>
                 </h2>
-              </Link>
+                <p className="mt-3 text-[15px] leading-[1.6]" style={{ color: 'var(--v2-ink-3)', maxWidth: '46ch' }}>
+                  {t.deck}
+                </p>
+              </div>
 
-              <p className="text-sm text-gray-500 leading-relaxed mb-4 max-w-2xl">
-                {thesis.deck}
-              </p>
-
-              <div className="flex items-center gap-3">
-                {thesis.positions.map((ticker) => (
+              <div className="col-span-12 lg:col-span-3 flex flex-wrap gap-2 lg:justify-end">
+                {t.positions.map((ticker) => (
                   <span
                     key={ticker}
-                    className="text-xs font-mono text-gray-600 border border-gray-200 px-2 py-0.5 rounded-sm"
+                    className="v2-mono text-[10px] tracking-[0.12em] px-2 py-1"
+                    style={{ color: 'var(--v2-ink-3)', border: '1px solid var(--v2-rule-strong)' }}
                   >
                     {ticker}
                   </span>
                 ))}
-                <Link
-                  href={`/thesis/${thesis.slug}`}
-                  className="ml-auto text-xs font-mono text-gray-400 hover:text-primary transition-colors tracking-wide uppercase"
-                >
-                  Read →
-                </Link>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>
-    </Layout>
-  );
+    </V2Shell>
+  )
 }
