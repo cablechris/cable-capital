@@ -97,7 +97,7 @@ export default function HeroFrame() {
             lineHeight: 0.96,
             letterSpacing: '-0.02em',
             color: 'var(--v2-ink)',
-            maxWidth: '18ch',
+            maxWidth: 'min(18ch, 100%)',
           }}
         >
           Big ideas, specific bets, and{' '}

@@ -46,7 +46,7 @@ export default function Writing() {
                 fontSize: 'clamp(2rem, 4vw, 3.25rem)',
                 lineHeight: 1.05,
                 letterSpacing: '-0.015em',
-                maxWidth: '20ch',
+                maxWidth: 'min(20ch, 100%)',
               }}
             >
               On the record.

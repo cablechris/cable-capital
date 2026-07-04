@@ -26,6 +26,14 @@
   color: var(--v2-ink);
   font-family: var(--v2-sans-font);
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.v2-root p,
+.v2-root h1,
+.v2-root h2,
+.v2-root h3 {
+  overflow-wrap: break-word;
 }
 
 .v2-root *,

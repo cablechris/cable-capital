@@ -34,7 +34,7 @@ export default function Philosophy() {
                 fontSize: 'clamp(1.75rem, 3.2vw, 2.75rem)',
                 lineHeight: 1.25,
                 letterSpacing: '-0.005em',
-                maxWidth: '28ch',
+                maxWidth: 'min(28ch, 100%)',
               }}
             >
               Most of life's returns compound at the edges. The comfortable middle (in portfolios,

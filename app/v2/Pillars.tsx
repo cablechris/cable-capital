@@ -85,7 +85,7 @@ export default function Pillars() {
 
                 <p
                   className="text-[15px] leading-[1.6]"
-                  style={{ color: 'var(--v2-ink-2)', maxWidth: '34ch' }}
+                  style={{ color: 'var(--v2-ink-2)', maxWidth: 'min(34ch, 100%)' }}
                 >
                   {p.blurb}
                 </p>

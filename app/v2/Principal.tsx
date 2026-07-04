@@ -43,15 +43,15 @@ export default function Principal() {
               fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
               lineHeight: 1.05,
               letterSpacing: '-0.015em',
-              maxWidth: '22ch',
+              maxWidth: 'min(22ch, 100%)',
             }}
           >
             Chris Cable
           </motion.h2>
 
           <p
-            className="mt-8 text-[17px] leading-[1.65] max-w-[52ch]"
-            style={{ color: 'var(--v2-ink-2)' }}
+            className="mt-8 text-[17px] leading-[1.65]"
+            style={{ color: 'var(--v2-ink-2)', maxWidth: 'min(52ch, 100%)' }}
           >
             I've had my share of wins. But luck and skill look identical while they're
             happening, and you only learn which one you had long after. The investors worth

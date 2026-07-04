@@ -25,7 +25,7 @@ export default function Footer() {
             >
               info@cable.capital
             </a>
-            <p className="mt-8 max-w-[40ch] text-[15px] leading-[1.65]" style={{ color: 'rgba(246,242,234,0.7)' }}>
+            <p className="mt-8 text-[15px] leading-[1.65]" style={{ color: 'rgba(246,242,234,0.7)', maxWidth: 'min(40ch, 100%)' }}>
               If you've come this far, don't be afraid to reach out!
             </p>
           </div>
