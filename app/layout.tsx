@@ -14,13 +14,13 @@ const dmSerif = DM_Serif_Display({
 
 export const metadata = {
   title: "Cable Capital",
-  description: "Resilient supply chains and strategic advisory for Australian businesses.",
+  description: "A public reasoning archive. Investment theses, deal memos, and original research, pre-registered before they resolve.",
   icons: {
     icon: '/favicon.svg',
   },
   openGraph: {
     title: "Cable Capital",
-    description: "Resilient supply chains and strategic advisory for Australian businesses.",
+    description: "A public reasoning archive. Investment theses, deal memos, and original research, pre-registered before they resolve.",
     url: "https://cable.capital",
     siteName: "Cable Capital",
     locale: "en_AU",

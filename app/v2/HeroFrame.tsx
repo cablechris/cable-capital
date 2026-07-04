@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 /**
@@ -104,6 +105,21 @@ export default function HeroFrame() {
             rabbit holes.
           </span>
         </motion.h1>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 1.3, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-12"
+        >
+          <Link
+            href="/thesis"
+            className="v2-mono text-[11px] tracking-[0.22em] uppercase inline-flex items-center gap-3 v2-link-underline pb-1"
+            style={{ color: 'var(--v2-oxblood)' }}
+          >
+            Start with the theses <span>&rarr;</span>
+          </Link>
+        </motion.div>
       </div>
     </section>
   )

@@ -30,8 +30,8 @@ const mono = JetBrains_Mono({
 })
 
 export const metadata = {
-  title: 'Cable Capital — preview',
-  description: 'Design preview of the new Cable Capital site.',
+  title: 'Cable Capital',
+  description: 'A public reasoning archive. Investment theses, deal memos, and original research, pre-registered before they resolve.',
 }
 
 export default function V2Layout({ children }: { children: React.ReactNode }) {
