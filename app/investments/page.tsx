@@ -3,10 +3,12 @@ import V2Shell from '../v2/V2Shell'
 
 export const metadata = {
   title: 'Investments',
-  description: 'Funds I helped seed and DAOs I was a founding member of. Whether that was judgment or just being early is the question the rest of this site is trying to answer.',
+  description: 'Funds I helped seed, DAOs I was a founding member of, and early venture bets. Whether that was judgment or just being early is the question the rest of this site is trying to answer.',
 }
 
-const logos = {
+type LogoItem = { name: string; href?: string; src?: string; alt?: string }
+
+const logos: { funds: LogoItem[]; daos: LogoItem[]; venture: LogoItem[] } = {
   funds: [
     { href: 'https://polychain.capital/', src: '/assets/logos/Polychain.png', alt: 'Polychain Capital logo', name: 'Polychain' },
     { href: 'https://bankless.ventures/', src: '/assets/logos/banklessventures.png', alt: 'Bankless Ventures logo', name: 'Bankless Ventures' },
@@ -21,31 +23,61 @@ const logos = {
     { href: 'https://darkhorsedao.xyz/', src: '/assets/logos/darkhorse.png', alt: 'Dark Horse DAO logo', name: 'Dark Horse DAO' },
     { href: 'https://spaceshipdao.xyz/', src: '/assets/logos/spaceship.png', alt: 'Spaceship DAO logo', name: 'Spaceship DAO' },
   ],
+  // Logos to be added per-company: drop a PNG in /public/assets/logos and set
+  // `src` (+ `href`). Until then each tile renders the name as a wordmark.
+  venture: [
+    { name: 'Innerworks', href: 'https://innerworks.me/' },
+    { name: 'General Tensor', href: 'https://www.generaltensor.io/' },
+    { name: 'Sourceful', href: 'https://srcful.io/' },
+    { name: 'Pluralis', href: 'https://pluralis.ai/' },
+    { name: 'Aalo', href: 'https://aalo.com/' },
+    { name: 'Apptronik', href: 'https://apptronik.com/' },
+    { name: 'Varda', href: 'https://www.varda.com/' },
+    { name: 'Prometheus' },
+  ],
 }
 
-function LogoGrid({ items }: { items: typeof logos.funds }) {
+function Tile({ item }: { item: LogoItem }) {
+  const cls = 'group relative flex items-center justify-center aspect-[3/2] transition-colors'
+  const style = { background: 'var(--v2-ivory-dim)', border: '1px solid var(--v2-rule)' } as const
+
+  const inner = item.src ? (
+    <>
+      <div className="relative w-1/2 h-1/2">
+        <Image src={item.src} alt={item.alt || item.name} fill className="object-contain" style={{ filter: 'grayscale(100%)', opacity: 0.75 }} sizes="200px" />
+      </div>
+      <span
+        className="absolute bottom-3 left-1/2 -translate-x-1/2 v2-mono text-[10px] tracking-[0.14em] uppercase opacity-0 group-hover:opacity-100 transition-opacity"
+        style={{ color: 'var(--v2-ink-3)' }}
+      >
+        {item.name}
+      </span>
+    </>
+  ) : (
+    <span
+      className="v2-serif text-center px-3"
+      style={{ fontSize: 'clamp(1.1rem, 2.2vw, 1.6rem)', letterSpacing: '-0.01em', color: 'var(--v2-ink-2)' }}
+    >
+      {item.name}
+    </span>
+  )
+
+  return item.href ? (
+    <a key={item.name} href={item.href} target="_blank" rel="noopener noreferrer" aria-label={item.name} className={cls} style={style}>
+      {inner}
+    </a>
+  ) : (
+    <div key={item.name} className={cls} style={style}>
+      {inner}
+    </div>
+  )
+}
+
+function LogoGrid({ items }: { items: LogoItem[] }) {
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-4">
-      {items.map(({ href, src, alt, name }) => (
-        <a
-          key={href}
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={name}
-          className="group relative flex items-center justify-center aspect-[3/2] transition-colors"
-          style={{ background: 'var(--v2-ivory-dim)', border: '1px solid var(--v2-rule)' }}
-        >
-          <div className="relative w-1/2 h-1/2">
-            <Image src={src} alt={alt} fill className="object-contain" style={{ filter: 'grayscale(100%)', opacity: 0.75 }} sizes="200px" />
-          </div>
-          <span
-            className="absolute bottom-3 left-1/2 -translate-x-1/2 v2-mono text-[10px] tracking-[0.14em] uppercase opacity-0 group-hover:opacity-100 transition-opacity"
-            style={{ color: 'var(--v2-ink-3)' }}
-          >
-            {name}
-          </span>
-        </a>
+      {items.map((item) => (
+        <Tile key={item.name} item={item} />
       ))}
     </div>
   )
@@ -67,9 +99,9 @@ export default function Investments() {
             Investments
           </h1>
           <p className="mt-7 text-[17px] leading-[1.65] max-w-[56ch]" style={{ color: 'var(--v2-ink-2)' }}>
-            Funds I helped seed and DAOs I was a founding member of. Some of these worked out
-            well. Whether that was judgment or just being early is exactly the question the rest
-            of this site is trying to answer.
+            Funds I helped seed, DAOs I was a founding member of, and early venture bets. Some of
+            these worked out well. Whether that was judgment or just being early is exactly the
+            question the rest of this site is trying to answer.
           </p>
         </div>
 
@@ -82,11 +114,19 @@ export default function Investments() {
         </section>
 
         {/* DAOs */}
-        <section>
+        <section className="mb-16">
           <div className="v2-mono text-[11px] tracking-[0.22em] uppercase mb-6" style={{ color: 'var(--v2-ink-4)' }}>
             DAOs
           </div>
           <LogoGrid items={logos.daos} />
+        </section>
+
+        {/* Venture bets */}
+        <section>
+          <div className="v2-mono text-[11px] tracking-[0.22em] uppercase mb-6" style={{ color: 'var(--v2-ink-4)' }}>
+            Venture bets
+          </div>
+          <LogoGrid items={logos.venture} />
         </section>
       </div>
     </V2Shell>
