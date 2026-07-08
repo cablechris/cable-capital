@@ -1,6 +1,11 @@
 import Link from 'next/link'
 import V2Shell from '../v2/V2Shell'
 
+export const metadata = {
+  title: 'Memos',
+  description: 'Deal-by-deal analysis with explicit verdicts. PASS, MONITOR, WATCH. Pass memos published alongside the ones I acted on.',
+}
+
 const memos = [
   {
     number: '03',

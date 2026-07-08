@@ -1,6 +1,11 @@
 import Image from 'next/image'
 import V2Shell from '../v2/V2Shell'
 
+export const metadata = {
+  title: 'Investments',
+  description: 'Funds I helped seed and DAOs I was a founding member of. Whether that was judgment or just being early is the question the rest of this site is trying to answer.',
+}
+
 const logos = {
   funds: [
     { href: 'https://polychain.capital/', src: '/assets/logos/Polychain.png', alt: 'Polychain Capital logo', name: 'Polychain' },

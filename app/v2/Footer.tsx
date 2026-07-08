@@ -57,6 +57,12 @@ export default function Footer() {
           <span className="v2-mono text-[10px] tracking-[0.22em] uppercase" style={{ color: 'rgba(246,242,234,0.45)' }}>
             © {new Date().getFullYear()} Cable Capital
           </span>
+          <div className="flex items-center gap-6 v2-mono text-[10px] tracking-[0.22em] uppercase" style={{ color: 'rgba(246,242,234,0.6)' }}>
+            <a href="https://x.com/cablechris" target="_blank" rel="noopener noreferrer" className="v2-link-underline pb-0.5">
+              Push back on X
+            </a>
+            <a href="/feed.xml" className="v2-link-underline pb-0.5">RSS</a>
+          </div>
           <span className="v2-mono text-[10px] tracking-[0.22em] uppercase" style={{ color: 'rgba(246,242,234,0.45)' }}>
             Sydney · Global
           </span>

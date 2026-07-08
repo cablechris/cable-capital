@@ -13,7 +13,11 @@ const dmSerif = DM_Serif_Display({
 })
 
 export const metadata = {
-  title: "Cable Capital",
+  metadataBase: new URL('https://cable.capital'),
+  title: {
+    default: 'Cable Capital',
+    template: '%s · Cable Capital',
+  },
   description: "A public reasoning archive. Investment theses, deal memos, and original research, pre-registered before they resolve.",
   icons: {
     icon: '/favicon.svg',

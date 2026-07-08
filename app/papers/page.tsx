@@ -2,6 +2,11 @@ import Link from 'next/link'
 import V2Shell from '../v2/V2Shell'
 import { papers, Paper } from '../data/papers'
 
+export const metadata = {
+  title: 'Research',
+  description: 'Original work at the frontier, from bioelectric morphogenesis to how coordination emerges in artificial systems.',
+}
+
 export default function Papers() {
   return (
     <V2Shell>
