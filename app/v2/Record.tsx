@@ -32,6 +32,14 @@ const entries = [
     href: '/papers/sparse-bioelectric-control',
   },
   {
+    date: '2026',
+    type: 'Research',
+    title: 'Stranded or Fungible?',
+    deck: 'Testing whether Extropic’s thermodynamic-computing moat survives scale. On what I could measure, the moat looks more like a head start.',
+    status: '',
+    href: '/papers/thermodynamic-computing-moat',
+  },
+  {
     date: 'May 2026',
     type: 'Memo',
     title: 'Dolphin Network',

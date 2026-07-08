@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/memos/dolphin-network',
     '/papers/emergent-culture',
     '/papers/sparse-bioelectric-control',
+    '/papers/thermodynamic-computing-moat',
   ]
   const now = new Date()
   return routes.map((route) => ({

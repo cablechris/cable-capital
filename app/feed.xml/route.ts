@@ -19,6 +19,14 @@ const items = [
     description: 'Light as the structural successor to copper in AI scale-up.',
   },
   {
+    title: 'Stranded or Fungible? Testing the Thermodynamic Computing Moat',
+    type: 'Research',
+    path: '/papers/thermodynamic-computing-moat',
+    date: 'Sun, 01 Mar 2026 00:00:00 GMT',
+    description:
+      "Extropic's thermodynamic hardware bets its energy-based-model advantage is stranded. On the axis this study can measure, the moat looks more like a head start, with the decisive cell (physical energy) explicitly unmeasured.",
+  },
+  {
     title: 'Hard Limits on Sparse Bioelectric Control',
     type: 'Research',
     path: '/papers/sparse-bioelectric-control',
