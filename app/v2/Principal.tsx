@@ -56,9 +56,9 @@ export default function Principal() {
             I've had my share of wins. But luck and skill look identical while they're
             happening, and you only learn which one you had long after. The investors worth
             learning from worked this out the same way: they put the reasoning on the record
-            before the outcome, where it could be judged. That's what this is. I write the
-            reads before they resolve, keep the memos honest even when the verdict is no, and
-            follow the research wherever it wants to go.
+            before the outcome, where it could be judged. That's what this is. I write things
+            down before they resolve, keep the memos honest even when the verdict is no, and
+            chase the rabbit holes I fall into.
           </p>
 
           <div className="mt-10 flex items-center gap-8 v2-mono text-[11px] tracking-[0.22em] uppercase" style={{ color: 'var(--v2-ink-3)' }}>

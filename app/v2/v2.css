@@ -15,7 +15,7 @@
   --v2-rule-strong: rgba(14, 14, 12, 0.28);
 
   --v2-serif-font: var(--v2-serif), Georgia, 'Times New Roman', serif;
-  --v2-editorial-font: var(--v2-editorial), Georgia, serif;
+  --v2-editorial-font: var(--v2-serif), Georgia, serif;
   --v2-sans-font: var(--v2-sans), 'Inter', system-ui, sans-serif;
   --v2-mono-font: var(--v2-mono), ui-monospace, 'SFMono-Regular', monospace;
 

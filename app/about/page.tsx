@@ -2,6 +2,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import V2Shell from '../v2/V2Shell'
 
+export const metadata = {
+  title: 'About',
+  description: 'A public reasoning archive. Why it exists, what it stands for, the barbell, and the person behind it.',
+}
+
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <div className="v2-mono text-[11px] tracking-[0.22em] uppercase mb-6" style={{ color: 'var(--v2-oxblood)' }}>
@@ -46,10 +51,10 @@ export default function About() {
           they look identical. You only learn which one you had long after.
         </p>
         <p className="text-[17px] leading-[1.7]" style={{ color: 'var(--v2-ink-2)' }}>
-          So I do what the investors worth learning from all did: put the reasoning on the
-          record before the outcome, where it can be judged. Track the reads rigorously enough,
-          over a long enough window, and eventually the record tells you whether there was skill
-          under the luck or just a streak. I would rather know than keep telling myself a story.
+          So I do what the investors worth learning from all did: put the reasoning down before
+          the outcome, where it can be checked. Do that honestly enough, over a long enough
+          window, and you find out whether there was skill under the luck or just a streak. I
+          would rather know than keep telling myself a story.
         </p>
 
         <hr className="v2-hair my-16" />
@@ -61,7 +66,7 @@ export default function About() {
           subscribers, no service with a booking link at the bottom. That absence is deliberate.
           The moment you're selling something, you start bending the reasoning to fit the sale,
           usually without noticing. Taking the incentive out is the only way I know to keep the
-          reads honest.
+          thinking honest.
         </p>
         <p className="text-[17px] leading-[1.7]" style={{ color: 'var(--v2-ink-2)' }}>
           So the one thing I want back is disagreement. If a thesis is wrong, I would rather
@@ -124,8 +129,8 @@ export default function About() {
         <p className="text-[17px] leading-[1.7] mb-5" style={{ color: 'var(--v2-ink-2)' }}>
           The through-line is the substrate: the layer underneath the thing everyone else is
           watching. Interconnect underneath the AI trade. Neutrality underneath the intelligence
-          race. Morphogenetic signaling underneath the biology. Read that layer early, write the
-          read down, and let the record do the grading.
+          race. Morphogenetic signaling underneath the biology. I try to catch that layer while
+          it's still early and write down what I see, before I know whether I'm right.
         </p>
         <p className="text-[17px] leading-[1.7]" style={{ color: 'var(--v2-ink-2)' }}>
           Based in Sydney. Outside the work: calisthenics where the kids can see, time on the

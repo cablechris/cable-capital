@@ -33,33 +33,6 @@ export default function HeroFrame() {
         }}
       />
 
-      {/* Top scaffolding — eyebrow marquee */}
-      <div
-        className="absolute top-16 inset-x-0 overflow-hidden"
-        style={{ borderBottom: '1px solid var(--v2-rule)' }}
-      >
-        <div className="v2-marquee py-3 whitespace-nowrap">
-          {Array.from({ length: 2 }).map((_, i) => (
-            <div key={i} className="flex gap-16 v2-mono text-[10px] tracking-[0.22em] uppercase" style={{ color: 'var(--v2-ink-4)' }}>
-              <span>Theses</span>
-              <span>·</span>
-              <span>Memos</span>
-              <span>·</span>
-              <span>Research</span>
-              <span>·</span>
-              <span>Frontier technology</span>
-              <span>·</span>
-              <span>Scarce real estate</span>
-              <span>·</span>
-              <span>Physical commodities</span>
-              <span>·</span>
-              <span>Concentration at the edges</span>
-              <span>·</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* Side rail labels */}
       <div className="hidden lg:block absolute left-10 bottom-12 v2-mono text-[10px] tracking-[0.22em] uppercase" style={{ color: 'var(--v2-ink-4)' }}>
         <div>Est. 2019</div>

@@ -1,6 +1,11 @@
 import Link from 'next/link'
 import V2Shell from '../v2/V2Shell'
 
+export const metadata = {
+  title: 'Theses',
+  description: 'Structured investment theses with explicit positions, the conditions that would prove them wrong, and a timestamp, written down before they resolve.',
+}
+
 const theses = [
   {
     number: '04',
@@ -34,7 +39,8 @@ export default function ThesisPage() {
           </h1>
           <p className="mt-7 text-[17px] leading-[1.65] max-w-[56ch]" style={{ color: 'var(--v2-ink-2)' }}>
             Structured bets, each with explicit positions, the conditions that would prove me
-            wrong, and a timestamp. Written before they resolve, so the record can grade them.
+            wrong, and a timestamp. Written down before they resolve, so I can't rewrite the
+            story afterward.
           </p>
         </div>
 

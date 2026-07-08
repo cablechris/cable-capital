@@ -1,9 +1,8 @@
 import Header from './Header'
 import HeroFrame from './HeroFrame'
-import Pillars from './Pillars'
+import Record from './Record'
 import Philosophy from './Philosophy'
 import Principal from './Principal'
-import Writing from './Writing'
 import Footer from './Footer'
 
 export default function V2Home() {
@@ -12,10 +11,9 @@ export default function V2Home() {
       <Header />
       <main>
         <HeroFrame />
-        <Pillars />
+        <Record />
         <Philosophy />
         <Principal />
-        <Writing />
       </main>
       <Footer />
     </div>
