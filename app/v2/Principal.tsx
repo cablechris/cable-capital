@@ -21,7 +21,7 @@ export default function Principal() {
           >
             {/* Fallback headshot — existing asset in /public */}
             <Image
-              src="/images/headshot.JPG"
+              src="/images/headshot.png"
               alt="Chris Cable"
               fill
               sizes="(max-width: 1024px) 100vw, 400px"

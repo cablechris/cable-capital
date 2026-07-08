@@ -101,7 +101,7 @@ export default function About() {
           <div className="flex-shrink-0">
             <div className="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden" style={{ background: 'var(--v2-ivory-2)' }}>
               <Image
-                src="/images/headshot.JPG"
+                src="/images/headshot.png"
                 alt="Chris Cable"
                 fill
                 sizes="160px"
