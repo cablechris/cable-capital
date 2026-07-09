@@ -244,8 +244,8 @@ export default function BarbellManifesto() {
         </h1>
         <p className="bb-essay-lede bb-rev">
           Most people spend their lives seeking balance through moderation. But what if that&apos;s
-          exactly what&apos;s holding them back? The barbell strategy - and my favorite meme of all
-          time - reveal why the comfortable middle is actually the riskiest place to be.
+          exactly what&apos;s holding them back? The barbell strategy, and the upside-down bell curve
+          behind it, point to the same idea: the comfortable middle is the riskiest place to be.
         </p>
         <p>
           The barbell strategy seems like just investment advice at first: put most of your assets
@@ -255,13 +255,13 @@ export default function BarbellManifesto() {
           the mediocre middle.
         </p>
         <p>
-          What&apos;s compelling isn&apos;t the traditional focus on the average - it&apos;s the
-          recognition of where value emerges: at one end, those with lower IQ scores often succeed
-          by keeping things simple and relying on intuition built over thousands of years of human
-          evolution. At the other, those with higher IQ scores push theoretical boundaries and spot
-          patterns others miss. Both extremes drive progress in their own unique ways, while the
-          comfortable middle - despite having &apos;average&apos; intelligence - often produces
-          little of lasting value.
+          Picture a bell curve turned upside down. The mass everyone assumes is in the middle is
+          thin there, and the height sits out at the two ends. That is where the value collects. One
+          end is the oldest human stuff - presence, patience, a few relationships you keep for life -
+          the things that have paid off for thousands of years and are not about to stop. The other
+          is the frontier, where a concentrated bet on something most people cannot see yet is what
+          changes everything. Both ends compound quietly. The crowded middle, for all the safety it
+          promises, rarely produces much that lasts.
         </p>
         <p>
           These two models - the barbell strategy and the reverse bell curve - are really telling us
@@ -349,7 +349,7 @@ export default function BarbellManifesto() {
         </p>
         <p className="bb-essay-sub">What I consciously avoid - the middle ground:</p>
         <ul>
-          <li>Mindless social media browsing (I try do this by using Lists on this website)</li>
+          <li>Mindless social-media scrolling</li>
           <li>&quot;Balanced&quot; workouts that achieve neither strength nor skill</li>
           <li>
             That dangerous middle ground of knowledge where you&apos;ve read enough to have an
@@ -449,9 +449,9 @@ export default function BarbellManifesto() {
           comfortable middle, each activity becomes not just more focused but more alive.
         </p>
         <p>
-          There&apos;s no perfect answer to life&apos;s complexity. But that simple IQ distribution
-          meme reveals a profound truth: while everyone rushes to the middle seeking safety, the
-          real returns - in life, learning, and wealth - quietly compound at the edges.
+          There&apos;s no perfect answer to life&apos;s complexity. But the reverse bell curve tells
+          a simple truth: while everyone rushes to the middle seeking safety, the real returns - in
+          life, learning, and wealth - quietly compound at the edges.
         </p>
       </section>
 
