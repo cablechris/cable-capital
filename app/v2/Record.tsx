@@ -2,70 +2,13 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { archive } from '../data/archive'
 
-// The archive index: the actual work, newest first. Replaces the old
-// abstract Pillars cards and the placeholder Writing list with one
-// content-first section that shows the real theses, memos, and research.
-const entries = [
-  {
-    date: 'Jul 2026',
-    type: 'Memo',
-    title: 'Panthalassa',
-    deck: 'A wave-powered ocean data center Thiel just backed. The platform may be worth building; the cargo it carries is racing to zero.',
-    status: 'PASS',
-    href: '/memos/panthalassa',
-  },
-  {
-    date: 'May 2026',
-    type: 'Thesis',
-    title: 'Photonic Interconnect',
-    deck: 'Light as the structural successor to copper in AI scale-up.',
-    status: 'Active conviction',
-    href: '/thesis/photonic-interconnect',
-  },
-  {
-    date: '2026',
-    type: 'Research',
-    title: 'Hard Limits on Sparse Bioelectric Control',
-    deck: 'Bioelectric repair is a dimensionality problem, not a dose problem. Below a critical number of intervention sites, no amount of stimulation works.',
-    status: '',
-    href: '/papers/sparse-bioelectric-control',
-  },
-  {
-    date: '2026',
-    type: 'Research',
-    title: 'Stranded or Fungible?',
-    deck: 'Testing whether Extropic’s thermodynamic-computing moat survives scale. On what I could measure, the moat looks more like a head start.',
-    status: '',
-    href: '/papers/thermodynamic-computing-moat',
-  },
-  {
-    date: 'May 2026',
-    type: 'Memo',
-    title: 'Dolphin Network',
-    deck: 'Distributed inference, narrowed. The bet is workload economics, not sharding.',
-    status: 'MONITOR',
-    href: '/memos/dolphin-network',
-  },
-  {
-    date: 'May 2026',
-    type: 'Memo',
-    title: 'Tenstorrent',
-    deck: 'The company is real. The security is not clean enough.',
-    status: 'PASS',
-    href: '/memos/tenstorrent',
-  },
-  {
-    date: '2025',
-    type: 'Research',
-    title: 'Culture Without Function',
-    deck: 'Emergent coordination in artificial systems, through costly signals.',
-    status: '',
-    href: '/papers/emergent-culture',
-  },
-]
+// The archive index: the actual work, newest first, read from the single
+// source of truth in app/data/archive.ts (shared with the RSS feed).
+const entries = archive
 
-const statusColor = (s: string) => {
+const statusColor = (s?: string) => {
   if (s === 'PASS' || s === 'Active conviction') return 'var(--v2-oxblood)'
   if (s === 'MONITOR') return '#9A6A1E'
   return 'var(--v2-ink-4)'
@@ -120,7 +63,7 @@ export default function Record() {
               >
                 <div className="col-span-12 lg:col-span-2 flex lg:block items-baseline gap-4">
                   <span className="v2-mono text-[11px] tracking-[0.18em]" style={{ color: 'var(--v2-ink-4)' }}>
-                    {e.date}
+                    {e.displayDate}
                   </span>
                   <span className="v2-mono text-[10px] tracking-[0.18em] uppercase lg:mt-2 lg:block" style={{ color: 'var(--v2-ink-4)' }}>
                     {e.type}
