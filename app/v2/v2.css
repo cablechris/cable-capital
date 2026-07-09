@@ -120,6 +120,23 @@
   to { transform: translate3d(-50%, 0, 0); }
 }
 
+/* Hero extreme-node halos — a slow, cheap breathing pulse, switched on by the
+   hero intro timeline once the draw-in has resolved (see HeroFrame.tsx). */
+.hero-node-halo {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.hero-node-halo.is-live {
+  animation: hero-node-pulse 5.2s var(--v2-ease) infinite;
+}
+@keyframes hero-node-pulse {
+  0%, 100% { opacity: 0.14; transform: scale(1); }
+  50% { opacity: 0.24; transform: scale(1.08); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-node-halo.is-live { animation: none; }
+}
+
 /* Barbell curve breathing */
 @keyframes v2-pulse-a {
   0%, 100% { transform: translate(0, 0); opacity: 0.85; }
