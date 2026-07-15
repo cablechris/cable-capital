@@ -1,12 +1,12 @@
 import DolphinNetworkMemo from './DolphinNetworkMemo'
 
 export const metadata = {
-  title: 'Dolphin Network — MONITOR',
+  title: 'Dolphin Network - STARTER',
   description:
-    'Distributed inference, narrowed. Real arbitrage in audio and small LLMs, a marginal edge in image, a fading thesis in video. The bet is workload economics, not sharding.',
+    'An AI lab whose uncensored models power Venice for three million users. The network is live. The token buys itself with 100% of network revenue. The API has not opened yet.',
   openGraph: {
-    title: 'Dolphin Network — MONITOR',
-    description: 'Distributed inference, narrowed. The bet is workload economics, not sharding.',
+    title: 'Dolphin Network - STARTER',
+    description: 'They built the customer before they built the network. The customer has been at the door the whole time.',
     type: 'article',
     url: 'https://cable.capital/memos/dolphin-network',
   },

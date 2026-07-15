@@ -20,10 +20,10 @@ const memos = [
     number: '02',
     slug: 'dolphin-network',
     title: 'Dolphin Network',
-    deck: 'Distributed inference, narrowed. Real arbitrage in audio and small LLMs, a marginal edge in image, a fading thesis in video. The bet is workload economics, not sharding.',
-    date: 'May 2026',
-    verdict: 'MONITOR',
-    tags: ['Decentralized AI', 'Pre-Token', 'Inference'],
+    deck: 'They built the customer before they built the network. Dolphin’s uncensored models power Venice for three million users. The network is live. The token buys itself with 100% of network revenue. The API has not opened yet.',
+    date: 'Updated Jul 2026',
+    verdict: 'STARTER',
+    tags: ['Decentralized AI', 'Post-TGE', 'Inference', 'Base'],
   },
   {
     number: '01',
@@ -39,6 +39,7 @@ const memos = [
 const verdictColor = (v: string) => {
   if (v === 'PASS') return 'var(--v2-oxblood)'
   if (v === 'MONITOR') return '#9A6A1E'
+  if (v === 'STARTER') return '#2E6E86'
   return '#3B6B4A'
 }
 
