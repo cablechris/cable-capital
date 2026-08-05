@@ -29,6 +29,18 @@ export interface ArchiveEntry {
 
 export const archive: ArchiveEntry[] = [
   {
+    slug: 'venice',
+    href: '/memos/venice',
+    type: 'Memo',
+    title: 'Venice AI',
+    deck: 'A dual-token AI protocol — VVV for ownership, DIEM for compute — built for autonomous agents, not humans.',
+    description:
+      'Active conviction. Venice separates the value of the network (VVV) from the price of compute (DIEM), inoculating it against the margin compression collapsing the centralized AI stack. The bet is that the next wave of inference demand comes from agents, and that decentralized, uncensored infrastructure is the only place it can run.',
+    status: 'Active conviction',
+    date: '2026-08-01',
+    displayDate: 'Aug 2026',
+  },
+  {
     slug: 'panthalassa',
     href: '/memos/panthalassa',
     type: 'Memo',

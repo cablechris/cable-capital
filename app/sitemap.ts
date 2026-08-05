@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/about',
     '/v2/barbell',
     '/thesis/photonic-interconnect',
+    '/memos/venice',
     '/memos/panthalassa',
     '/memos/tenstorrent',
     '/memos/dolphin-network',

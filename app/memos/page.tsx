@@ -8,6 +8,15 @@ export const metadata = {
 
 const memos = [
   {
+    number: '04',
+    slug: 'venice',
+    title: 'Venice AI',
+    deck: 'A decentralized, full-stack AI protocol with a dual-token model — VVV for ownership, DIEM for compute — built for the autonomous agent economy rather than human users. The thesis: agent demand is where inference goes, and it needs infrastructure centralized players can’t offer.',
+    date: 'Aug 2026',
+    verdict: 'Active conviction',
+    tags: ['Decentralized AI', 'Dual-Token', 'Agent Economy', 'Base'],
+  },
+  {
     number: '03',
     slug: 'panthalassa',
     title: 'Panthalassa',
