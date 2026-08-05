@@ -9,15 +9,6 @@ export const metadata = {
 const memos = [
   {
     number: '04',
-    slug: 'venice',
-    title: 'Venice AI',
-    deck: 'A decentralized, full-stack AI protocol with a dual-token model — VVV for ownership, DIEM for compute — built for the autonomous agent economy rather than human users. The thesis: agent demand is where inference goes, and it needs infrastructure centralized players can’t offer.',
-    date: 'Aug 2026',
-    verdict: 'Active conviction',
-    tags: ['Decentralized AI', 'Dual-Token', 'Agent Economy', 'Base'],
-  },
-  {
-    number: '03',
     slug: 'panthalassa',
     title: 'Panthalassa',
     deck: 'A wave-powered ocean data center Thiel just backed near USD 1B, offered to me at USD 1.7B pre. The platform may be worth building. The compute business on the label is its weakest asset, and the cargo it carries is racing to zero.',
@@ -26,7 +17,7 @@ const memos = [
     tags: ['Wave Energy', 'Ocean Compute', 'Private Round'],
   },
   {
-    number: '02',
+    number: '03',
     slug: 'dolphin-network',
     title: 'Dolphin Network',
     deck: 'They built the customer before they built the network. Dolphin’s uncensored models power Venice for three million users. The network is live. The token buys itself with 100% of network revenue. The API has not opened yet.',
@@ -35,13 +26,22 @@ const memos = [
     tags: ['Decentralized AI', 'Post-TGE', 'Inference', 'Base'],
   },
   {
-    number: '01',
+    number: '02',
     slug: 'tenstorrent',
     title: 'Tenstorrent',
     deck: 'The company is real. The security is not clean enough. A late-stage convertible into a credible AI inference and IP company, via a Hiive SPV with opaque conversion terms.',
     date: 'May 2026',
     verdict: 'PASS',
     tags: ['AI Silicon', 'Convertible Note', 'Hiive SPV'],
+  },
+  {
+    number: '01',
+    slug: 'venice',
+    title: 'Venice AI',
+    deck: 'A decentralized, full-stack AI protocol with a dual-token model — VVV for ownership, DIEM for compute — built for the autonomous agent economy rather than human users. The thesis: agent demand is where inference goes, and it needs infrastructure centralized players can’t offer.',
+    date: 'Nov 2025',
+    verdict: 'Active conviction',
+    tags: ['Decentralized AI', 'Dual-Token', 'Agent Economy', 'Base'],
   },
 ]
 
