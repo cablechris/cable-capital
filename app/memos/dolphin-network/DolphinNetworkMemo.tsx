@@ -346,9 +346,7 @@ export default function DolphinNetworkMemo() {
 
           <p>By the time that lab, Dolphin, issued a token, its models were the default uncensored layer on Venice for three million users, and its open releases pulled five million downloads a month on Hugging Face. Only then did they stand up a network to serve them.</p>
 
-          <p>The current network state reflects that ordering. Datagen.dphn.ai runs 1.5 million tokens per second across 14,000 GPUs. That is real production capacity. The workload is a coding dataset the network is generating for itself, because the public API has not opened. Nodes earn POD emissions from treasury; there is no external revenue to buy back against yet. That is the timing risk in one sentence.</p>
-
-          <p>Correction from the May draft: it framed Venice as a potential Dolphin competitor. Voorhees is actually a Dolphin investor and a POD holder; the two projects are one thing, not two. Fixing that reading is what turned the memo from a Monitor into a starter position.</p>
+          <p>The current network state reflects that ordering. Peak stress testing ran 14,000 GPUs through 1.4 trillion tokens in two weeks. Supply is intentionally suppressed right now to around 800 GPUs at $0.10 per million tokens in rewards, held low while the team finishes anti-cheat work and prepares to migrate to Qwen 3.6 27B ahead of the API launch. That capacity is a demonstrated ceiling, not a running rate. The workload is still a coding dataset the network is generating for itself, because the public API has not opened. Nodes earn POD emissions from treasury; there is no external revenue to buy back against yet. That is the timing risk in one sentence.</p>
         </section>
 
         <section>
@@ -362,7 +360,7 @@ export default function DolphinNetworkMemo() {
 
           <p>Dolphin&rsquo;s answer is live-weight proofs. Sample the tensors actually resident in the runtime at the moment a response is produced, compare against the approved model&rsquo;s manifest. Overhead is around 0.1% of a full re-inference. Cheap enough to run on every response. It verifies what is loaded, not what is emitted, so it extends to image, audio, and video where token-based verification breaks down.</p>
 
-          <p>Which matters, because the cost advantage is largest in exactly those modalities. A 4090 is 12 to 18 times more efficient per dollar than an H100 for audio, and 5 to 8 times for image and video. Those are also the highest-margin modalities in AI. ElevenLabs alone is reportedly near $500M ARR on audio.</p>
+          <p>Which matters, because the cost advantage is largest in exactly those modalities. A 4090 is 12 to 18 times more efficient per dollar than an H100 for audio, and 5 to 8 times for image and video. Those are also the highest-margin modalities in AI. ElevenLabs alone is reportedly near $500M ARR on audio. And the video read has just shifted: MiniMax H3, released in July, matches Sedance quality on a single RTX 6000 with audio built in. That moves the video tier from speculative to plausible on the roadmap.</p>
 
           <div className="pullquote">
             The verification stack and the revenue stack are the same moat.
@@ -409,6 +407,8 @@ export default function DolphinNetworkMemo() {
 
           <p>OpenRouter routes about a billion dollars a year in inference. Even 1% capture is $10M gross and $2.9M of buyback. Against a $15M market cap that is a 19% annualized bid on the token. Against $172M FDV it is 1.7%. Reflexivity works on the near-term price and competes with fully diluted supply long-term. Fine, provided you are honest about the timeframe you are trading.</p>
 
+          <p>That math is the wholesale API. The team is building two adjacent surfaces on top of it. Flipper is a coding harness targeting Claude Code and Codex on cost, with an MVP in about four weeks, using 27B subagents planned by Qwen Max. Sticky developer relationships convert better than API rentals, and this is the more defensible surface long-term. Fusion is an intelligent router: most requests to 27B, complex ones to a larger on-network model (Deepseek Flash, 300B parameters), or out to Venice for frontier quality, paid in API credits from a GLM 700B fine-tune Dolphin is finishing for Venice right now. None of this changes the buyback mechanism. All of it feeds the same contract.</p>
+
           <h3>Ownership</h3>
 
           <table className="tier-table">
@@ -443,7 +443,7 @@ export default function DolphinNetworkMemo() {
             </tbody>
           </table>
 
-          <p>Nobody signs a twelve-year vest without believing in the outcome. The team also hard-committed to no equity. If they ever need a legal entity to accept fiat, it will be non-profit, Morpho-style. The token is the only value-capture instrument. That combination, more than any single mechanism, is what makes this a real bet rather than a fair-launch fantasy.</p>
+          <p>Nobody signs a twelve-year vest without believing in the outcome. The team also hard-committed to no equity. The Cayman service company that will accept fiat and list on OpenRouter was formed in mid-July, with a director appointed. It remits 99% of collected revenue to the protocol and keeps 1% as an administrative margin. The token remains the only value-capture instrument. That combination, more than any single mechanism, is what makes this a real bet rather than a fair-launch fantasy.</p>
         </section>
 
         <section>
@@ -525,7 +525,7 @@ export default function DolphinNetworkMemo() {
 
           <p>Scale up if any of these land: V2 worker release ships, the public API opens, an OpenRouter listing goes live near the $0.70 mark, first on-chain buyback executions show visible volume, governance publishes the buyback-to-xPOD split at 50% or higher.</p>
 
-          <p>Cut the position if the API slips past September with no update, or first-month OpenRouter revenue is under $100k, or independent Qwen 27B benchmarks come in under 75% of Opus 4.7, or the buyback contract shows negligible activity 60 days after launch, or Venice reduces routing volume.</p>
+          <p>Cut the position if the API slips past October with no update, or first-month OpenRouter revenue is under $100k, or independent Qwen 3.6 27B benchmarks come in under 75% of Opus 5, or the buyback contract shows negligible activity 60 days after launch, or Venice reduces routing volume to Dolphin models.</p>
 
           <p>Four things I don&rsquo;t know. When the API opens (soon has been the answer for six weeks). How the buyback split gets set. Whether the Qwen benchmarks survive independent evaluation. Whether Venice keeps growing past three million.</p>
 
@@ -537,7 +537,7 @@ export default function DolphinNetworkMemo() {
         <footer className="footer">
           <div>cable.capital &middot; clarity under complexity</div>
           <div>CC &middot; 2026</div>
-          <p className="disclaimer">Not investment advice. Personal research notes published for transparency. This memo supersedes the May 2026 draft that framed Venice as a Dolphin competitor. That framing was factually wrong. Venice is Dolphin&rsquo;s anchor customer, and Erik Voorhees is a Dolphin investor. Cable Capital holdings disclosed: VVV, sVVV, DIEM, and after this memo a starter POD position staked into xPOD. The four positions are one thesis expressed four ways. The concentration is real.</p>
+          <p className="disclaimer">Not investment advice. Personal research notes published for transparency. This memo supersedes the May 2026 draft that framed Venice as a Dolphin competitor. That framing was factually wrong. Venice is Dolphin&rsquo;s anchor customer, and Erik Voorhees is a Dolphin investor. Cable Capital holdings disclosed: VVV, sVVV, DIEM, and after this memo a starter POD position staked into xPOD. The four positions share a thesis on the model layer, where Dolphin builds the uncensored models Venice sells. They diverge on the inference layer, where Venice is building its own datacentre and the two projects may compete rather than complement. Size the aggregate exposure accordingly.</p>
         </footer>
 
       </div>
