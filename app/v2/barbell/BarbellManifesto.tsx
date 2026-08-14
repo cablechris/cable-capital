@@ -5,38 +5,6 @@ import Link from 'next/link'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-/* Curve geometry: a consensus bell and a bimodal barbell, sampled with
-   identical point counts so GSAP can tween one path into the other. */
-function gauss(x: number, mu: number, sigma: number) {
-  return Math.exp(-((x - mu) ** 2) / (2 * sigma * sigma))
-}
-
-function curvePath(fn: (x: number) => number) {
-  const pts: string[] = []
-  for (let i = 0; i <= 140; i++) {
-    const x = (i / 140) * 1000
-    const y = 380 - fn(x)
-    pts.push(`${x.toFixed(1)} ${y.toFixed(1)}`)
-  }
-  return `M 0 380 L ${pts.join(' L ')} L 1000 380 Z`
-}
-
-const BELL = curvePath((x) => 300 * gauss(x, 500, 150))
-const BIMODAL = curvePath((x) => Math.min(330, 330 * (gauss(x, 110, 62) + gauss(x, 890, 62))))
-
-function Words({ text }: { text: string }) {
-  return (
-    <>
-      {text.split(' ').map((w, i) => (
-        <span key={i} className="bb-w">
-          {w}
-          {' '}
-        </span>
-      ))}
-    </>
-  )
-}
-
 export default function BarbellManifesto() {
   const rootRef = useRef<HTMLDivElement>(null)
 
@@ -55,93 +23,7 @@ export default function BarbellManifesto() {
         scrollTrigger: { trigger: root, start: 'top top', end: 'bottom bottom', scrub: 0.3 },
       })
 
-      /* ---- Act I: the crush ---- */
-      const heroTl = gsap.timeline({
-        defaults: { ease: 'none' },
-        scrollTrigger: {
-          trigger: '.bb-hero',
-          start: 'top top',
-          end: '+=170%',
-          pin: true,
-          scrub: 0.6,
-        },
-      })
-
-      heroTl
-        .to('.bb-hero-eyebrow, .bb-scrollhint', { opacity: 0, duration: 0.12 }, 0)
-        .fromTo('.bb-slab--left', { x: '-62vw' }, { x: 0, duration: 0.55 }, 0)
-        .fromTo('.bb-slab--right', { x: '62vw' }, { x: 0, duration: 0.55 }, 0)
-        .to(
-          '.bb-hero-word',
-          {
-            scaleX: 0.04,
-            scaleY: 0.45,
-            opacity: 0,
-            filter: 'blur(10px)',
-            duration: 0.38,
-          },
-          0.2
-        )
-        .to('.bb-bar', { scaleX: 1, duration: 0.28, ease: 'power2.out' }, 0.5)
-        .to('.bb-hero-label', { opacity: 1, duration: 0.18 }, 0.72)
-        .to('.bb-hero-inner', { opacity: 0, y: -40, duration: 0.15 }, 0.92)
-
-      /* ---- Act II: the curve morph (bell -> barbell) ---- */
-      gsap.set('.bb-curve-path', { attr: { d: BELL } })
-      gsap.set('.bb-pole-label', { opacity: 0 })
-
-      const curveTl = gsap.timeline({
-        defaults: { ease: 'none' },
-        scrollTrigger: {
-          trigger: '.bb-curve',
-          start: 'top top',
-          end: '+=200%',
-          pin: true,
-          scrub: 0.6,
-        },
-      })
-
-      curveTl
-        .to('.bb-curve-path', { attr: { d: BIMODAL }, duration: 0.5, ease: 'power1.inOut' }, 0.1)
-        .to('.bb-pole-label', { opacity: 1, stagger: 0.05, duration: 0.15 }, 0.6)
-
-      /* ---- Act III: strike the middle ---- */
-      gsap.from('.bb-pole-item', {
-        opacity: 0,
-        y: 30,
-        stagger: 0.08,
-        duration: 0.9,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: '.bb-poles-grid', start: 'top 75%', once: true },
-      })
-      gsap.from('.bb-mid-item', {
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        scrollTrigger: { trigger: '.bb-poles-grid', start: 'top 75%', once: true },
-      })
-      gsap.fromTo(
-        '.bb-mid-item',
-        { '--bb-strike': 0 },
-        {
-          '--bb-strike': 1,
-          stagger: 0.15,
-          duration: 0.7,
-          ease: 'power2.inOut',
-          delay: 0.4,
-          scrollTrigger: { trigger: '.bb-poles-grid', start: 'top 60%', once: true },
-        }
-      )
-      gsap.from('.bb-poles-title .bb-w', {
-        opacity: 0,
-        y: 26,
-        stagger: 0.05,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: '.bb-poles', start: 'top 70%', once: true },
-      })
-
-      /* ---- reading sections: gentle reveal on headings + ledes ---- */
+      /* reading sections: gentle reveal on headings + ledes */
       gsap.utils.toArray<HTMLElement>('.bb-essay').forEach((section) => {
         gsap.from(section.querySelectorAll('.bb-rev'), {
           opacity: 0,
@@ -151,38 +33,6 @@ export default function BarbellManifesto() {
           ease: 'power3.out',
           scrollTrigger: { trigger: section, start: 'top 80%', once: true },
         })
-      })
-
-      /* ---- Act V: close ---- */
-      gsap.from('.bb-glyph-bar', {
-        scaleX: 0,
-        duration: 1.1,
-        ease: 'power3.inOut',
-        scrollTrigger: { trigger: '.bb-close', start: 'top 65%', once: true },
-      })
-      gsap.from('.bb-glyph-weight', {
-        opacity: 0,
-        scale: 0.4,
-        duration: 0.7,
-        delay: 0.6,
-        ease: 'back.out(2)',
-        scrollTrigger: { trigger: '.bb-close', start: 'top 65%', once: true },
-      })
-      gsap.from('.bb-close-line .bb-w', {
-        opacity: 0,
-        y: 30,
-        stagger: 0.06,
-        duration: 0.9,
-        ease: 'power3.out',
-        delay: 0.4,
-        scrollTrigger: { trigger: '.bb-close', start: 'top 65%', once: true },
-      })
-      gsap.from('.bb-close-cta', {
-        opacity: 0,
-        y: 16,
-        duration: 0.8,
-        delay: 1.2,
-        scrollTrigger: { trigger: '.bb-close', start: 'top 65%', once: true },
       })
     })
 
@@ -198,45 +48,6 @@ export default function BarbellManifesto() {
         <span>The Barbell · A Manifesto</span>
       </nav>
 
-      {/* Act I — the crush */}
-      <section className="bb-hero" aria-label="The middle, crushed">
-        <div className="bb-hero-inner" style={{ position: 'absolute', inset: 0 }}>
-          <div className="bb-hero-eyebrow v2-eyebrow">Avoiding the middle</div>
-
-          <div className="bb-slab-pos bb-slab-pos--left">
-            <div className="bb-slab bb-slab--left" />
-          </div>
-          <div className="bb-slab-pos bb-slab-pos--right">
-            <div className="bb-slab bb-slab--right" />
-          </div>
-
-          <div className="bb-bar" aria-hidden />
-
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <h1 className="bb-hero-word">the middle</h1>
-          </div>
-
-          <div className="bb-hero-label v2-eyebrow" style={{ color: 'var(--v2-oxblood)' }}>
-            Everything at the ends. Nothing in between.
-          </div>
-
-          <div className="bb-scrollhint">
-            <span className="v2-eyebrow" style={{ fontSize: 10 }}>
-              Scroll
-            </span>
-            <span className="bb-scrollhint-line" />
-          </div>
-        </div>
-      </section>
-
       {/* Essay — opening */}
       <section className="bb-essay bb-essay--intro">
         <h1 className="bb-essay-title bb-rev">
@@ -244,8 +55,8 @@ export default function BarbellManifesto() {
         </h1>
         <p className="bb-essay-lede bb-rev">
           Most people spend their lives seeking balance through moderation. But what if that&apos;s
-          exactly what&apos;s holding them back? The barbell strategy, and the upside-down bell curve
-          behind it, point to the same idea: the comfortable middle is the riskiest place to be.
+          exactly what&apos;s holding them back? The barbell strategy - and my favorite meme of all
+          time - reveal why the comfortable middle is actually the riskiest place to be.
         </p>
         <p>
           The barbell strategy seems like just investment advice at first: put most of your assets
@@ -255,13 +66,13 @@ export default function BarbellManifesto() {
           the mediocre middle.
         </p>
         <p>
-          Picture a bell curve turned upside down. The mass everyone assumes is in the middle is
-          thin there, and the height sits out at the two ends. That is where the value collects. One
-          end is the oldest human stuff - presence, patience, a few relationships you keep for life -
-          the things that have paid off for thousands of years and are not about to stop. The other
-          is the frontier, where a concentrated bet on something most people cannot see yet is what
-          changes everything. Both ends compound quietly. The crowded middle, for all the safety it
-          promises, rarely produces much that lasts.
+          What&apos;s compelling isn&apos;t the traditional focus on the average - it&apos;s the
+          recognition of where value emerges: at one end, those with lower IQ scores often succeed by
+          keeping things simple and relying on intuition built over thousands of years of human
+          evolution. At the other, those with higher IQ scores push theoretical boundaries and spot
+          patterns others miss. Both extremes drive progress in their own unique ways, while the
+          comfortable middle - despite having &apos;average&apos; intelligence - often produces
+          little of lasting value.
         </p>
         <p>
           These two models - the barbell strategy and the reverse bell curve - are really telling us
@@ -273,30 +84,6 @@ export default function BarbellManifesto() {
           depth in anything. The majority clusters in the middle because it feels safe, but that
           perceived safety is an illusion.
         </p>
-      </section>
-
-      {/* Act II — the curve */}
-      <section className="bb-curve" aria-label="From the bell curve to the barbell">
-        <div className="bb-curve-head">
-          <div className="v2-eyebrow" style={{ color: 'var(--v2-oxblood)' }}>
-            The reverse bell curve
-          </div>
-        </div>
-
-        <div className="bb-curve-svgwrap">
-          <svg className="bb-curve-svg" viewBox="0 0 1000 420" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-            <line x1="0" y1="380" x2="1000" y2="380" stroke="var(--v2-rule-strong)" strokeWidth="1" />
-            <path
-              className="bb-curve-path"
-              d={BIMODAL}
-              fill="rgba(107, 30, 30, 0.07)"
-              stroke="var(--v2-ink)"
-              strokeWidth="1.75"
-            />
-          </svg>
-          <div className="bb-pole-label bb-pole-label--left">Capped downside</div>
-          <div className="bb-pole-label bb-pole-label--right">Uncapped upside</div>
-        </div>
       </section>
 
       {/* Essay — how I try to live this */}
@@ -349,7 +136,7 @@ export default function BarbellManifesto() {
         </p>
         <p className="bb-essay-sub">What I consciously avoid - the middle ground:</p>
         <ul>
-          <li>Mindless social-media scrolling</li>
+          <li>Mindless social media browsing (I try do this by using Lists on this website)</li>
           <li>&quot;Balanced&quot; workouts that achieve neither strength nor skill</li>
           <li>
             That dangerous middle ground of knowledge where you&apos;ve read enough to have an
@@ -359,50 +146,6 @@ export default function BarbellManifesto() {
           <li>The illusion of productivity through constant connectivity</li>
           <li>Moderate positions that seem safe but compound hidden risks</li>
         </ul>
-      </section>
-
-      {/* Act III — two poles */}
-      <section className="bb-poles" aria-label="Two poles, nothing between">
-        <div className="bb-poles-inner">
-          <div className="v2-eyebrow" style={{ color: 'var(--v2-oxblood)', marginBottom: 28 }}>
-            The shape of the bet
-          </div>
-          <h2 className="bb-poles-title">
-            <Words text="Two poles. Nothing between." />
-          </h2>
-
-          <div className="bb-poles-grid">
-            <div>
-              <div className="v2-eyebrow" style={{ color: 'var(--v2-oxblood)', marginBottom: 18 }}>
-                One pole · Survive anything
-              </div>
-              <div className="bb-pole-item">Real estate in scarce, desirable places.</div>
-              <div className="bb-pole-item">Compound movements, done daily.</div>
-              <div className="bb-pole-item">Physical books.</div>
-              <div className="bb-pole-item">Long-term people.</div>
-            </div>
-
-            <div className="bb-mid-col bb-mid-wrap">
-              <div className="v2-eyebrow" style={{ color: 'rgba(246,242,234,0.4)', marginBottom: 18 }}>
-                The middle
-              </div>
-              <span className="bb-mid-item">balanced funds</span>
-              <span className="bb-mid-item">hedged opinions</span>
-              <span className="bb-mid-item">defensible careers</span>
-              <span className="bb-mid-item">lukewarm conviction</span>
-            </div>
-
-            <div>
-              <div className="v2-eyebrow" style={{ color: 'var(--v2-oxblood)', marginBottom: 18 }}>
-                The other · Change everything
-              </div>
-              <div className="bb-pole-item">Concentrated bets on AI and crypto.</div>
-              <div className="bb-pole-item">Frontier research.</div>
-              <div className="bb-pole-item">Sized to conviction.</div>
-              <div className="bb-pole-item">No half-measures.</div>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* Essay — the investment parallel */}
@@ -449,26 +192,10 @@ export default function BarbellManifesto() {
           comfortable middle, each activity becomes not just more focused but more alive.
         </p>
         <p>
-          There&apos;s no perfect answer to life&apos;s complexity. But the reverse bell curve tells
-          a simple truth: while everyone rushes to the middle seeking safety, the real returns - in
-          life, learning, and wealth - quietly compound at the edges.
+          There&apos;s no perfect answer to life&apos;s complexity. But that simple IQ distribution
+          meme reveals a profound truth: while everyone rushes to the middle seeking safety, the real
+          returns - in life, learning, and wealth - quietly compound at the edges.
         </p>
-      </section>
-
-      {/* Act V — close */}
-      <section className="bb-close" aria-label="Close">
-        <div className="bb-glyph" aria-hidden>
-          <span className="bb-glyph-weight" />
-          <span className="bb-glyph-bar" />
-          <span className="bb-glyph-weight" />
-        </div>
-        <p className="bb-close-line">
-          <Words text="The real returns quietly compound at the edges." />
-        </p>
-        <Link href="/v2" className="bb-close-cta">
-          <span>Enter Cable Capital</span>
-          <span>→</span>
-        </Link>
       </section>
     </div>
   )

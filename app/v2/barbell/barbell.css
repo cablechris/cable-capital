@@ -419,7 +419,8 @@
 }
 
 .bb-essay--intro {
-  padding-top: clamp(40px, 8vh, 96px);
+  /* First section under the fixed nav (no hero above it) - clear the bar with air. */
+  padding-top: clamp(112px, 18vh, 200px);
 }
 
 .bb-essay-title {
