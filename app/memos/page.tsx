@@ -8,7 +8,7 @@ export const metadata = {
 
 const memos = [
   {
-    number: '04',
+    number: '03',
     slug: 'panthalassa',
     title: 'Panthalassa',
     deck: 'A wave-powered ocean data center Thiel just backed near USD 1B, offered to me at USD 1.7B pre. The platform may be worth building. The compute business on the label is its weakest asset, and the cargo it carries is racing to zero.',
@@ -17,22 +17,13 @@ const memos = [
     tags: ['Wave Energy', 'Ocean Compute', 'Private Round'],
   },
   {
-    number: '03',
+    number: '02',
     slug: 'dolphin-network',
     title: 'Dolphin Network',
     deck: 'They built the customer before they built the network. Dolphin’s uncensored models power Venice for three million users. The network is live. The token buys itself with 100% of network revenue. The API has not opened yet.',
     date: 'Updated Jul 2026',
     verdict: 'STARTER',
     tags: ['Decentralized AI', 'Post-TGE', 'Inference', 'Base'],
-  },
-  {
-    number: '02',
-    slug: 'tenstorrent',
-    title: 'Tenstorrent',
-    deck: 'The company is real. The security is not clean enough. A late-stage convertible into a credible AI inference and IP company, via a Hiive SPV with opaque conversion terms.',
-    date: 'May 2026',
-    verdict: 'PASS',
-    tags: ['AI Silicon', 'Convertible Note', 'Hiive SPV'],
   },
   {
     number: '01',

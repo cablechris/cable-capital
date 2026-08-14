@@ -14,7 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/thesis/photonic-interconnect',
     '/memos/venice',
     '/memos/panthalassa',
-    '/memos/tenstorrent',
     '/memos/dolphin-network',
     '/papers/emergent-culture',
     '/papers/sparse-bioelectric-control',

@@ -64,17 +64,6 @@ export const archive: ArchiveEntry[] = [
     displayDate: 'May 2026',
   },
   {
-    slug: 'tenstorrent',
-    href: '/memos/tenstorrent',
-    type: 'Memo',
-    title: 'Tenstorrent',
-    deck: 'The company is real. The security is not clean enough.',
-    description: 'PASS. The company is real. The security is not clean enough.',
-    status: 'PASS',
-    date: '2026-05-01',
-    displayDate: 'May 2026',
-  },
-  {
     slug: 'sparse-bioelectric-control',
     href: '/papers/sparse-bioelectric-control',
     type: 'Research',

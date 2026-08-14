@@ -28,15 +28,9 @@ export default function Record() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 lg:mb-16">
           <div>
-            <div className="v2-mono text-[11px] tracking-[0.22em] uppercase mb-4" style={{ color: 'var(--v2-oxblood)' }}>
+            <div className="v2-mono text-[11px] tracking-[0.22em] uppercase" style={{ color: 'var(--v2-oxblood)' }}>
               The record
             </div>
-            <h2
-              className="v2-serif"
-              style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', lineHeight: 1.05, letterSpacing: '-0.015em', maxWidth: 'min(20ch, 100%)' }}
-            >
-              Everything I&apos;ve written down.
-            </h2>
           </div>
           <div className="flex gap-6 v2-mono text-[11px] tracking-[0.18em] uppercase" style={{ color: 'var(--v2-ink-3)' }}>
             {cats.map((c) => (
