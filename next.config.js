@@ -20,12 +20,15 @@ const nextConfig = {
     optimizeCss: false,
     scrollRestoration: true,
   },
-  // /blog is now the Essays section on the V2 shell — no longer redirected
-  // home. /talks stays retired (2019–2022 marketing content is off-brand).
-  // /v2/barbell now redirects to /barbell (top-level path) via its own
-  // page-level Next redirect for clean URLs.
+  // Two combined indexes replace the five old ones. Old URLs redirect to
+  // their new home so inbound links (external and archived) stay valid.
+  // Detail pages under /memos/*, /papers/*, /thesis/*, /blog/* keep their
+  // slugs; only the aggregate indexes moved.
   async redirects() {
     return [
+      { source: '/memos', destination: '/thesis', permanent: true },
+      { source: '/papers', destination: '/research', permanent: true },
+      { source: '/blog', destination: '/research', permanent: true },
       { source: '/talks', destination: '/', permanent: true },
     ]
   },

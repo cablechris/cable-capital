@@ -159,7 +159,7 @@ export default function PanthalassaMemo() {
 
         <header className="memo-masthead">
           <div className="mark">cable<span>.</span>capital</div>
-          <div><a href="/memos">Memos</a> &middot; July 2026</div>
+          <div><a href="/thesis">Theses &amp; Memos</a> &middot; July 2026</div>
         </header>
 
         <div className="memo-eyebrow">

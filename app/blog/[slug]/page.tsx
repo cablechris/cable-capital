@@ -37,7 +37,7 @@ export default function EssayPage({ params }: PageProps) {
             That essay isn&rsquo;t here.
           </p>
           <Link
-            href="/blog"
+            href="/research"
             className="mt-6 inline-block v2-mono text-[11px] tracking-[0.22em] uppercase v2-link-underline pb-1"
             style={{ color: 'var(--v2-oxblood)' }}
           >
@@ -52,11 +52,11 @@ export default function EssayPage({ params }: PageProps) {
     <V2Shell>
       <article className="max-w-[720px] mx-auto px-6 lg:px-10 pt-32 lg:pt-40 pb-28">
         <Link
-          href="/blog"
+          href="/research"
           className="v2-mono text-[11px] tracking-[0.22em] uppercase v2-link-underline pb-1"
           style={{ color: 'var(--v2-oxblood)' }}
         >
-          &larr; Essays
+          &larr; Other research &amp; writing
         </Link>
 
         <div className="mt-10">

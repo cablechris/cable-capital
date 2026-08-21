@@ -5,12 +5,9 @@ import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 const nav = [
-  { href: '/thesis', label: 'Theses' },
-  { href: '/memos', label: 'Memos' },
-  { href: '/papers', label: 'Research' },
-  { href: '/blog', label: 'Essays' },
+  { href: '/thesis', label: 'Theses & Memos' },
+  { href: '/research', label: 'Other research & writing' },
   { href: '/investments', label: 'Investments' },
-  { href: '/barbell', label: 'Barbell' },
   { href: '/about', label: 'About' },
 ]
 

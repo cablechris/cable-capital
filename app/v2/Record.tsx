@@ -16,9 +16,8 @@ const statusColor = (s?: string) => {
 }
 
 const cats = [
-  { label: 'Theses', href: '/thesis' },
-  { label: 'Memos', href: '/memos' },
-  { label: 'Research', href: '/papers' },
+  { label: 'Theses & Memos', href: '/thesis' },
+  { label: 'Other research & writing', href: '/research' },
 ]
 
 export default function Record() {

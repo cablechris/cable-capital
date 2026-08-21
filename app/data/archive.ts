@@ -5,7 +5,7 @@
 // out of order again. Ordered newest-first by `date`; the feed sorts on the
 // same field, so this ordering is authoritative.
 
-export type ArchiveType = 'Thesis' | 'Memo' | 'Research'
+export type ArchiveType = 'Thesis' | 'Memo' | 'Research' | 'Essay' | 'Manifesto'
 export type ArchiveStatus = 'Active conviction' | 'PASS' | 'MONITOR' | 'WATCH' | 'STARTER'
 
 export interface ArchiveEntry {

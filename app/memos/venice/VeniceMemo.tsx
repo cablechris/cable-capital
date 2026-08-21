@@ -942,9 +942,9 @@ export default function VeniceMemo() {
           </div>
           <div className="vfoot-tag">clarity under complexity</div>
           <div className="vfoot-links">
-            <a href="/memos">Memos</a>
-            <a href="/thesis">Theses</a>
-            <a href="/papers">Research</a>
+            <a href="/thesis">Theses &amp; Memos</a>
+            <a href="/research">Other research &amp; writing</a>
+            <a href="/investments">Investments</a>
             <a href="/about">About</a>
           </div>
           <div className="vfoot-legal">
