@@ -50,7 +50,7 @@ export default function MemosPage() {
         {/* Page header */}
         <div className="pb-12 mb-4" style={{ borderBottom: '1px solid var(--v2-rule-strong)' }}>
           <div className="v2-mono text-[11px] tracking-[0.22em] uppercase mb-5" style={{ color: 'var(--v2-oxblood)' }}>
-            On the record
+            Verdicts
           </div>
           <h1
             className="v2-serif"
@@ -59,8 +59,8 @@ export default function MemosPage() {
             Memos
           </h1>
           <p className="mt-7 text-[17px] leading-[1.65] max-w-[56ch]" style={{ color: 'var(--v2-ink-2)' }}>
-            One deal, worked end to end, down to a verdict I'm willing to be judged on. PASS,
-            MONITOR, WATCH. Pass memos published alongside the ones I acted on.
+            One deal, worked end to end, down to a clear call: PASS, MONITOR, WATCH. Pass memos
+            published alongside the ones I acted on.
           </p>
         </div>
 

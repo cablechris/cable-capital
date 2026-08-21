@@ -53,12 +53,10 @@ export default function Principal() {
             className="mt-8 text-[17px] leading-[1.65]"
             style={{ color: 'var(--v2-ink-2)', maxWidth: 'min(52ch, 100%)' }}
           >
-            I've had my share of wins. But luck and skill look identical while they're
-            happening, and you only learn which one you had long after. The investors worth
-            learning from worked this out the same way: they put the reasoning on the record
-            before the outcome, where it could be judged. That's what this is. I write things
-            down before they resolve, keep the memos honest even when the verdict is no, and
-            chase the rabbit holes I fall into.
+            A decade across investment banking, operator work at Diageo in New York, and now
+            allocating capital at the edges of AI, crypto, and frontier science. This is where
+            I write up the thinking: investment theses, memos on deals I passed on, and research
+            I got into. There&rsquo;s no fund, no newsletter, nothing to sell.
           </p>
 
           <div className="mt-10 flex items-center gap-8 v2-mono text-[11px] tracking-[0.22em] uppercase" style={{ color: 'var(--v2-ink-3)' }}>

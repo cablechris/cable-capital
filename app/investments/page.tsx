@@ -90,7 +90,7 @@ export default function Investments() {
         {/* Page header */}
         <div className="pb-12 mb-14" style={{ borderBottom: '1px solid var(--v2-rule-strong)' }}>
           <div className="v2-mono text-[11px] tracking-[0.22em] uppercase mb-5" style={{ color: 'var(--v2-oxblood)' }}>
-            Track record
+            The record
           </div>
           <h1
             className="v2-serif"

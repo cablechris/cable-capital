@@ -1,16 +1,18 @@
 import type { MetadataRoute } from 'next'
+import { posts } from './data/posts'
 
 const BASE = 'https://cable.capital'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [
-    '/v2',
+  const staticRoutes = [
+    '/',
     '/thesis',
     '/memos',
     '/papers',
+    '/blog',
     '/investments',
+    '/barbell',
     '/about',
-    '/v2/barbell',
     '/thesis/photonic-interconnect',
     '/memos/venice',
     '/memos/panthalassa',
@@ -19,8 +21,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/papers/sparse-bioelectric-control',
     '/papers/thermodynamic-computing-moat',
   ]
+  const essayRoutes = posts.map((p) => `/blog/${p.slug}`)
   const now = new Date()
-  return routes.map((route) => ({
+  return [...staticRoutes, ...essayRoutes].map((route) => ({
     url: `${BASE}${route}`,
     lastModified: now,
   }))

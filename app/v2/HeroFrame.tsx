@@ -135,7 +135,7 @@ export default function HeroFrame() {
           className="hero-eyebrow v2-mono text-[11px] tracking-[0.22em] uppercase mb-7"
           style={{ color: 'var(--v2-oxblood)' }}
         >
-          Est. 2019 · Ideas at the edges
+          A researcher who invests · Sydney · Est. 2019
         </p>
 
         <h1

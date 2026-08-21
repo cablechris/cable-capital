@@ -8,8 +8,9 @@ const nav = [
   { href: '/thesis', label: 'Theses' },
   { href: '/memos', label: 'Memos' },
   { href: '/papers', label: 'Research' },
+  { href: '/blog', label: 'Essays' },
   { href: '/investments', label: 'Investments' },
-  { href: '/v2/barbell', label: 'Barbell' },
+  { href: '/barbell', label: 'Barbell' },
   { href: '/about', label: 'About' },
 ]
 

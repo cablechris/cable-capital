@@ -11,6 +11,7 @@ const entries = archive
 const statusColor = (s?: string) => {
   if (s === 'PASS' || s === 'Active conviction') return 'var(--v2-oxblood)'
   if (s === 'MONITOR') return '#9A6A1E'
+  if (s === 'STARTER') return '#2E6E86'
   return 'var(--v2-ink-4)'
 }
 

@@ -47,7 +47,8 @@ export default function Footer() {
             </div>
             <ul className="space-y-3 v2-serif text-[20px]" style={{ letterSpacing: '-0.01em' }}>
               <li><a href="/investments" className="v2-link-underline pb-0.5">Investments</a></li>
-              <li><a href="/v2/barbell" className="v2-link-underline pb-0.5">Barbell</a></li>
+              <li><a href="/barbell" className="v2-link-underline pb-0.5">Barbell</a></li>
+              <li><a href="/blog" className="v2-link-underline pb-0.5">Essays</a></li>
               <li><a href="/about" className="v2-link-underline pb-0.5">About Chris</a></li>
             </ul>
           </div>

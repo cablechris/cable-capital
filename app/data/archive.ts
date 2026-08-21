@@ -6,7 +6,7 @@
 // same field, so this ordering is authoritative.
 
 export type ArchiveType = 'Thesis' | 'Memo' | 'Research'
-export type ArchiveStatus = 'Active conviction' | 'PASS' | 'MONITOR' | 'WATCH'
+export type ArchiveStatus = 'Active conviction' | 'PASS' | 'MONITOR' | 'WATCH' | 'STARTER'
 
 export interface ArchiveEntry {
   /** Stable id / route slug tail. */
@@ -56,12 +56,12 @@ export const archive: ArchiveEntry[] = [
     href: '/memos/dolphin-network',
     type: 'Memo',
     title: 'Dolphin Network',
-    deck: 'Distributed inference, narrowed. The bet is workload economics, not sharding.',
+    deck: 'They built the customer before they built the network. The token buys itself with 100% of network revenue. The API has not opened yet.',
     description:
-      'MONITOR. Distributed inference, narrowed. Real arbitrage in audio and small LLMs. The bet is workload economics, not sharding.',
-    status: 'MONITOR',
-    date: '2026-05-01',
-    displayDate: 'May 2026',
+      'STARTER. Dolphin built its customer before it built its network. Uncensored models power Venice for three million users; the token spends 100% of network revenue buying POD on the open market. The API opening is the whole trade.',
+    status: 'STARTER',
+    date: '2026-07-13',
+    displayDate: 'Updated Jul 2026',
   },
   {
     slug: 'sparse-bioelectric-control',

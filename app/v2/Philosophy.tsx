@@ -74,7 +74,7 @@ export default function Philosophy() {
               className="mt-14"
             >
               <Link
-                href="/v2/barbell"
+                href="/barbell"
                 className="v2-mono text-[11px] tracking-[0.22em] uppercase inline-flex items-center gap-3"
               >
                 <span className="v2-link-underline pb-1">Read the manifesto</span>
