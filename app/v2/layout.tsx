@@ -2,8 +2,8 @@ import './v2.css'
 import { v2FontVars } from './fonts'
 
 export const metadata = {
-  title: { absolute: 'Cable Capital · A public reasoning archive' },
-  description: 'A public reasoning archive. Investment theses, deal memos, and original research, pre-registered before they resolve.',
+  title: { absolute: 'Cable Capital · A working archive of key ideas and theses' },
+  description: 'A working archive of key ideas and theses. Deal memos and original research from the edges of AI, crypto, and frontier science.',
 }
 
 export default function V2Layout({ children }: { children: React.ReactNode }) {

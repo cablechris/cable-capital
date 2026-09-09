@@ -38,16 +38,16 @@ const logos: { funds: LogoItem[]; daos: LogoItem[]; venture: LogoItem[] } = {
 }
 
 function Tile({ item }: { item: LogoItem }) {
-  const cls = 'group relative flex items-center justify-center aspect-[3/2] transition-colors'
+  const cls = 'investment-tile group relative flex items-center justify-center aspect-[3/2] transition-colors'
   const style = { background: 'var(--v2-ivory-dim)', border: '1px solid var(--v2-rule)' } as const
 
   const inner = item.src ? (
     <>
-      <div className="relative w-1/2 h-1/2">
+      <div className="investment-logo relative w-2/3 h-2/3">
         <Image src={item.src} alt={item.alt || item.name} fill className="object-contain" style={{ filter: 'grayscale(100%)', opacity: 0.75 }} sizes="200px" />
       </div>
       <span
-        className="absolute bottom-3 left-1/2 -translate-x-1/2 v2-mono text-[10px] tracking-[0.14em] uppercase opacity-0 group-hover:opacity-100 transition-opacity"
+        className="investment-label absolute bottom-3 left-1/2 -translate-x-1/2 v2-mono text-[10px] tracking-[0.14em] uppercase opacity-0 group-hover:opacity-100 transition-opacity"
         style={{ color: 'var(--v2-ink-3)' }}
       >
         {item.name}

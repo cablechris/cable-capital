@@ -86,7 +86,7 @@ const SubculturalNetworkVisualization: React.FC<SubculturalNetworkProps> = ({
   const clusterColors = ["#8dd3c7", "#fb8072", "#80b1d3", "#bebada"];
   
   return (
-    <div className="p-4 bg-white shadow-lg rounded-lg">
+    <div className="research-chart">
       <h3 className="text-xl font-semibold mb-4">{title}</h3>
       <div className="relative" style={{ height: "500px" }}>
         <svg width="100%" height="100%" viewBox="0 0 600 400">
@@ -150,7 +150,7 @@ const SubculturalNetworkVisualization: React.FC<SubculturalNetworkProps> = ({
           </g>
         </svg>
       </div>
-      <p className="text-sm text-gray-600 mt-2">
+      <p className="research-chart-caption">
         {description}
       </p>
     </div>

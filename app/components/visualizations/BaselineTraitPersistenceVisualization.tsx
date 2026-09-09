@@ -22,19 +22,19 @@ const BaselineTraitPersistenceVisualization: React.FC<BaselineTraitProps> = ({
   ];
 
   return (
-    <div className="p-4 bg-white shadow-lg rounded-lg mt-6">
+    <div className="research-chart">
       <h3 className="text-xl font-semibold mb-4">{title}</h3>
       <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={baselineData}>
+        <BarChart accessibilityLayer margin={{ top: 8, right: 14, bottom: 25, left: 8 }} data={baselineData}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="traitId" label={{ value: 'Trait ID', position: 'insideBottom', offset: -5 }} />
+          <XAxis dataKey="traitId" label={{ value: 'Trait ID', position: 'insideBottom', offset: -12 }} />
           <YAxis label={{ value: 'Average Lifespan (Epochs)', angle: -90, position: 'insideLeft' }} domain={[0, 12]} />
           <Tooltip />
           <Legend />
           <Bar dataKey="lifespan" fill="#888888" name="Lifespan" />
         </BarChart>
       </ResponsiveContainer>
-      <p className="text-sm text-gray-600 mt-2">
+      <p className="research-chart-caption">
         {description}
       </p>
     </div>

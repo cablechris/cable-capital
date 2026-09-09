@@ -1,16 +1,7 @@
-import { Inter, DM_Serif_Display } from 'next/font/google'
+import { homeFontVars } from './components/home/fonts'
+import SiteFrame from './components/site/SiteFrame'
+import './components/site/site.css'
 import "./globals.css"
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: '--font-sans'
-})
-
-const dmSerif = DM_Serif_Display({
-  weight: '400',
-  subsets: ["latin"],
-  variable: '--font-serif'
-})
 
 export const metadata = {
   metadataBase: new URL('https://cable.capital'),
@@ -18,17 +9,24 @@ export const metadata = {
     default: 'Cable Capital',
     template: '%s · Cable Capital',
   },
-  description: "A public reasoning archive. Investment theses, deal memos, and original research, pre-registered before they resolve.",
+  description: "A working archive of key ideas and theses. Deal memos and original research from the edges of AI, crypto, and frontier science.",
   icons: {
     icon: '/favicon.svg',
+    apple: '/favicon.svg',
   },
   openGraph: {
     title: "Cable Capital",
-    description: "A public reasoning archive. Investment theses, deal memos, and original research, pre-registered before they resolve.",
+    description: "A working archive of key ideas and theses. Deal memos and original research from the edges of AI, crypto, and frontier science.",
     url: "https://cable.capital",
     siteName: "Cable Capital",
     locale: "en_AU",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cable Capital",
+    description: "A working archive of key ideas and theses. Deal memos and original research from the edges of AI, crypto, and frontier science.",
+    creator: "@cablechris",
   },
 }
 
@@ -38,9 +36,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${dmSerif.variable}`}>
-      <body className="min-h-screen bg-white antialiased font-sans">
-        {children}
+    <html lang="en" className={homeFontVars}>
+      <body className="min-h-screen antialiased">
+        <SiteFrame>{children}</SiteFrame>
       </body>
     </html>
   )

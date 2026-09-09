@@ -26,6 +26,8 @@ const nextConfig = {
   // slugs; only the aggregate indexes moved.
   async redirects() {
     return [
+      { source: '/v2', destination: '/', permanent: true },
+      { source: '/v2/barbell', destination: '/barbell', permanent: true },
       { source: '/memos', destination: '/thesis', permanent: true },
       { source: '/papers', destination: '/research', permanent: true },
       { source: '/blog', destination: '/research', permanent: true },

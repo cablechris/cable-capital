@@ -1,5 +1,5 @@
-import { redirect } from 'next/navigation'
+import OceanHome from './components/home/OceanHome'
 
 export default function Home() {
-  redirect('/v2')
+  return <OceanHome />
 }

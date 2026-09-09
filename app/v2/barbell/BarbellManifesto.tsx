@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import Link from 'next/link'
+
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -42,11 +42,6 @@ export default function BarbellManifesto() {
   return (
     <div ref={rootRef} className="bb-root v2-grain">
       <div className="bb-progress" aria-hidden />
-
-      <nav className="bb-nav">
-        <Link href="/v2">Cable Capital</Link>
-        <span>The Barbell · A Manifesto</span>
-      </nav>
 
       {/* Essay — opening */}
       <section className="bb-essay bb-essay--intro">

@@ -10,8 +10,8 @@ export const metadata = {
 
 const statusColor = (s?: string) => {
   if (s === 'PASS') return 'var(--v2-oxblood)'
-  if (s === 'MONITOR') return '#9A6A1E'
-  if (s === 'STARTER') return '#2E6E86'
+  if (s === 'MONITOR') return '#d8c587'
+  if (s === 'STARTER') return '#90c9df'
   if (s === 'Active conviction') return 'var(--v2-oxblood)'
   return 'var(--v2-ink-4)'
 }
@@ -54,9 +54,6 @@ export default function ThesesAndMemosPage() {
               style={{ borderBottom: '1px solid var(--v2-rule)' }}
             >
               <div className="col-span-12 lg:col-span-2 flex lg:block items-baseline gap-4">
-                <span className="v2-mono text-[11px] tracking-[0.22em]" style={{ color: 'var(--v2-ink-4)' }}>
-                  {e.displayDate}
-                </span>
                 <span className="v2-mono text-[10px] tracking-[0.18em] uppercase lg:mt-2 lg:block" style={{ color: 'var(--v2-ink-4)' }}>
                   {e.type}
                 </span>

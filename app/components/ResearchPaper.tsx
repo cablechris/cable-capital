@@ -19,7 +19,7 @@ const ResearchPaper = () => {
           setActiveSection(entry.target.id);
         }
       });
-    }, { threshold: 0.5 });
+    }, { rootMargin: '-110px 0px -60% 0px', threshold: 0 });
 
     document.querySelectorAll('section[id]').forEach((section) => {
       observer.observe(section);
@@ -32,8 +32,8 @@ const ResearchPaper = () => {
     const element = document.getElementById(sectionId);
     if (element && 'offsetTop' in element) {
       window.scrollTo({
-        top: element.offsetTop - 100,
-        behavior: 'smooth'
+        top: element.getBoundingClientRect().top + window.scrollY - 108,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
       });
     }
   };
@@ -392,7 +392,7 @@ python main.py`}
                        className={styles.link}
                        target="_blank"
                        rel="noopener noreferrer">GitHub Repository</a> | 
-                    <a href="mailto:contact@cablechris.com" className={styles.link}>Contact</a>
+                    <a href="mailto:info@cable.capital" className={styles.link}>Contact</a>
                   </p>
                 </footer>
               </div>

@@ -42,7 +42,7 @@ export default function Header() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="h-16 flex items-center justify-between">
           <Link
-            href="/v2"
+            href="/"
             className="v2-mono text-[11px] tracking-[0.22em] uppercase flex items-center gap-3"
             style={{ color: 'var(--v2-ink)' }}
             onClick={() => setMenuOpen(false)}

@@ -20,12 +20,12 @@ const TraitSurvivalVisualization: React.FC<TraitSurvivalProps> = ({
   const [data] = useState<TraitData[]>(generateTraitSurvivalData());
 
   return (
-    <div className="p-4 bg-white shadow-lg rounded-lg">
+    <div className="research-chart">
       <h3 className="text-xl font-semibold mb-4">{title}</h3>
       <ResponsiveContainer width="100%" height={400}>
-        <LineChart data={data}>
+        <LineChart accessibilityLayer margin={{ top: 8, right: 14, bottom: 25, left: 8 }} data={data}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="epoch" label={{ value: 'Epochs', position: 'insideBottom', offset: -5 }} />
+          <XAxis dataKey="epoch" label={{ value: 'Epochs', position: 'insideBottom', offset: -12 }} />
           <YAxis label={{ value: 'Number of Traits', angle: -90, position: 'insideLeft' }} />
           <Tooltip />
           <Legend />
@@ -52,7 +52,7 @@ const TraitSurvivalVisualization: React.FC<TraitSurvivalProps> = ({
           />
         </LineChart>
       </ResponsiveContainer>
-      <p className="text-sm text-gray-600 mt-2">
+      <p className="research-chart-caption">
         {description}
       </p>
     </div>

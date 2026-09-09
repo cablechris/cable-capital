@@ -20,21 +20,21 @@ const MetaPreferenceVisualization: React.FC<MetaPreferenceProps> = ({
   const [data] = useState<MetaPreferenceData[]>(generateMetaPreferenceData());
 
   return (
-    <div className="p-4 bg-white shadow-lg rounded-lg">
+    <div className="research-chart">
       <h3 className="text-xl font-semibold mb-4">{title}</h3>
       <ResponsiveContainer width="100%" height={400}>
-        <ScatterChart>
+        <ScatterChart accessibilityLayer margin={{ top: 8, right: 14, bottom: 25, left: 8 }}>
           <CartesianGrid />
-          <XAxis type="number" dataKey="epoch" name="Epoch" label={{ value: 'Simulation Epochs', position: 'insideBottom', offset: -5 }} />
-          <YAxis type="number" domain={[0, 1]} label={{ value: 'Score', angle: -90, position: 'insideLeft' }} />
+          <XAxis type="number" dataKey="epoch" name="Epoch" label={{ value: 'Simulation Epochs', position: 'insideBottom', offset: -12 }} />
+          <YAxis type="number" dataKey="value" domain={[0, 1]} label={{ value: 'Score', angle: -90, position: 'insideLeft' }} />
           <Tooltip />
           <Legend />
-          <Scatter name="Alignment Score" data={data} fill="#8884d8" dataKey="alignmentScore" />
-          <Scatter name="Entropy Score" data={data} fill="#82ca9d" dataKey="entropyScore" />
-          <Scatter name="Diversity Score" data={data} fill="#ff7300" dataKey="diversityScore" />
+          <Scatter name="Alignment Score" data={data.map(point => ({ epoch: point.epoch, value: point.alignmentScore }))} fill="#8884d8" />
+          <Scatter name="Entropy Score" data={data.map(point => ({ epoch: point.epoch, value: point.entropyScore }))} fill="#82ca9d" />
+          <Scatter name="Diversity Score" data={data.map(point => ({ epoch: point.epoch, value: point.diversityScore }))} fill="#ff7300" />
         </ScatterChart>
       </ResponsiveContainer>
-      <p className="text-sm text-gray-600 mt-2">
+      <p className="research-chart-caption">
         {description}
       </p>
     </div>

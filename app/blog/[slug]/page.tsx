@@ -1,6 +1,7 @@
 import { posts } from '../../data/posts'
 import V2Shell from '../../v2/V2Shell'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 
 interface PageProps {
   params: { slug: string }
@@ -29,24 +30,7 @@ export function generateMetadata({ params }: PageProps) {
 export default function EssayPage({ params }: PageProps) {
   const post = posts.find((p) => p.slug === params.slug)
 
-  if (!post) {
-    return (
-      <V2Shell>
-        <div className="max-w-[720px] mx-auto px-6 lg:px-10 pt-32 lg:pt-40 pb-28">
-          <p className="text-[17px]" style={{ color: 'var(--v2-ink-2)' }}>
-            That essay isn&rsquo;t here.
-          </p>
-          <Link
-            href="/research"
-            className="mt-6 inline-block v2-mono text-[11px] tracking-[0.22em] uppercase v2-link-underline pb-1"
-            style={{ color: 'var(--v2-oxblood)' }}
-          >
-            Back to essays
-          </Link>
-        </div>
-      </V2Shell>
-    )
-  }
+  if (!post) notFound()
 
   return (
     <V2Shell>

@@ -1,0 +1,762 @@
+.cable-home {
+  --background: #060b10;
+  --foreground: #e9eeeb;
+  --primary: #b4e3d5;
+  --primary-foreground: #061211;
+  --muted: #142126;
+  --muted-foreground: #99a8af;
+  --border: #253036;
+  --ring: #a5dcca;
+  --card: #0b1318;
+  --card-foreground: #e9eeeb;
+  --popover: #0b1318;
+  --popover-foreground: #e9eeeb;
+  --secondary: #15232a;
+  --secondary-foreground: #e9eeeb;
+  --accent: #183931;
+  --accent-foreground: #b4e3d5;
+  --input: #253036;
+  --radius: 0.5rem;
+}
+.cable-home * {
+  box-sizing: border-box;
+}
+html:has(.cable-home) {
+  scroll-behavior: smooth;
+  scroll-padding-top: 35px;
+}
+.cable-home {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans-site), Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.cable-home a {
+  color: inherit;
+  text-decoration: none;
+}
+.cable-home a:focus-visible,
+.cable-home button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 7px;
+}
+.cable-home ::selection {
+  background: #377c70;
+  color: white;
+}
+.cable-home .skip-link {
+  position: fixed;
+  left: 20px;
+  top: -80px;
+  background: var(--primary);
+  color: #061211;
+  padding: 14px;
+  z-index: 50;
+}
+.cable-home .skip-link:focus {
+  top: 20px;
+}
+.cable-home .hero {
+  min-height: 820px;
+  height: 100svh;
+  max-height: 1300px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #050b11;
+}
+.cable-home .ocean-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background: radial-gradient(ellipse at 65% 60%, #18443f, transparent 50%), #050b11;
+}
+.cable-home .ocean-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.cable-home .hero-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, #04090e7a, transparent 67%),
+    linear-gradient(0deg, #060b10 0%, transparent 26%, transparent 83%, #04090e40);
+}
+.cable-home .site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 37px 4.5%;
+  gap: 28px;
+}
+.cable-home .wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.cable-home .wordmark > span:first-child {
+  font-size: 24px;
+  letter-spacing: -1px;
+  font-weight: 500;
+}
+.cable-home .name-dot {
+  color: #99dfcb;
+}
+.cable-home .brand-sub {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3.3px;
+  color: #a7b7ba;
+}
+.cable-home .site-header nav {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+  font-size: 14px;
+  color: #c4cfce;
+}
+.cable-home .site-header nav a {
+  transition: color 0.25s;
+}
+.cable-home .site-header nav a:hover {
+  color: #b8f3de;
+}
+.cable-home .contact-link {
+  border: 1px solid #ffffff26;
+  border-radius: 30px;
+  padding: 11px 19px;
+  background: #06111926;
+  backdrop-filter: blur(10px);
+}
+.cable-home .contact-link span {
+  margin-left: 15px;
+}
+.cable-home .hero-copy {
+  position: absolute;
+  top: 24%;
+  left: 9%;
+  pointer-events: none;
+}
+.cable-home .hero-copy a {
+  pointer-events: auto;
+}
+.cable-home .eyebrow {
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  font-weight: 450;
+  line-height: 1.7;
+  color: #aabbbc;
+  margin: 0;
+}
+.cable-home .hero-copy .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cable-home .status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #b5e3d3;
+  box-shadow: 0 0 14px #69b9a3;
+}
+.cable-home h1 {
+  font-size: clamp(78px, 8.6vw, 144px);
+  font-weight: 400;
+  line-height: 0.93;
+  letter-spacing: -0.07em;
+  margin: 30px 0 25px;
+}
+.cable-home em {
+  font-family: var(--font-serif-site), Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
+.cable-home h1 em {
+  font-size: 1.17em;
+  color: #c9eadb;
+}
+.cable-home .hero-intro {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #acbdc0;
+  margin: 0 0 28px;
+}
+.cable-home .explore-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 14px;
+  padding: 0 0 9px;
+  border-bottom: 1px solid #a4c5ba66;
+  color: #d1e5dc;
+}
+.cable-home .explore-link span {
+  transition: transform 0.3s;
+}
+.cable-home .explore-link:hover span {
+  transform: translate(3px, -3px);
+}
+.cable-home .hero-bottom {
+  position: absolute;
+  bottom: 38px;
+  left: 4.5%;
+  right: 4.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cable-home .scroll-link {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: #b1c1c3;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.cable-home .scroll-link span {
+  border: 1px solid #ffffff20;
+  border-radius: 100%;
+  height: 34px;
+  width: 34px;
+  display: grid;
+  place-items: center;
+}
+.cable-home .location {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #859d9f;
+  margin-right: 0;
+}
+.cable-home .ocean-control {
+  position: absolute;
+  right: 4.5%;
+  bottom: 37px;
+  z-index: 3;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  color: #a9c3c2;
+  font-size: 11px;
+}
+.cable-home .ocean-control .motion-button {
+  background: #08191b80;
+  border: 1px solid #ffffff20;
+  backdrop-filter: blur(15px);
+  border-radius: 30px;
+  height: 36px;
+  padding: 0 14px;
+  gap: 8px;
+  font-size: 12px;
+  color: #cce3dc;
+  cursor: pointer;
+}
+.cable-home .motion-button:hover {
+  background: #17372f;
+}
+.cable-home .ocean-invitation {
+  position: absolute;
+  right: 11%;
+  top: 49%;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #c1e5dd7a;
+  pointer-events: none;
+  writing-mode: vertical-rl;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.cable-home .ocean-invitation::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(transparent, #a0d5c466);
+}
+.cable-home .content-width {
+  width: 82%;
+  max-width: 1320px;
+  margin: auto;
+}
+.cable-home .writing-section {
+  padding: 112px 0 80px;
+  scroll-margin-top: 25px;
+}
+.cable-home .section-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cable-home .section-note {
+  font-family: var(--font-serif-site), Georgia, serif;
+  font-style: italic;
+  font-size: 20px;
+  color: #82969a;
+}
+.cable-home .section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin: 26px 0 45px;
+  gap: 20px;
+}
+.cable-home h2 {
+  font-size: clamp(42px, 4.7vw, 72px);
+  line-height: 1.07;
+  letter-spacing: -0.045em;
+  font-weight: 400;
+  margin: 0;
+}
+.cable-home h2 em {
+  color: #b5d4c9;
+  font-size: 1.12em;
+}
+.cable-home .text-link {
+  font-size: 13px;
+  color: #b6c8c9;
+  display: inline-flex;
+  gap: 28px;
+  align-items: center;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #78918d44;
+  transition: color 0.3s;
+}
+.cable-home .text-link:hover {
+  color: #bdecd8;
+}
+.cable-home .section-heading .text-link {
+  margin-bottom: 6px;
+}
+.cable-home .writing-row {
+  display: grid;
+  grid-template-columns: 50px 1fr 180px 35px;
+  gap: 20px;
+  padding: 33px 0 37px;
+  border-top: 1px solid #233035;
+  align-items: center;
+  transition:
+    background 0.35s,
+    padding 0.35s;
+}
+.cable-home .writing-row:last-child {
+  border-bottom: 1px solid #233035;
+}
+.cable-home .writing-row:hover {
+  background: #0a151a;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+.cable-home .row-number {
+  font-size: 12px;
+  color: #5b757a;
+  font-variant-numeric: tabular-nums;
+  align-self: start;
+  margin-top: 4px;
+}
+.cable-home .row-type {
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  font-size: 10px;
+  color: #80a89f;
+  margin: 0 0 12px;
+}
+.cable-home .row-content h3 {
+  font-size: 27px;
+  letter-spacing: -0.7px;
+  font-weight: 400;
+  margin: 0 0 10px;
+}
+.cable-home .row-description {
+  font-size: 14px;
+  color: #92a6ad;
+  margin: 0;
+  line-height: 1.7;
+}
+.cable-home .row-tag {
+  font-size: 12px;
+  color: #799196;
+}
+.cable-home .row-arrow {
+  font-size: 23px;
+  color: #c3d9d1;
+  text-align: right;
+}
+.cable-home .research-link {
+  margin-top: 28px;
+}
+.cable-home .about-section {
+  padding: 88px 0 112px;
+  border-top: 1px solid #233035;
+}
+.cable-home .about-body {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 12%;
+  margin-top: 36px;
+}
+.cable-home .about-body h2 {
+  font-size: clamp(38px, 4vw, 62px);
+}
+.cable-home .about-copy p {
+  font-size: 17px;
+  line-height: 1.85;
+  color: #afbec2;
+  margin: 0 0 23px;
+}
+.cable-home .about-copy p:first-child {
+  color: #d4dedc;
+}
+.cable-home .about-copy .about-aside {
+  font-size: 13px;
+  color: #7f969a;
+}
+.cable-home .site-footer {
+  border-top: 1px solid #233035;
+  padding-top: 64px;
+}
+.cable-home .footer-invite > a {
+  font-size: clamp(55px, 7vw, 100px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 560px;
+  margin-top: 16px;
+}
+.cable-home .footer-invite em {
+  color: #b8d9ca;
+  margin-left: 18px;
+  margin-right: auto;
+}
+.cable-home .footer-invite > a > span {
+  font-size: 0.62em;
+  color: #8db8aa;
+  transition: transform 0.3s;
+}
+.cable-home .footer-invite > a:hover > span {
+  transform: translate(6px, -6px);
+}
+.cable-home .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 65px 0 30px;
+  color: #718b91;
+  font-size: 11px;
+}
+.cable-home .footer-bottom > div {
+  display: flex;
+  gap: 27px;
+}
+.cable-home .footer-bottom a:hover {
+  color: #b4e3d5;
+}
+@media (min-width: 1600px) {
+  .cable-home .hero-copy {
+    left: calc((100% - 1320px) /2);
+  }
+  .cable-home .hero {
+    min-height: 900px;
+  }
+}
+@media (max-width: 900px) {
+  .cable-home .hero {
+    min-height: 760px;
+  }
+  .cable-home .hero-copy {
+    left: 7%;
+    top: 25%;
+  }
+  .cable-home h1 {
+    font-size: 100px;
+  }
+  .cable-home .location {
+    display: none;
+  }
+  .cable-home .content-width {
+    width: 86%;
+  }
+  .cable-home .writing-row {
+    grid-template-columns: 30px 1fr 28px;
+    gap: 14px;
+  }
+  .cable-home .row-tag {
+    display: none;
+  }
+  .cable-home .about-body {
+    gap: 7%;
+  }
+  .cable-home .site-header {
+    padding: 28px 6%;
+  }
+  .cable-home .site-header nav {
+    gap: 25px;
+  }
+  .cable-home .hero-bottom {
+    left: 6%;
+    right: 6%;
+  }
+  .cable-home .ocean-control {
+    right: 6%;
+  }
+  .cable-home .ocean-invitation {
+    right: 7%;
+    top: 45%;
+  }
+}
+@media (max-width: 600px) {
+  .cable-home .hero {
+    height: 100svh;
+    min-height: 730px;
+    max-height: 1050px;
+  }
+  .cable-home .site-header {
+    padding: 25px 7%;
+    gap: 20px;
+  }
+  .cable-home .wordmark > span:first-child {
+    font-size: 21px;
+  }
+  .cable-home .brand-sub {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+  }
+  .cable-home .site-header nav {
+    gap: 21px;
+    font-size: 13px;
+  }
+  .cable-home .contact-link {
+    display: none;
+  }
+  .cable-home .hero-copy {
+    top: 24%;
+    left: 8%;
+  }
+  .cable-home .hero-copy .eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.7px;
+  }
+  .cable-home h1 {
+    font-size: clamp(76px, 16vw, 100px);
+    margin: 25px 0;
+  }
+  .cable-home .hero-intro {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+  .cable-home .explore-link {
+    font-size: 13px;
+  }
+  .cable-home .hero-shade {
+    background:
+      linear-gradient(90deg, #04090e44, transparent),
+      linear-gradient(0deg, #060b10, transparent 23%);
+  }
+  .cable-home .hero-bottom {
+    left: 7%;
+    bottom: 25px;
+  }
+  .cable-home .scroll-link {
+    font-size: 11px;
+    gap: 9px;
+  }
+  .cable-home .ocean-control {
+    right: 7%;
+    bottom: 25px;
+  }
+  .cable-home .ocean-invitation {
+    display: none;
+  }
+  .cable-home .section-top .section-note {
+    display: none;
+  }
+  .cable-home .content-width {
+    width: 84%;
+  }
+  .cable-home .writing-section {
+    padding: 75px 0 65px;
+  }
+  .cable-home .section-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 20px;
+    margin-bottom: 33px;
+  }
+  .cable-home h2 {
+    font-size: 44px;
+  }
+  .cable-home .writing-row {
+    grid-template-columns: 20px 1fr 20px;
+    gap: 12px;
+    padding: 27px 0;
+  }
+  .cable-home .row-content h3 {
+    font-size: 23px;
+  }
+  .cable-home .row-type {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+  }
+  .cable-home .row-description {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+  .cable-home .row-number {
+    font-size: 10px;
+  }
+  .cable-home .row-arrow {
+    font-size: 20px;
+  }
+  .cable-home .about-section {
+    padding: 64px 0 65px;
+  }
+  .cable-home .about-body {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 24px;
+  }
+  .cable-home .about-body h2 {
+    font-size: 42px;
+  }
+  .cable-home .about-copy p {
+    font-size: 16px;
+  }
+  .cable-home .site-footer {
+    padding-top: 50px;
+  }
+  .cable-home .footer-invite .eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.8px;
+  }
+  .cable-home .footer-invite > a {
+    font-size: 67px;
+  }
+  .cable-home .footer-bottom {
+    padding-top: 45px;
+    flex-direction: column;
+    font-size: 10px;
+    gap: 24px;
+  }
+  .cable-home .footer-bottom > div {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  .cable-home .eyebrow {
+    font-size: 10px;
+  }
+  .cable-home .writing-row:hover {
+    padding-left: 0;
+    padding-right: 0;
+    background: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html:has(.cable-home) {
+    scroll-behavior: auto;
+  }
+  .cable-home *,
+  .cable-home *::before,
+  .cable-home *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+/* Readability across screen sizes. */
+.cable-home .hero {
+  min-height: 690px;
+}
+.cable-home .brand-sub,
+.cable-home .eyebrow,
+.cable-home .location,
+.cable-home .ocean-invitation,
+.cable-home .row-type,
+.cable-home .row-number,
+.cable-home .row-tag,
+.cable-home .footer-bottom,
+.cable-home .footer-invite .eyebrow {
+  font-size: 12px;
+}
+.cable-home .scroll-link,
+.cable-home .text-link,
+.cable-home .explore-link,
+.cable-home .site-header nav,
+.cable-home .ocean-control .motion-button {
+  font-size: 14px;
+}
+.cable-home .row-description,
+.cable-home .hero-intro {
+  font-size: 16px;
+}
+.cable-home .about-copy .about-aside {
+  font-size: 14px;
+}
+.cable-home .hero-copy .eyebrow {
+  font-size: 12px;
+}
+@media (max-width: 600px) {
+  .cable-home .hero {
+    min-height: 710px;
+  }
+  .cable-home .brand-sub {
+    font-size: 10px;
+  }
+  .cable-home .hero-copy .eyebrow {
+    font-size: 10px;
+  }
+  .cable-home .site-header nav {
+    font-size: 14px;
+  }
+  .cable-home .scroll-link,
+  .cable-home .ocean-control .motion-button {
+    font-size: 12px;
+  }
+  .cable-home .row-description {
+    font-size: 16px;
+  }
+  .cable-home .row-type {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .cable-home .footer-bottom {
+    font-size: 12px;
+  }
+  .cable-home .footer-bottom > div {
+    gap: 20px;
+  }
+  .cable-home .hero-copy {
+    top: 23%;
+  }
+  .cable-home .hero-intro {
+    font-size: 16px;
+  }
+  .cable-home .eyebrow {
+    letter-spacing: 1.8px;
+  }
+  .cable-home .location {
+    display: none;
+  }
+}
+.cable-home {
+  min-height: 100vh;
+  line-height: 1.5;
+  isolation: isolate;
+  --font-sans-site: var(--cable-home-sans);
+  --font-serif-site: var(--cable-home-serif);
+}
+.cable-home .row-description {
+  max-width: 66ch;
+}
+.cable-home .row-tag {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-align: right;
+}
