@@ -3,7 +3,7 @@ import V2Shell from '../v2/V2Shell'
 
 export const metadata = {
   title: 'Investments',
-  description: 'Funds I helped seed, DAOs I was a founding member of, and early venture bets. Whether that was judgment or just being early is the question the rest of this site is trying to answer.',
+  description: 'How I invest around technological shifts through specialist funds and high-conviction direct investments, alongside a selected investment record.',
 }
 
 type LogoItem = { name: string; href?: string; src?: string; alt?: string }
@@ -88,9 +88,9 @@ export default function Investments() {
     <V2Shell>
       <div className="max-w-[1080px] mx-auto px-6 lg:px-10 pt-32 lg:pt-40 pb-28">
         {/* Page header */}
-        <div className="pb-12 mb-14" style={{ borderBottom: '1px solid var(--v2-rule-strong)' }}>
+        <div className="pb-14 mb-14" style={{ borderBottom: '1px solid var(--v2-rule-strong)' }}>
           <div className="v2-mono text-[11px] tracking-[0.22em] uppercase mb-5" style={{ color: 'var(--v2-oxblood)' }}>
-            The record
+            Investment approach
           </div>
           <h1
             className="v2-serif"
@@ -98,7 +98,28 @@ export default function Investments() {
           >
             Investments
           </h1>
-          <p className="mt-7 text-[17px] leading-[1.65] max-w-[56ch]" style={{ color: 'var(--v2-ink-2)' }}>
+          <div className="mt-8 grid gap-5 text-[17px] leading-[1.75] max-w-[72ch]" style={{ color: 'var(--v2-ink-2)' }}>
+            <p>
+              I invest around technological shifts before they become institutionally obvious. I
+              look for exceptional founders and specialist managers with differentiated insight,
+              access or technical depth, operating in markets where new capabilities can create
+              nonlinear outcomes.
+            </p>
+            <p>
+              I use funds to access ecosystems and domain expertise, and make direct investments
+              where I have stronger conviction in the team, timing and market structure. Because
+              these opportunities are inherently uncertain, I accept a high individual failure
+              rate in exchange for asymmetric upside, managing risk through position sizing,
+              diversification and long holding periods.
+            </p>
+          </div>
+        </div>
+
+        <div className="mb-12 lg:grid lg:grid-cols-12 lg:gap-8">
+          <div className="v2-mono text-[11px] tracking-[0.22em] uppercase mb-4 lg:mb-0 lg:col-span-3" style={{ color: 'var(--v2-oxblood)' }}>
+            Selected investments
+          </div>
+          <p className="text-[16px] leading-[1.7] lg:col-span-9 max-w-[58ch]" style={{ color: 'var(--v2-ink-3)' }}>
             Funds I helped seed, DAOs I was a founding member of, and early venture bets. Some of
             these worked out well. Whether that was judgment or just being early is exactly the
             question the rest of this site is trying to answer.
