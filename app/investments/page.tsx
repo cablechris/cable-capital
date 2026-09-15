@@ -14,6 +14,7 @@ const selectedRecord = [
   { year: '2016', name: 'Polychain Capital', role: 'Seeded' },
   { year: '2017', name: '1kx', role: 'Seeded' },
   { year: '2020', name: 'Flamingo DAO', role: 'Helped establish' },
+  { year: '2022', name: 'Bankless Ventures', role: 'Seeded' },
 ]
 
 const logos: { funds: LogoItem[]; daos: LogoItem[]; venture: LogoItem[] } = {
@@ -129,9 +130,7 @@ export default function Investments() {
             Selected investments
           </div>
           <p className="text-[16px] leading-[1.7] lg:col-span-9 max-w-[58ch]" style={{ color: 'var(--v2-ink-3)' }}>
-            Funds I helped seed, DAOs I was a founding member of, and early venture bets. Some of
-            these worked out well. Whether that was judgment or just being early is exactly the
-            question the rest of this site is trying to answer.
+            Funds I helped seed, DAOs I was a founding member of, and early venture bets.
           </p>
         </div>
 
