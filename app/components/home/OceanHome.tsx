@@ -109,7 +109,7 @@ export default function OceanHome() {
             <em>Strong opinions, loosely held.</em>
           </h2>
           <div className="about-copy">
-            <p>I’m Chris Cable, an independent investor based in Sydney. I look for technological shifts before they become obvious—especially across AI, crypto and frontier science.</p>
+            <p>I’m Chris Cable, an independent investor based in Sydney. I look for technological shifts before they become obvious. My interests are broad, but I tend to be drawn to products, platforms and ideas at the intersection of AI, crypto and frontier science.</p>
             <p>I began in equity research and later led insights and analytics at Diageo in New York. Since first investing in Bitcoin in 2013, I’ve backed specialist managers, digital assets and early-stage companies.</p>
             <p>My process is simple: follow the interesting question, develop a view, make a specific bet and keep looking for evidence that I’m wrong.</p>
             <p className="about-aside">I work selectively with investors and founders navigating unfamiliar markets. If that sounds relevant, I’d enjoy comparing notes.</p>
