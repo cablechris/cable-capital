@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import V2Shell from '../../v2/V2Shell'
+import JsonLd from '../../components/JsonLd'
+import { articleStructuredData } from '../../lib/structured-data'
 
 export const metadata = {
   title: 'Stranded or Fungible? Testing the Thermodynamic Computing Moat',
@@ -67,6 +69,17 @@ const flips = [
 export default function ThermodynamicComputingMoat() {
   return (
     <V2Shell>
+      <JsonLd
+        data={articleStructuredData({
+          path: '/papers/thermodynamic-computing-moat',
+          title: 'Stranded or Fungible? Testing the Thermodynamic Computing Moat',
+          description:
+            "Extropic's thermodynamic hardware bets its energy-based-model advantage is stranded, so commodity silicon cannot catch it. On the axis this study can measure, the moat looks more like a head start.",
+          datePublished: '2026-03-01',
+          section: 'Research',
+          keywords: ['thermodynamic computing', 'Extropic', 'energy-based models', 'AI hardware'],
+        })}
+      />
       <article className="max-w-[760px] mx-auto px-6 lg:px-10 pt-32 lg:pt-40 pb-28">
         {/* Header */}
         <Eyebrow>Research &middot; Thermodynamic computing</Eyebrow>

@@ -1,4 +1,6 @@
 import { posts } from '../../data/posts'
+import JsonLd from '../../components/JsonLd'
+import { articleStructuredData } from '../../lib/structured-data'
 import V2Shell from '../../v2/V2Shell'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -34,6 +36,16 @@ export default function EssayPage({ params }: PageProps) {
 
   return (
     <V2Shell>
+      <JsonLd
+        data={articleStructuredData({
+          path: `/blog/${post.slug}`,
+          title: post.title,
+          description: post.content[0].replace(/<[^>]*>/g, '').slice(0, 200),
+          datePublished: new Date(post.date).toISOString().slice(0, 10),
+          section: 'Essays',
+          type: 'BlogPosting',
+        })}
+      />
       <article className="max-w-[720px] mx-auto px-6 lg:px-10 pt-32 lg:pt-40 pb-28">
         <Link
           href="/research"

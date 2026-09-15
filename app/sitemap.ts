@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/thesis',
     '/research',
     '/investments',
+    '/work-with-chris',
     '/barbell',
     '/about',
     '/thesis/photonic-interconnect',

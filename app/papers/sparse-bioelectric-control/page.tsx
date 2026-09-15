@@ -1,4 +1,6 @@
 import V2Shell from '../../v2/V2Shell'
+import JsonLd from '../../components/JsonLd'
+import { articleStructuredData } from '../../lib/structured-data'
 
 export const metadata = {
   title: 'Hard Limits on Sparse Bioelectric Control',
@@ -51,6 +53,17 @@ const findings = [
 export default function SparseBioelectricControl() {
   return (
     <V2Shell>
+      <JsonLd
+        data={articleStructuredData({
+          path: '/papers/sparse-bioelectric-control',
+          title: 'Hard Limits on Sparse Bioelectric Control',
+          description:
+            'Bioelectric repair is treated as a dose problem: more current, longer, broader. It is a dimensionality problem. Below a critical number of independent intervention sites, no amount of stimulation can repair the damage.',
+          datePublished: '2026-05-01',
+          section: 'Research',
+          keywords: ['bioelectricity', 'regeneration', 'control theory', 'morphogenesis'],
+        })}
+      />
       <article className="max-w-[760px] mx-auto px-6 lg:px-10 pt-32 lg:pt-40 pb-28">
         {/* Header */}
         <Eyebrow>Research &middot; Bioelectric control</Eyebrow>

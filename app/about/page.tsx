@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import JsonLd from '../components/JsonLd'
+import { profilePageStructuredData } from '../lib/structured-data'
 import V2Shell from '../v2/V2Shell'
 
 export const metadata = {
@@ -10,6 +12,7 @@ export const metadata = {
 export default function About() {
   return (
     <V2Shell>
+      <JsonLd data={profilePageStructuredData} />
       <div className="about-personal max-w-[800px] mx-auto px-6 lg:px-10 pt-32 lg:pt-40 pb-28">
         <div className="v2-mono text-[11px] tracking-[0.22em] uppercase mb-10" style={{ color: 'var(--v2-oxblood)' }}>A little context</div>
         <div className="relative w-40 h-40 md:w-48 md:h-48 mb-10 overflow-hidden" style={{ background: 'var(--v2-ivory-2)', borderRadius: '4px' }}>

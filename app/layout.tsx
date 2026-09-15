@@ -1,5 +1,7 @@
 import { homeFontVars } from './components/home/fonts'
+import JsonLd from './components/JsonLd'
 import SiteFrame from './components/site/SiteFrame'
+import { siteIdentityStructuredData } from './lib/structured-data'
 import './components/site/site.css'
 import "./globals.css"
 
@@ -37,7 +39,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={homeFontVars}>
+      <head>
+        <link rel="describedby" href="/llms.txt" />
+      </head>
       <body className="min-h-screen antialiased">
+        <JsonLd data={siteIdentityStructuredData} />
         <SiteFrame>{children}</SiteFrame>
       </body>
     </html>
