@@ -35,6 +35,7 @@ export default function OceanHome() {
           </a>
           <nav aria-label="Main navigation">
             <a href="#writing">Writing</a>
+            <Link href="/investments">Investments</Link>
             <a href="#about">About</a>
             <a className="contact-link" href="mailto:info@cable.capital">
               Get in touch <span aria-hidden="true">↗</span>
@@ -103,15 +104,15 @@ export default function OceanHome() {
         <p className="eyebrow">02 / A LITTLE CONTEXT</p>
         <div className="about-body">
           <h2 id="about-heading">
-            Curiosity first.
+            Endlessly curious.
             <br />
-            <em>Conviction earned.</em>
+            <em>Strong opinions, loosely held.</em>
           </h2>
           <div className="about-copy">
-            <p>I’m Chris Cable, an investor, operator and father based in Sydney, exploring AI, crypto and frontier science.</p>
-            <p>My path has taken me from equity research to leading insights and analytics at Diageo in New York. Today, I manage a private portfolio, follow questions, test ideas and write up my thinking.</p>
-            <p>The barbell philosophy shapes how I think about life as well as investing. Away from the desk, that means kettlebells in front of the kids and making more time to take them fishing on the water.</p>
-            <p className="about-aside">Building, investing or researching something interesting? I’d enjoy comparing notes.</p>
+            <p>I’m Chris Cable, an independent investor based in Sydney. I look for technological shifts before they become obvious—especially across AI, crypto and frontier science.</p>
+            <p>I began in equity research and later led insights and analytics at Diageo in New York. Since first investing in Bitcoin in 2013, I’ve backed specialist managers, digital assets and early-stage companies.</p>
+            <p>My process is simple: follow the interesting question, develop a view, make a specific bet and keep looking for evidence that I’m wrong.</p>
+            <p className="about-aside">I work selectively with investors and founders navigating unfamiliar markets. If that sounds relevant, I’d enjoy comparing notes.</p>
             <Link className="text-link" href="/about">
               More about me <span aria-hidden="true">↗</span>
             </Link>

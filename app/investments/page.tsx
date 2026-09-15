@@ -8,11 +8,20 @@ export const metadata = {
 
 type LogoItem = { name: string; href?: string; src?: string; alt?: string }
 
+const selectedRecord = [
+  { year: '2013', name: 'Bitcoin', role: 'Initial investment' },
+  { year: '2015', name: 'Numerai', role: 'Seeded' },
+  { year: '2016', name: 'Polychain Capital', role: 'Seeded' },
+  { year: '2017', name: '1kx', role: 'Seeded' },
+  { year: '2020', name: 'Flamingo DAO', role: 'Helped establish' },
+]
+
 const logos: { funds: LogoItem[]; daos: LogoItem[]; venture: LogoItem[] } = {
   funds: [
-    { href: 'https://polychain.capital/', src: '/assets/logos/Polychain.png', alt: 'Polychain Capital logo', name: 'Polychain' },
-    { href: 'https://bankless.ventures/', src: '/assets/logos/banklessventures.png', alt: 'Bankless Ventures logo', name: 'Bankless Ventures' },
     { href: 'https://numer.ai/', src: '/assets/logos/numerai.png', alt: 'Numerai logo', name: 'Numerai' },
+    { href: 'https://polychain.capital/', src: '/assets/logos/Polychain.png', alt: 'Polychain Capital logo', name: 'Polychain' },
+    { href: 'https://1kx.capital/', name: '1kx' },
+    { href: 'https://bankless.ventures/', src: '/assets/logos/banklessventures.png', alt: 'Bankless Ventures logo', name: 'Bankless Ventures' },
     { href: 'https://ox.partners/', src: '/assets/logos/0xpartners.png', alt: 'Ox Partners logo', name: 'Ox Partners' },
   ],
   daos: [
@@ -125,6 +134,35 @@ export default function Investments() {
             question the rest of this site is trying to answer.
           </p>
         </div>
+
+        <section className="mb-16" aria-labelledby="selected-record-heading">
+          <div
+            id="selected-record-heading"
+            className="v2-mono text-[11px] tracking-[0.22em] uppercase mb-6"
+            style={{ color: 'var(--v2-ink-4)' }}
+          >
+            Selected record
+          </div>
+          <div style={{ borderTop: '1px solid var(--v2-rule)' }}>
+            {selectedRecord.map((item) => (
+              <div
+                key={`${item.year}-${item.name}`}
+                className="grid grid-cols-[4.5rem_1fr] md:grid-cols-[6rem_1fr_1fr] gap-x-4 gap-y-1 py-4 items-baseline"
+                style={{ borderBottom: '1px solid var(--v2-rule)' }}
+              >
+                <span className="v2-mono text-[11px] tracking-[0.14em]" style={{ color: 'var(--v2-oxblood)' }}>
+                  {item.year}
+                </span>
+                <span className="v2-serif text-[20px]" style={{ color: 'var(--v2-ink)' }}>
+                  {item.name}
+                </span>
+                <span className="col-start-2 md:col-start-3 text-[14px]" style={{ color: 'var(--v2-ink-3)' }}>
+                  {item.role}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
 
         {/* Funds */}
         <section className="mb-16">

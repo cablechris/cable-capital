@@ -19,7 +19,7 @@ export default function About() {
         <p className="about-intro">Investor, operator, father. Based in Sydney, drawn to AI, crypto and frontier science.</p>
         <div className="about-prose">
           <p>I began my career in investment banking as an equity analyst, before moving to New York to lead insights and analytics at Diageo. That path gave me a grounding in both financial analysis and the day-to-day decisions that shape a business.</p>
-          <p>Investing has been the thread throughout. I became interested in Bitcoin in 2013, began backing emerging alternative managers in 2016 and, since 2020, have managed a private portfolio across funds and direct investments.</p>
+          <p>Investing has been the thread throughout. I became interested in Bitcoin in 2013, began backing emerging alternative managers in 2015 and, since 2020, have managed a private portfolio across funds and direct investments.</p>
           <p>Today, I follow questions across AI infrastructure, decentralized intelligence and frontier science. I develop theses, test ideas and write down what I see, including the evidence that would change my mind. This site is where I share that work.</p>
         </div>
         <section className="about-chapter" aria-labelledby="barbell-heading">
