@@ -111,10 +111,6 @@ export default function WorkWithChris() {
           <h2 id="contact-heading" className="v2-serif text-[38px] md:text-[50px] leading-tight max-w-[17ch] mb-6">
             Have something interesting in mind?
           </h2>
-          <p className="text-[16px] leading-[1.75] max-w-[62ch]" style={{ color: 'var(--v2-ink-3)' }}>
-            A short note is enough. Include what you are trying to decide, why it matters now and why
-            you think I may be useful.
-          </p>
           <a
             className="about-inline-link mt-8"
             href="mailto:info@cable.capital?subject=Working%20with%20Chris"
