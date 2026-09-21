@@ -2,6 +2,9 @@ import { archive } from '../data/archive'
 
 const BASE = 'https://cable.capital'
 
+const absoluteHref = (href: string) =>
+  href.startsWith('http://') || href.startsWith('https://') ? href : `${BASE}${href}`
+
 const escape = (s: string) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
@@ -11,8 +14,8 @@ export async function GET() {
     .map(
       (i) => `    <item>
       <title>${escape(`${i.type}: ${i.title}`)}</title>
-      <link>${BASE}${i.href}</link>
-      <guid isPermaLink="true">${BASE}${i.href}</guid>
+      <link>${escape(absoluteHref(i.href))}</link>
+      <guid isPermaLink="true">${escape(absoluteHref(i.href))}</guid>
       <pubDate>${new Date(i.date).toUTCString()}</pubDate>
       <description>${escape(i.description)}</description>
     </item>`

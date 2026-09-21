@@ -11,7 +11,7 @@ export type ArchiveStatus = 'Active conviction' | 'PASS' | 'MONITOR' | 'WATCH' |
 export interface ArchiveEntry {
   /** Stable id / route slug tail. */
   slug: string
-  /** Canonical route on the site. */
+  /** Canonical route on the site, or an external URL for off-site work. */
   href: string
   type: ArchiveType
   title: string
@@ -28,6 +28,16 @@ export interface ArchiveEntry {
 }
 
 export const archive: ArchiveEntry[] = [
+  {
+    slug: 'orbio-darwinian-market-for-intelligence',
+    href: 'https://x.com/MrCable0x/status/2101869258242433442',
+    type: 'Memo',
+    title: 'ORBIO and a Darwinian Market for Intelligence',
+    deck: 'My thesis on $ORBIO and a Darwinian market for intelligence.',
+    description: 'My thesis on $ORBIO and a Darwinian market for intelligence.',
+    date: '2026-09-21',
+    displayDate: 'Sep 2026',
+  },
   {
     slug: 'panthalassa',
     href: '/memos/panthalassa',

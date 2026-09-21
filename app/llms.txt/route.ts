@@ -3,6 +3,9 @@ import { posts } from '../data/posts'
 
 const BASE = 'https://cable.capital'
 
+const absoluteHref = (href: string) =>
+  href.startsWith('http://') || href.startsWith('https://') ? href : `${BASE}${href}`
+
 const clean = (value: string) =>
   value
     .replace(/<[^>]*>/g, '')
@@ -11,7 +14,7 @@ const clean = (value: string) =>
 
 const archiveLine = (entry: (typeof archive)[number]) => {
   const status = entry.status ? ` Status: ${entry.status}.` : ''
-  return `- [${entry.title}](${BASE}${entry.href}): ${entry.type}; ${entry.displayDate}.${status} ${clean(entry.deck)}`
+  return `- [${entry.title}](${absoluteHref(entry.href)}): ${entry.type}; ${entry.displayDate}.${status} ${clean(entry.deck)}`
 }
 
 export async function GET() {
