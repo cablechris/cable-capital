@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SiteFooter from "../site/SiteFooter";
+import SiteHeader from "../site/SiteHeader";
 import Ocean from "./Ocean";
 import { archive } from "../../data/archive";
 import { homeFontVars } from "./fonts";
@@ -18,6 +19,8 @@ const writing = archive.map((entry, index) => ({
   description: entry.deck,
   href: entry.href,
   tag: entry.status,
+  date: entry.date,
+  displayDate: entry.displayDate,
 }));
 
 export default function OceanHome() {
@@ -29,19 +32,7 @@ export default function OceanHome() {
       <section className="hero" aria-label="Chris Cable, Cable Capital">
         <Ocean />
         <div className="hero-shade" />
-        <header className="site-header">
-          <a className="wordmark" href="#top" aria-label="Cable Capital home">
-            <span>Cable Capital</span>
-          </a>
-          <nav aria-label="Main navigation">
-            <a href="#writing">Writing</a>
-            <Link href="/investments">Investments</Link>
-            <a href="#about">About</a>
-            <a className="contact-link" href="mailto:info@cable.capital">
-              Get in touch <span aria-hidden="true">↗</span>
-            </a>
-          </nav>
-        </header>
+        <SiteHeader home />
         <div className="hero-copy">
           <h1>
             Drawn to
@@ -57,10 +48,26 @@ export default function OceanHome() {
           </a>
         </div>
         <div className="hero-bottom">
-          <a className="scroll-link" href="#writing">
+          <a className="scroll-link" href="#about">
             <span aria-hidden="true">↓</span> Beneath the surface
           </a>
           <span className="location">SYDNEY · THINKING GLOBALLY</span>
+        </div>
+      </section>
+      <section className="about-section content-width" id="about" aria-labelledby="about-heading">
+        <p className="eyebrow">01 / A LITTLE CONTEXT</p>
+        <div className="about-body">
+          <h2 id="about-heading">
+            Endlessly curious.
+            <br />
+            <em>Strong opinions, loosely held.</em>
+          </h2>
+          <div className="about-copy">
+            <p>I’m Chris Cable, an independent investor based in Sydney. I look for technological shifts before they become obvious. My interests are broad, but I tend to be drawn to products, platforms and ideas at the intersection of AI, crypto and frontier science.</p>
+            <Link className="text-link" href="/about">
+              More about me <span aria-hidden="true">↗</span>
+            </Link>
+          </div>
         </div>
       </section>
       <section
@@ -69,7 +76,7 @@ export default function OceanHome() {
         aria-labelledby="writing-heading"
       >
         <div className="section-top">
-          <p className="eyebrow">01 / THE RECORD</p>
+          <p className="eyebrow">02 / THE RECORD</p>
           <span className="section-note">Ideas, followed further.</span>
         </div>
         <div className="section-heading">
@@ -89,7 +96,10 @@ export default function OceanHome() {
                 <h3>{w.title}</h3>
                 <p className="row-description">{w.description}</p>
               </div>
-              <span className="row-tag">{w.tag}</span>
+              <span className="row-meta">
+                <time dateTime={w.date}>{w.displayDate}</time>
+                {w.tag && <span className="row-tag">{w.tag}</span>}
+              </span>
               <span className="row-arrow" aria-hidden="true">
                 ↗
               </span>
@@ -99,25 +109,6 @@ export default function OceanHome() {
         <Link className="research-link text-link" href="/research">
           Other research & writing <span aria-hidden="true">↗</span>
         </Link>
-      </section>
-      <section className="about-section content-width" id="about" aria-labelledby="about-heading">
-        <p className="eyebrow">02 / A LITTLE CONTEXT</p>
-        <div className="about-body">
-          <h2 id="about-heading">
-            Endlessly curious.
-            <br />
-            <em>Strong opinions, loosely held.</em>
-          </h2>
-          <div className="about-copy">
-            <p>I’m Chris Cable, an independent investor based in Sydney. I look for technological shifts before they become obvious. My interests are broad, but I tend to be drawn to products, platforms and ideas at the intersection of AI, crypto and frontier science.</p>
-            <p>I began in equity research and later led insights and analytics at Diageo in New York. Since first investing in Bitcoin in 2013, I’ve backed specialist managers, digital assets and early-stage companies.</p>
-            <p>My process is simple: follow the interesting question, develop a view, make a specific bet and keep looking for evidence that I’m wrong.</p>
-            <p className="about-aside">I work selectively with investors and founders navigating unfamiliar markets. If that sounds relevant, I’d enjoy comparing notes.</p>
-            <Link className="text-link" href="/about">
-              More about me <span aria-hidden="true">↗</span>
-            </Link>
-          </div>
-        </div>
       </section>
       <SiteFooter />
     </main>

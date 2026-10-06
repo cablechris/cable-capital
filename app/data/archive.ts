@@ -130,3 +130,5 @@ export const archive: ArchiveEntry[] = [
     displayDate: 'Jan 2025',
   },
 ]
+
+archive.sort((a, b) => b.date.localeCompare(a.date))

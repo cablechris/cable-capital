@@ -45,6 +45,7 @@ export default function About() {
           <h2 id="conversation-heading">Compare notes.</h2>
           <div className="about-prose"><p>I&rsquo;m always interested in meeting founders and builders, fellow investors, and researchers working on questions that deserve more attention. If something here overlaps with your work, or you see it differently, I&rsquo;d enjoy hearing from you.</p></div>
           <a className="about-inline-link" href="mailto:info@cable.capital">Say hello <span aria-hidden="true">↗</span></a>
+          <div><Link className="about-inline-link" href="/work-with-chris">Work with Chris <span aria-hidden="true">↗</span></Link></div>
         </section>
       </div>
     </V2Shell>

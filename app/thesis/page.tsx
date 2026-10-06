@@ -57,6 +57,7 @@ export default function ThesesAndMemosPage() {
                 <span className="v2-mono text-[10px] tracking-[0.18em] uppercase lg:mt-2 lg:block" style={{ color: 'var(--v2-ink-4)' }}>
                   {e.type}
                 </span>
+                <time dateTime={e.date} className="archive-date">{e.displayDate}</time>
               </div>
 
               <div className="col-span-12 lg:col-span-8">

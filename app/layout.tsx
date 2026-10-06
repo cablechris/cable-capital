@@ -2,6 +2,7 @@ import { homeFontVars } from './components/home/fonts'
 import JsonLd from './components/JsonLd'
 import SiteFrame from './components/site/SiteFrame'
 import { siteIdentityStructuredData } from './lib/structured-data'
+import { relatedReadingByPath } from './data/related-reading'
 import './components/site/site.css'
 import "./globals.css"
 
@@ -44,7 +45,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen antialiased">
         <JsonLd data={siteIdentityStructuredData} />
-        <SiteFrame>{children}</SiteFrame>
+        <SiteFrame relatedReadingByPath={relatedReadingByPath}>{children}</SiteFrame>
       </body>
     </html>
   )

@@ -265,7 +265,6 @@ const ResearchPaper = () => {
                       <li>Simulation parameters could be more explicitly reported.</li>
                       <li>Results would benefit from statistical significance testing.</li>
                       <li>Visual lineage trees, although mentioned, were initially underutilized.</li>
-                      <li>No baseline models (e.g. random imitation) were tested for comparison.</li>
                       <li>The "meta-preference" term may confuse readers without clarification.</li>
                     </ul>
                   </div>
@@ -404,4 +403,4 @@ python main.py`}
   );
 };
 
-export default ResearchPaper; 
+export default ResearchPaper;

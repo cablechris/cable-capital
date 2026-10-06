@@ -13,4 +13,94 @@ html{scroll-padding-top:110px;scroll-behavior:smooth}body{background:#060b10;col
 
 .ocean-site #memo-root .memo-lead{display:flow-root}
 
+/* Targeted navigation, archive, and investment layout refinements. */
+.site-nav-header.is-home {
+  position: relative;
+  height: auto;
+  padding: 37px 4.5%;
+  background: transparent;
+  border-bottom: 0;
+  backdrop-filter: none;
+}
+.archive-date {
+  display: block;
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--v2-ink-4);
+}
+.related-reading {
+  width: 82%;
+  max-width: 1080px;
+  margin: 0 auto 72px;
+  padding-top: 32px;
+  border-top: 1px solid #263b43;
+}
+.related-reading h2 {
+  margin-bottom: 22px;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: #90a8b0;
+}
+.related-reading-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+.related-reading-links a {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 20px;
+  font-family: var(--cable-home-serif), Georgia, serif;
+  font-size: 25px;
+  line-height: 1.25;
+  color: #dbe8e2;
+}
+.related-reading-links a:hover { color: #bcebd9; }
+.related-reading-links a > span:last-child {
+  font-family: var(--cable-home-sans), Arial, sans-serif;
+  font-size: 20px;
+  color: #9fc9b8;
+}
+.ocean-site .investment-tile {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  grid-template-rows: minmax(0, 1fr) auto;
+  aspect-ratio: 3 / 2;
+  min-height: 180px;
+  gap: 14px;
+  padding: 18px;
+  transition: border-color .25s;
+}
+.ocean-site .investment-tile:hover { border-color: #557b70 !important; }
+.ocean-site .investment-logo {
+  min-height: 64px;
+  width: 100%;
+  height: 100%;
+}
+.investment-logo-art { position: relative; width: 100%; height: 100%; }
+.ocean-site .investment-label {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.investment-wordmark { grid-row: 1 / -1; align-self: center; }
+@media (max-width: 1023px) {
+  .archive-date { margin-top: 0; }
+}
+@media (max-width: 760px) {
+  .site-nav-header.is-home { padding: 25px 7%; }
+  .related-reading { width: 84%; margin-bottom: 48px; }
+  .related-reading-links { grid-template-columns: 1fr; gap: 24px; }
+  .related-reading-links a { font-size: 23px; }
+  .ocean-site .investment-tile { min-height: 152px; padding: 12px; gap: 10px; }
+  .ocean-site .investment-logo { min-height: 72px; }
+}
+
 .about-personal .about-intro{font-family:var(--cable-home-serif),Georgia,serif;font-size:clamp(25px,3vw,31px);font-style:italic;line-height:1.5;color:#b5ddcd;margin-bottom:35px;max-width:35ch}.about-prose{display:grid;gap:24px;color:var(--v2-ink-2);font-size:17px;line-height:1.85}.about-chapter{margin-top:56px;padding-top:36px;border-top:1px solid var(--v2-rule)}.about-label{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#a7d4c3;margin-bottom:18px}.about-chapter h2{font-family:var(--cable-home-serif),Georgia,serif;font-size:clamp(31px,4vw,41px);line-height:1.2;color:var(--v2-ink);font-weight:400;margin-bottom:25px}.about-inline-link{display:inline-flex;align-items:center;gap:24px;font-size:14px;color:#b6e2d1;margin-top:26px;padding-bottom:7px;border-bottom:1px solid #44645e}.about-water-card{display:block;position:relative;margin-top:44px;border:1px solid #35584f;border-radius:8px;padding:32px;background:radial-gradient(ellipse at 100% 100%,#42605c33,transparent 65%),linear-gradient(130deg,#10262b,#0a1720);transition:border-color .25s,transform .25s}.about-water-card:hover{border-color:#81bca6;transform:translateY(-3px)}.about-water-title{display:flex;gap:28px;justify-content:space-between;font-family:var(--cable-home-serif),Georgia,serif;font-size:clamp(29px,4vw,38px);line-height:1.15;color:#dbebe2;max-width:22ch}.about-water-title>span{font-family:var(--cable-home-sans),Arial,sans-serif;font-size:24px;color:#afd8c7}.about-water-copy{display:block;color:#acc2c7;font-size:15px;line-height:1.8;margin:22px 0}.about-water-action{font-size:12px;color:#bbe6d3;border-bottom:1px solid #496b60;padding-bottom:5px}@media(max-width:760px){.about-water-card{padding:25px}.about-chapter{margin-top:42px}.about-prose{font-size:16px}}

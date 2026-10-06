@@ -284,7 +284,8 @@ html:has(.cable-home) {
   margin: auto;
 }
 .cable-home .writing-section {
-  padding: 112px 0 80px;
+  padding: 72px 0 80px;
+  border-top: 1px solid #233035;
   scroll-margin-top: 25px;
 }
 .cable-home .section-top {
@@ -390,7 +391,7 @@ html:has(.cable-home) {
   margin-top: 28px;
 }
 .cable-home .about-section {
-  padding: 88px 0 112px;
+  padding: 88px 0 64px;
   border-top: 1px solid #233035;
 }
 .cable-home .about-body {
@@ -581,7 +582,7 @@ html:has(.cable-home) {
     width: 84%;
   }
   .cable-home .writing-section {
-    padding: 75px 0 65px;
+    padding: 56px 0 65px;
   }
   .cable-home .section-heading {
     align-items: start;
@@ -616,7 +617,7 @@ html:has(.cable-home) {
     font-size: 20px;
   }
   .cable-home .about-section {
-    padding: 64px 0 65px;
+    padding: 64px 0 48px;
   }
   .cable-home .about-body {
     grid-template-columns: 1fr;
@@ -759,4 +760,26 @@ html:has(.cable-home) {
   font-size: 12px;
   letter-spacing: 1px;
   text-align: right;
+}
+
+.cable-home .row-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #92a6ad;
+}
+@media (max-width: 900px) {
+  .cable-home .row-meta {
+    grid-column: 2;
+    grid-row: 2;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 10px 20px;
+  }
+  .cable-home .row-meta .row-tag { display: inline; text-align: left; }
+  .cable-home .row-arrow { grid-column: 3; grid-row: 1; }
 }
