@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/memos/venice',
     '/memos/panthalassa',
     '/memos/dolphin-network',
+    '/memos/textql',
     '/papers/emergent-culture',
     '/papers/sparse-bioelectric-control',
     '/papers/thermodynamic-computing-moat',

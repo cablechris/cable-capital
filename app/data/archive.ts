@@ -29,6 +29,18 @@ export interface ArchiveEntry {
 
 export const archive: ArchiveEntry[] = [
   {
+    slug: 'textql',
+    href: '/memos/textql',
+    type: 'Memo',
+    title: 'TextQL',
+    deck: 'Enterprise data agents face a hard test: make fragmented systems useful without becoming a services business.',
+    description:
+      'A starter-sized venture bet on an enterprise ontology layer, with strategic acquisition as the return path. Growth is strong but expected to moderate; the test is whether TextQL becomes more valuable to a buyer than to build internally.',
+    status: 'STARTER',
+    date: '2026-10-06',
+    displayDate: 'Oct 2026',
+  },
+  {
     slug: 'orbio-darwinian-market-for-intelligence',
     href: 'https://x.com/MrCable0x/status/2101869258242433442',
     type: 'Memo',
